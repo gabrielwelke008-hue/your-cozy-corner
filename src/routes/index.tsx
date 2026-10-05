@@ -67,13 +67,130 @@ function IronCoreSalesPage() {
   return (
     <main className="min-h-screen bg-[#050505] text-white">
       <style>{`
-        html { scroll-behavior: smooth; }
-        @keyframes anatomySpin { 0%,100% { transform: rotateY(-10deg); } 50% { transform: rotateY(10deg); } }
-        @keyframes anatomyBreath { 0%,100% { transform: scaleY(1) scaleX(1); } 50% { transform: scaleY(1.025) scaleX(1.012); } }
-        @keyframes anatomyGlow { 0%,100% { opacity:.5; transform:scale(.97); } 50% { opacity:.9; transform:scale(1.04); } }
+        html { scroll-behavior: smooth; background: #000; }
+        body { margin: 0; background: #000; }
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap');
+
+        @keyframes anatomySpin { 0%,100% { transform: rotateY(-8deg); } 50% { transform: rotateY(8deg); } }
+        @keyframes anatomyBreath { 0%,100% { transform: scaleY(1) scaleX(1); } 50% { transform: scaleY(1.018) scaleX(1.008); } }
+        @keyframes anatomyGlow { 0%,100% { opacity:.22; transform:scale(.98); } 50% { opacity:.5; transform:scale(1.03); } }
+
         .anatomy-spin { animation: anatomySpin 7s ease-in-out infinite; transform-style: preserve-3d; }
         .anatomy-breath { animation: anatomyBreath 4.2s ease-in-out infinite; transform-origin:center bottom; }
-        .anatomy-spin svg { filter: drop-shadow(0 0 8px rgba(217,255,0,.45)); }
+        .anatomy-spin svg { filter: grayscale(1) contrast(1.12) brightness(1.12) drop-shadow(0 24px 45px rgba(255,255,255,.08)); }
+        .anatomy-spin svg * { stroke: #c8c8c8 !important; }
+        .anatomy-spin svg path[fill] { fill: #a9a9a9 !important; }
+        .anatomy-spin + div { color: #aaa !important; border-color: rgba(255,255,255,.14) !important; }
+
+        main {
+          position: relative;
+          isolation: isolate;
+          background:
+            radial-gradient(circle at 50% 12%, rgba(255,255,255,.045), transparent 30%),
+            #000 !important;
+          font-family: 'Montserrat', Arial, sans-serif;
+        }
+        main::before {
+          content: "";
+          position: fixed;
+          inset: 0;
+          z-index: -1;
+          pointer-events: none;
+          opacity: .15;
+          background-image:
+            radial-gradient(ellipse at 20% 30%, rgba(255,255,255,.11) 0 1px, transparent 2px),
+            radial-gradient(ellipse at 80% 70%, rgba(255,255,255,.07) 0 1px, transparent 2px),
+            linear-gradient(115deg, transparent 20%, rgba(255,255,255,.035) 21%, transparent 22%, transparent 48%, rgba(255,255,255,.025) 49%, transparent 50%);
+          background-size: 140px 110px, 180px 150px, 420px 360px;
+          mix-blend-mode: screen;
+        }
+
+        main > nav {
+          background: rgba(0,0,0,.82) !important;
+          border-color: rgba(255,255,255,.12) !important;
+          backdrop-filter: blur(18px);
+        }
+        main > nav a { color: rgba(255,255,255,.55) !important; }
+        main > nav a:hover { color: #fff !important; }
+        main > nav > div > div:first-child > div {
+          background: #fff !important;
+          color: #000 !important;
+        }
+
+        section { position: relative; }
+        section > div, footer > div { position: relative; z-index: 2; }
+
+        /* Remove the original neon palette without touching any existing copy. */
+        [class*="d9ff00"], [class*="d9ff55"], [class*="eaff9b"], [class*="efffb0"], [class*="dffb82"], [class*="b9ff00"] {
+          color: #fff !important;
+          border-color: rgba(255,255,255,.18) !important;
+          background-color: rgba(255,255,255,.025) !important;
+        }
+        [class*="bg-[#d9ff00]"] { background: #fff !important; color: #000 !important; }
+        [class*="text-[#d9ff00]"] { color: #fff !important; }
+        [class*="border-[#d9ff00]"] { border-color: rgba(255,255,255,.18) !important; }
+
+        h1, h2, h3, .font-black {
+          font-family: 'Anton', 'Montserrat', Arial, sans-serif;
+          font-weight: 900 !important;
+          letter-spacing: -.035em;
+        }
+        h1 {
+          text-shadow: 0 10px 45px rgba(255,255,255,.06);
+        }
+        h2 { letter-spacing: -.045em; }
+
+        /* Hero: sculpture-card / dark luxury treatment. */
+        section:first-of-type {
+          background:
+            radial-gradient(ellipse at 72% 50%, rgba(255,255,255,.075), transparent 23%),
+            linear-gradient(180deg,#000,#030303 60%,#000) !important;
+        }
+        section:first-of-type > div:last-child {
+          grid-template-columns: minmax(0,1fr) 440px;
+        }
+        section:first-of-type .anatomical-model,
+        section:first-of-type .relative.mx-auto {
+          border-radius: 32px;
+        }
+        section:first-of-type .relative.mx-auto::before {
+          content: "";
+          position: absolute;
+          inset: 4%;
+          border: 1px solid rgba(255,255,255,.14);
+          border-radius: 32px;
+          box-shadow: 0 0 90px rgba(255,255,255,.05), inset 0 0 70px rgba(255,255,255,.025);
+          pointer-events: none;
+          z-index: 0;
+        }
+        section:first-of-type h1 span { color: #fff !important; }
+        section:first-of-type p { color: rgba(255,255,255,.52); }
+        section:first-of-type p:first-child { color: rgba(255,255,255,.55) !important; }
+
+        /* Luxury cards: white edge, black glass center, no neon. */
+        article {
+          border-color: rgba(255,255,255,.12) !important;
+          background: rgba(255,255,255,.025) !important;
+          box-shadow: 0 24px 70px rgba(0,0,0,.45);
+          border-radius: 20px !important;
+        }
+        article:hover {
+          border-color: rgba(255,255,255,.3) !important;
+          transform: translateY(-2px);
+          transition: .25s ease;
+        }
+
+        footer { background: #000 !important; border-color: rgba(255,255,255,.12) !important; }
+
+        button { color: #fff; }
+        a { transition: transform .2s ease, opacity .2s ease, border-color .2s ease; }
+
+        @media (max-width: 768px) {
+          section:first-of-type > div:last-child { grid-template-columns: 1fr !important; }
+          section:first-of-type .relative.mx-auto { width: min(86vw, 360px); }
+          h1 { font-size: clamp(3.4rem, 16vw, 6rem) !important; }
+          h2 { font-size: clamp(2.7rem, 12vw, 4.5rem) !important; }
+        }
       `}</style>
 
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
