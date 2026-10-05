@@ -67,9 +67,9 @@ function IronCoreSalesPage() {
   return (
     <main className="min-h-screen bg-[#050505] text-white">
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap');
         html { scroll-behavior: smooth; background: #000; }
         body { margin: 0; background: #000; }
-        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap');
 
         @keyframes anatomySpin { 0%,100% { transform: rotateY(-8deg); } 50% { transform: rotateY(8deg); } }
         @keyframes anatomyBreath { 0%,100% { transform: scaleY(1) scaleX(1); } 50% { transform: scaleY(1.018) scaleX(1.008); } }
