@@ -330,6 +330,68 @@ function IronCoreSalesPage() {
       )}
       <style>{`
 
+        .hero-landing { isolation: isolate; }
+        .hero-leaf {
+          position: absolute;
+          z-index: 1;
+          width: 170px;
+          height: 360px;
+          pointer-events: none;
+          opacity: .78;
+          border-radius: 100% 0 100% 0;
+          background:
+            radial-gradient(ellipse at 30% 22%, rgba(255,255,255,.18), transparent 24%),
+            linear-gradient(145deg, rgba(226,255,126,.28) 0%, rgba(105,139,24,.18) 38%, rgba(18,24,4,.08) 72%, rgba(0,0,0,.32) 100%);
+          border: 1px solid rgba(217,255,0,.12);
+          box-shadow:
+            inset -24px -35px 45px rgba(0,0,0,.5),
+            inset 16px 10px 30px rgba(255,255,255,.08),
+            0 45px 75px rgba(0,0,0,.72);
+          filter: saturate(.82);
+          transform-style: preserve-3d;
+        }
+        .hero-leaf::before {
+          content: "";
+          position: absolute;
+          left: 49%;
+          top: 5%;
+          width: 2px;
+          height: 90%;
+          border-radius: 999px;
+          background: linear-gradient(to bottom, rgba(255,255,255,.28), rgba(217,255,0,.12), rgba(0,0,0,.35));
+          transform: rotate(7deg);
+        }
+        .hero-leaf::after {
+          content: "";
+          position: absolute;
+          inset: 9% 20%;
+          border-radius: 50%;
+          background: radial-gradient(ellipse, rgba(255,255,255,.08), transparent 64%);
+          transform: rotate(-18deg);
+        }
+        .hero-leaf span {
+          position: absolute;
+          left: 50%;
+          top: 30%;
+          width: 42%;
+          height: 1px;
+          background: rgba(217,255,0,.12);
+          box-shadow: 0 42px rgba(217,255,0,.08), 0 84px rgba(217,255,0,.06);
+          transform: rotate(-28deg);
+          transform-origin: left center;
+        }
+        .hero-leaf-left-1 { left: -82px; top: 13%; transform: rotate(31deg); }
+        .hero-leaf-left-2 { left: 10px; bottom: 2%; width: 120px; height: 270px; opacity: .48; transform: rotate(-17deg) scale(.78); }
+        .hero-leaf-right-1 { right: -78px; top: 16%; transform: rotate(-31deg) scaleX(-1); }
+        .hero-leaf-right-2 { right: 8px; bottom: 0; width: 125px; height: 285px; opacity: .46; transform: rotate(18deg) scale(.8) scaleX(-1); }
+        @media (max-width: 767px) {
+          .hero-leaf { width: 95px; height: 220px; opacity: .32; }
+          .hero-leaf-left-1 { left: -54px; top: 18%; }
+          .hero-leaf-left-2 { left: -18px; bottom: 4%; width: 78px; height: 180px; }
+          .hero-leaf-right-1 { right: -54px; top: 19%; }
+          .hero-leaf-right-2 { right: -16px; bottom: 2%; width: 82px; height: 190px; }
+        }
+
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap');
         html { scroll-behavior: smooth; background: #000; }
         body { margin: 0; background: #000; }
@@ -572,7 +634,11 @@ function IronCoreSalesPage() {
         </div>
       </nav>
 
-      <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16">
+      <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing">
+        <div className="hero-leaf hero-leaf-left hero-leaf-left-1" aria-hidden="true"><span /></div>
+        <div className="hero-leaf hero-leaf-left hero-leaf-left-2" aria-hidden="true"><span /></div>
+        <div className="hero-leaf hero-leaf-right hero-leaf-right-1" aria-hidden="true"><span /></div>
+        <div className="hero-leaf hero-leaf-right hero-leaf-right-2" aria-hidden="true"><span /></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(217,255,0,.11),transparent_30%),linear-gradient(120deg,#050505,#090b03,#050505)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
