@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Dumbbell, ShieldCheck, Sparkles, Timer, Utensils, Zap } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -44,6 +44,206 @@ function AnatomicalModel() {
         </div>
       </div>
       <div className="absolute bottom-0 left-1/2 z-20 -translate-x-1/2 rounded-full border border-[#d9ff00]/25 bg-black/70 px-4 py-2 text-[9px] font-black uppercase tracking-[.3em] text-[#d9ff00]">Muscle protocol • 360°</div>
+    </div>
+  );
+}
+
+
+function QuizAndOffer() {
+  const questions = [
+    {
+      title: "Qual é o seu principal objetivo hoje?",
+      options: [
+        "Perder gordura e ficar mais definido",
+        "Ganhar massa muscular",
+        "Ganhar massa e ficar mais definido",
+        "Construir um shape mais completo",
+        "Melhorar meu físico e minha autoestima",
+      ],
+    },
+    {
+      title: "Como você se sente em relação ao seu corpo atualmente?",
+      options: [
+        "Estou satisfeito, mas quero evoluir",
+        "Tenho pouca massa muscular",
+        "Tenho gordura que quero eliminar",
+        "Estou sem definição",
+        "Não estou satisfeito com meu físico",
+      ],
+    },
+    {
+      title: "O que mais está impedindo você de chegar no shape que deseja?",
+      options: [
+        "Não sei como treinar corretamente",
+        "Não consigo manter uma alimentação adequada",
+        "Não sei o que fazer para ganhar massa",
+        "Tenho dificuldade para perder gordura",
+        "Começo, mas não consigo manter consistência",
+        "Já tentei várias coisas e não tive o resultado esperado",
+      ],
+    },
+    {
+      title: "Há quanto tempo você treina?",
+      options: [
+        "Ainda não treino",
+        "Menos de 6 meses",
+        "6 meses a 1 ano",
+        "1 a 3 anos",
+        "Mais de 3 anos",
+      ],
+    },
+    {
+      title: "O que você mais gostaria de mudar no seu corpo?",
+      options: [
+        "Ganhar mais músculos",
+        "Diminuir a barriga",
+        "Ficar mais definido",
+        "Aumentar braços, peito e costas",
+        "Melhorar pernas e glúteos",
+        "Melhorar meu físico como um todo",
+      ],
+    },
+    {
+      title: "Você já tentou transformar seu físico antes?",
+      options: [
+        "Sim, mas não consegui manter",
+        "Sim, mas não tive o resultado que queria",
+        "Sim, e tive algum resultado, mas quero evoluir mais",
+        "Já tentei várias vezes",
+        "Ainda não, estou começando agora",
+      ],
+    },
+    {
+      title: "Se você tivesse um caminho claro para seguir, quanto você estaria disposto a se dedicar para mudar seu físico?",
+      options: [
+        "Quero começar de verdade",
+        "Estou disposto a mudar minha rotina",
+        "Quero levar isso a sério",
+        "Quero transformar meu físico o mais rápido possível",
+      ],
+    },
+  ];
+
+  const [started, setStarted] = useState(false);
+  const [current, setCurrent] = useState(0);
+  const [answers, setAnswers] = useState<string[]>([]);
+  const [finished, setFinished] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(2 * 60 * 60 + 37 * 60);
+
+  useEffect(() => {
+    if (!finished || secondsLeft <= 0) return;
+    const timer = window.setInterval(() => {
+      setSecondsLeft((value) => Math.max(0, value - 1));
+    }, 1000);
+    return () => window.clearInterval(timer);
+  }, [finished, secondsLeft]);
+
+  const chooseAnswer = (answer: string) => {
+    const nextAnswers = [...answers];
+    nextAnswers[current] = answer;
+    setAnswers(nextAnswers);
+    if (current === questions.length - 1) {
+      setFinished(true);
+    } else {
+      setCurrent((value) => value + 1);
+    }
+  };
+
+  const resetQuiz = () => {
+    setStarted(false);
+    setCurrent(0);
+    setAnswers([]);
+    setFinished(false);
+    setSecondsLeft(2 * 60 * 60 + 37 * 60);
+  };
+
+  const hours = String(Math.floor(secondsLeft / 3600)).padStart(2, "0");
+  const minutes = String(Math.floor((secondsLeft % 3600) / 60)).padStart(2, "0");
+  const seconds = String(secondsLeft % 60).padStart(2, "0");
+
+  if (!started) {
+    return (
+      <div className="mx-auto mt-14 max-w-xl">
+        <button
+          onClick={() => setStarted(true)}
+          className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-white px-7 py-5 text-xs font-black uppercase tracking-[.16em] text-black transition hover:-translate-y-1 hover:bg-white/90"
+        >
+          QUERO DESCOBRIR MEU CAMINHO <ArrowRight size={17} />
+        </button>
+      </div>
+    );
+  }
+
+  if (!finished) {
+    const question = questions[current];
+    return (
+      <div className="mx-auto mt-14 max-w-2xl">
+        <div className="mb-5 flex items-center justify-between text-[10px] font-black uppercase tracking-[.25em] text-white/30">
+          <span>PERGUNTA {String(current + 1).padStart(2, "0")} / {String(questions.length).padStart(2, "0")}</span>
+          <span>{Math.round(((current + 1) / questions.length) * 100)}%</span>
+        </div>
+        <div className="mb-10 h-1 overflow-hidden rounded-full bg-white/10">
+          <div className="h-full rounded-full bg-white transition-all duration-300" style={{ width: `${((current + 1) / questions.length) * 100}%` }} />
+        </div>
+        <div className="rounded-[28px] border border-white/10 bg-white/[.025] p-6 sm:p-10">
+          <h3 className="text-2xl font-black uppercase leading-tight sm:text-3xl">{question.title}</h3>
+          <div className="mt-8 grid gap-3">
+            {question.options.map((option) => (
+              <button
+                key={option}
+                onClick={() => chooseAnswer(option)}
+                className="w-full rounded-2xl border border-white/10 bg-black px-5 py-4 text-left text-sm font-semibold text-white/65 transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/[.04] hover:text-white"
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mx-auto mt-14 max-w-2xl text-center">
+      <div className="rounded-[30px] border border-white/10 bg-white/[.025] p-7 sm:p-12">
+        <p className="text-[10px] font-black uppercase tracking-[.35em] text-white/35">IRON CORE • DIREÇÃO CERTA</p>
+        <h3 className="mt-5 text-3xl font-black uppercase leading-tight sm:text-5xl">SEU CAMINHO ESTÁ PRONTO. 🔥</h3>
+        <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/50">
+          Com base nas suas respostas, encontramos o melhor caminho para você começar a construir o shape que deseja.
+        </p>
+
+        <div className="my-10 h-px bg-white/10" />
+
+        <p className="text-xs font-black uppercase tracking-[.22em] text-white/45">VOCÊ LIBEROU UMA CONDIÇÃO ESPECIAL DE ENTRADA NA IRON CORE.</p>
+        <p className="mt-7 text-5xl font-black tracking-[-.04em] sm:text-7xl">65% OFF</p>
+        <p className="mt-5 text-sm text-white/35 line-through">De R$ 79,90</p>
+        <p className="mt-1 text-xl font-black uppercase text-white/60">POR APENAS</p>
+        <p className="mt-1 text-4xl font-black sm:text-5xl">R$ 27,31</p>
+        <p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/30">CONDIÇÃO ÚNICA DE ENTRADA</p>
+        <p className="mx-auto mt-5 max-w-lg text-xs leading-6 text-white/35">
+          Essa condição especial foi criada para novos alunos que estão começando agora e fica disponível enquanto o contador estiver ativo.
+        </p>
+
+        <div className="mx-auto mt-10 max-w-md rounded-2xl border border-white/10 bg-black/60 p-5">
+          <p className="text-[10px] font-black uppercase tracking-[.25em] text-white/35">SUA CONDIÇÃO ESPECIAL TERMINA EM:</p>
+          <p className="mt-3 font-mono text-4xl font-bold tracking-[.08em] text-white sm:text-5xl">{hours}:{minutes}:{seconds}</p>
+        </div>
+
+        <p className="mx-auto mt-5 max-w-md text-xs leading-6 text-white/30">
+          Depois que o contador chegar a zero, essa condição promocional sairá do ar.
+        </p>
+
+        <a
+          href="#checkout"
+          className="mt-9 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-white px-7 py-5 text-xs font-black uppercase tracking-[.16em] text-black transition hover:-translate-y-1 hover:bg-white/90"
+        >
+          QUERO COMEÇAR MEU SHAPE <ArrowRight size={18} />
+        </a>
+
+        <button onClick={resetQuiz} className="mt-5 text-[10px] font-black uppercase tracking-[.2em] text-white/25 transition hover:text-white/50">
+          Refazer quiz
+        </button>
+      </div>
     </div>
   );
 }
@@ -339,6 +539,21 @@ function IronCoreSalesPage() {
               {story.map((p,i)=><p key={i} className={i===0||i===6||i===11||i===14 ? "mb-7 text-xl font-bold leading-8 text-white sm:text-2xl" : "mb-7"}>{p}</p>)}
             </article>
           </div>
+        </div>
+      </section>
+
+
+      <section id="quiz-iron-core" className="border-t border-white/10 bg-[#050505] py-24 sm:py-32">
+        <div className="mx-auto max-w-4xl px-5 sm:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-[10px] font-black uppercase tracking-[.35em] text-white/35">06 • Seu próximo passo</p>
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[.95] sm:text-6xl">DESCUBRA O MELHOR CAMINHO PARA O SEU SHAPE</h2>
+            <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/45 sm:text-base">
+              Responda algumas perguntas rápidas sobre seus objetivos e seu momento atual. No final, vamos direcionar o melhor caminho para o seu shape.
+            </p>
+          </div>
+
+          <QuizAndOffer />
         </div>
       </section>
 
