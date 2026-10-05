@@ -335,42 +335,81 @@ function IronCoreSalesPage() {
           position:absolute;
           z-index:20;
           pointer-events:none;
-          left:0; right:0; top:8%; height:78%;
+          inset:0;
           overflow:visible;
         }
         .hero-water::before,
         .hero-water::after {
           content:"";
           position:absolute;
-          top:-5%; width:5px; height:62%;
-          border-radius:999px;
-          background:linear-gradient(to bottom, rgba(255,255,255,.05), rgba(210,242,255,.72) 20%, rgba(120,190,230,.38) 70%, transparent);
-          filter:blur(.3px) drop-shadow(0 0 8px rgba(160,225,255,.24));
-          animation:waterFall 3.2s ease-in-out infinite;
+          top:14%;
+          width:clamp(180px, 28vw, 390px);
+          height:clamp(300px, 62vh, 650px);
+          border-radius:46% 54% 62% 38% / 28% 42% 58% 72%;
+          background:
+            radial-gradient(ellipse at 35% 18%, rgba(255,255,255,.98), transparent 15%),
+            radial-gradient(ellipse at 52% 45%, rgba(190,238,255,.76), rgba(70,150,205,.34) 44%, transparent 72%),
+            linear-gradient(105deg, rgba(255,255,255,.78), rgba(105,195,240,.38) 38%, rgba(20,80,125,.14) 72%, transparent);
+          filter:blur(.4px) drop-shadow(0 0 26px rgba(110,205,255,.38));
+          opacity:.86;
+          animation:waterSurge 3.8s cubic-bezier(.22,1,.36,1) infinite;
         }
-        .hero-water::before { left:9%; transform:rotate(7deg); }
-        .hero-water::after { right:10%; height:54%; transform:rotate(-6deg); animation-delay:1.1s; }
+        .hero-water::before {
+          left:-10%;
+          transform:rotate(-18deg) skewY(-8deg);
+          clip-path:polygon(0 0, 68% 8%, 100% 22%, 74% 31%, 96% 42%, 64% 50%, 92% 65%, 55% 72%, 78% 86%, 32% 100%, 0 94%);
+        }
+        .hero-water::after {
+          right:-10%;
+          transform:rotate(18deg) scaleX(-1) skewY(-8deg);
+          animation-delay:1.15s;
+          clip-path:polygon(0 8%, 34% 0, 100% 0, 78% 17%, 100% 30%, 70% 39%, 96% 54%, 62% 62%, 88% 78%, 48% 88%, 66% 100%, 0 92%);
+        }
         .hero-water span,
         .hero-water i,
         .hero-water b {
-          position:absolute; display:block; pointer-events:none;
-          border-radius:50%;
-          background:radial-gradient(circle at 35% 25%, rgba(255,255,255,.95), rgba(180,235,255,.58) 38%, rgba(75,145,190,.18) 68%, transparent 72%);
-          box-shadow:0 0 12px rgba(160,225,255,.28);
+          position:absolute;
+          display:block;
+          pointer-events:none;
+          border-radius:50% 50% 62% 38%;
+          background:radial-gradient(circle at 35% 25%, rgba(255,255,255,.98), rgba(185,235,255,.74) 32%, rgba(60,145,200,.3) 65%, transparent 74%);
+          box-shadow:0 0 18px rgba(130,215,255,.4);
+          filter:blur(.2px);
         }
-        .hero-water span { left:18%; top:18%; width:18px; height:30px; animation:waterDrop 2.7s infinite; }
-        .hero-water i { right:22%; top:31%; width:12px; height:21px; animation:waterDrop 3.4s .7s infinite; }
-        .hero-water b { left:50%; top:8%; width:9px; height:15px; animation:waterDrop 2.9s 1.3s infinite; }
-        @keyframes waterFall {
-          0%,100% { transform:translateY(-8px) scaleY(.88); opacity:.18; }
-          45% { opacity:.78; }
-          70% { transform:translateY(30px) scaleY(1.04); opacity:.5; }
+        .hero-water span {
+          left:8%;
+          top:19%;
+          width:38px;
+          height:108px;
+          transform:rotate(24deg);
+          animation:waterStrike 2.3s ease-in infinite;
         }
-        @keyframes waterDrop {
-          0% { transform:translateY(-10px) scale(.75); opacity:0; }
-          20% { opacity:.9; }
-          70% { transform:translateY(110px) scale(1); opacity:.7; }
-          100% { transform:translateY(190px) scale(.55); opacity:0; }
+        .hero-water i {
+          right:8%;
+          top:33%;
+          width:31px;
+          height:88px;
+          transform:rotate(-28deg);
+          animation:waterStrike 2.7s .55s ease-in infinite;
+        }
+        .hero-water b {
+          left:46%;
+          top:6%;
+          width:15px;
+          height:52px;
+          animation:waterStrike 2.1s 1.2s ease-in infinite;
+        }
+        @keyframes waterSurge {
+          0%,100% { transform:translateX(0) scale(.86) skewX(0); opacity:.2; }
+          35% { transform:translateX(10px) scale(1) skewX(-3deg); opacity:.82; }
+          52% { transform:translateX(24px) scale(1.07) skewX(-6deg); opacity:.94; }
+          72% { transform:translateX(5px) scale(.97) skewX(2deg); opacity:.58; }
+        }
+        @keyframes waterStrike {
+          0% { transform:translateY(-90px) scaleY(.5) rotate(20deg); opacity:0; }
+          22% { opacity:.98; }
+          68% { transform:translateY(130px) scaleY(1.12) rotate(20deg); opacity:.84; }
+          100% { transform:translateY(250px) scaleY(.58) rotate(20deg); opacity:0; }
         }
         @media (max-width: 767px) {
           .hero-leaf { width: 105px; height: 245px; opacity: .48; }
