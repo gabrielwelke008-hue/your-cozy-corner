@@ -334,147 +334,82 @@ function IronCoreSalesPage() {
          .hero-water {
           position:absolute;
           z-index:20;
-          pointer-events:none;
           inset:0;
-          overflow:visible;
+          pointer-events:none;
+          overflow:hidden;
           mix-blend-mode:screen;
         }
-        .hero-water::before,
-        .hero-water::after {
-          content:"";
+        .water-ribbon {
           position:absolute;
-          top:-4%;
-          width:clamp(150px, 20vw, 280px);
-          height:118%;
-          opacity:.72;
-          filter:blur(.15px) drop-shadow(0 0 18px rgba(185,225,255,.18));
+          top:-10%;
+          width:34vw;
+          min-width:240px;
+          height:120%;
+          opacity:.68;
+          filter:blur(.35px);
           background:
-            radial-gradient(ellipse at 50% 8%, rgba(255,255,255,.78) 0 1%, transparent 4%),
-            radial-gradient(ellipse at 42% 18%, rgba(225,247,255,.55) 0 2%, transparent 7%),
-            radial-gradient(ellipse at 58% 32%, rgba(135,195,225,.45) 0 1.5%, transparent 6%),
-            radial-gradient(ellipse at 40% 48%, rgba(245,252,255,.5) 0 2%, transparent 7%),
-            radial-gradient(ellipse at 63% 67%, rgba(105,175,215,.38) 0 1.5%, transparent 7%),
-            linear-gradient(90deg, transparent 0%, rgba(190,230,248,.22) 22%, rgba(255,255,255,.42) 44%, rgba(115,185,220,.2) 62%, transparent 100%);
-          background-size:100% 100%, 85% 45%, 90% 55%, 100% 60%, 80% 55%, 100% 100%;
-          animation:realWater 4.6s cubic-bezier(.4,0,.2,1) infinite;
+            radial-gradient(ellipse 38% 10% at 50% 5%,rgba(255,255,255,.8),transparent 70%),
+            radial-gradient(ellipse 24% 16% at 38% 22%,rgba(220,248,255,.62),transparent 72%),
+            radial-gradient(ellipse 30% 13% at 62% 39%,rgba(125,190,220,.42),transparent 74%),
+            radial-gradient(ellipse 22% 18% at 43% 58%,rgba(245,253,255,.58),transparent 72%),
+            radial-gradient(ellipse 32% 12% at 58% 78%,rgba(105,175,215,.36),transparent 74%);
+          -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 20%,#000 78%,transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0%,#000 20%,#000 78%,transparent 100%);
+          animation:liquidFlow 5.2s cubic-bezier(.42,0,.18,1) infinite;
         }
-        .hero-water::before {
-          left:-7%;
-          transform:skewX(-10deg) rotate(-8deg);
-          border-radius:0 48% 42% 0 / 0 18% 82% 0;
-          clip-path:polygon(0 0, 74% 0, 88% 8%, 67% 16%, 96% 24%, 72% 33%, 100% 43%, 69% 51%, 95% 62%, 63% 70%, 88% 81%, 58% 91%, 74% 100%, 0 100%);
+        .water-ribbon-left {
+          left:-15%;
+          transform:rotate(-7deg) skewX(-7deg);
+          border-radius:58% 42% 50% 30% / 12% 35% 65% 88%;
         }
-        .hero-water::after {
-          right:-7%;
-          transform:skewX(10deg) rotate(8deg);
-          border-radius:48% 0 0 42% / 18% 0 82% 0;
-          clip-path:polygon(26% 0, 100% 0, 100% 100%, 26% 100%, 42% 91%, 12% 81%, 37% 70%, 5% 62%, 31% 51%, 0 43%, 28% 33%, 4% 24%, 33% 16%, 12% 8%);
-          animation-delay:1.3s;
+        .water-ribbon-right {
+          right:-15%;
+          transform:rotate(7deg) skewX(7deg);
+          border-radius:42% 58% 30% 50% / 35% 12% 88% 65%;
+          animation-delay:1.2s;
         }
-        .hero-water span,
-        .hero-water i,
-        .hero-water b {
+        .water-highlight {
           position:absolute;
-          display:block;
-          pointer-events:none;
+          top:-8%;
+          width:22vw;
+          min-width:150px;
+          height:115%;
+          border-radius:50%;
+          background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),rgba(210,244,255,.58),rgba(255,255,255,.16),transparent);
+          filter:blur(1px);
+          opacity:.65;
+          animation:highlightFlow 3.8s ease-in-out infinite;
+        }
+        .water-highlight-left { left:4%; transform:rotate(-9deg); }
+        .water-highlight-right { right:4%; transform:rotate(9deg); animation-delay:1.1s; }
+        .water-droplets {
+          position:absolute;
+          inset:0;
+          opacity:.75;
           background:
-            radial-gradient(ellipse at 35% 20%, rgba(255,255,255,.95), transparent 16%),
-            radial-gradient(ellipse at 58% 48%, rgba(205,238,252,.68), rgba(85,155,190,.24) 48%, transparent 72%);
-          filter:blur(.15px);
-          box-shadow:0 0 14px rgba(180,225,250,.2);
+            radial-gradient(ellipse 3px 11px at 28% 18%,rgba(255,255,255,.85),transparent 70%),
+            radial-gradient(ellipse 2px 8px at 35% 38%,rgba(210,245,255,.72),transparent 70%),
+            radial-gradient(ellipse 3px 12px at 72% 24%,rgba(255,255,255,.8),transparent 70%),
+            radial-gradient(ellipse 2px 9px at 65% 51%,rgba(210,245,255,.65),transparent 70%);
+          animation:dropsFlow 2.8s linear infinite;
         }
-        .hero-water span {
-          left:17%; top:9%; width:4px; height:210px;
-          border-radius:80%;
-          animation:waterStream 2.2s linear infinite;
+        @keyframes liquidFlow {
+          0%,100% { transform:translateX(0) scaleX(.9); opacity:.2; }
+          35% { transform:translateX(20px) scaleX(1.02); opacity:.62; }
+          52% { transform:translateX(36px) scaleX(1.1); opacity:.8; }
+          75% { transform:translateX(8px) scaleX(.96); opacity:.42; }
         }
-        .hero-water i {
-          right:19%; top:22%; width:5px; height:180px;
-          border-radius:80%;
-          animation:waterStream 2.8s .7s linear infinite;
+        @keyframes highlightFlow {
+          0%,100% { transform:translateX(0) rotate(-9deg); opacity:.18; }
+          45% { transform:translateX(24px) rotate(-6deg); opacity:.72; }
+          70% { transform:translateX(8px) rotate(-10deg); opacity:.36; }
         }
-        .hero-water b {
-          left:49%; top:0%; width:2px; height:130px;
-          border-radius:80%;
-          animation:waterStream 2.4s 1.1s linear infinite;
+        @keyframes dropsFlow {
+          0% { transform:translateY(-100px); opacity:0; }
+          20% { opacity:.75; }
+          75% { transform:translateY(220px); opacity:.42; }
+          100% { transform:translateY(420px); opacity:0; }
         }
-        @keyframes realWater {
-          0%,100% { transform:translateX(0) scaleX(.9); opacity:.18; }
-          20% { opacity:.42; }
-          48% { transform:translateX(18px) scaleX(1.05); opacity:.82; }
-          58% { transform:translateX(28px) scaleX(1.08); opacity:.72; }
-          78% { transform:translateX(5px) scaleX(.98); opacity:.38; }
-        }
-        @keyframes waterStream {
-          0% { transform:translateY(-180px) scaleY(.7); opacity:0; }
-          18% { opacity:.8; }
-          65% { transform:translateY(180px) scaleY(1); opacity:.58; }
-          100% { transform:translateY(420px) scaleY(.55); opacity:0; }
-        }
-        @media (max-width: 767px) {
-          .hero-leaf { width: 105px; height: 245px; opacity: .48; }
-          .hero-leaf-left-1 { left: -46px; top: 16%; }
-          .hero-leaf-left-2 { left: -8px; bottom: 4%; width: 84px; height: 195px; }
-          .hero-leaf-left-3 { left: 28px; top: 32%; width: 66px; height: 145px; opacity: .30; }
-          .hero-leaf-right-1 { right: -46px; top: 17%; }
-          .hero-leaf-right-2 { right: -8px; bottom: 2%; width: 88px; height: 205px; }
-          .hero-leaf-right-3 { right: 28px; top: 34%; width: 66px; height: 145px; opacity: .30; }
-        }
-
-        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap');
-        html { scroll-behavior: smooth; background: #000; }
-        body { margin: 0; background: #000; }
-
-        @keyframes anatomySpin { 0%,100% { transform: rotateY(-8deg); } 50% { transform: rotateY(8deg); } }
-        @keyframes anatomyBreath { 0%,100% { transform: scaleY(1) scaleX(1); } 50% { transform: scaleY(1.018) scaleX(1.008); } }
-        @keyframes anatomyGlow { 0%,100% { opacity:.22; transform:scale(.98); } 50% { opacity:.5; transform:scale(1.03); } }
-
-        .anatomy-spin { animation: anatomySpin 7s ease-in-out infinite; transform-style: preserve-3d; }
-        .anatomy-breath { animation: anatomyBreath 4.2s ease-in-out infinite; transform-origin:center bottom; }
-        .anatomy-spin svg { filter: grayscale(1) contrast(1.12) brightness(1.12) drop-shadow(0 24px 45px rgba(255,255,255,.08)); }
-        .anatomy-spin svg * { stroke: #c8c8c8 !important; }
-        .anatomy-spin svg path[fill] { fill: #a9a9a9 !important; }
-        .anatomy-spin + div { color: #aaa !important; border-color: rgba(255,255,255,.14) !important; }
-
-        main {
-          position: relative;
-          isolation: isolate;
-          background:
-            radial-gradient(circle at 50% 12%, rgba(255,255,255,.045), transparent 30%),
-            #000 !important;
-          font-family: 'Montserrat', Arial, sans-serif;
-        }
-        main::before {
-          content: "";
-          position: fixed;
-          inset: 0;
-          z-index: -1;
-          pointer-events: none;
-          opacity: .15;
-          background-image:
-            radial-gradient(ellipse at 20% 30%, rgba(255,255,255,.11) 0 1px, transparent 2px),
-            radial-gradient(ellipse at 80% 70%, rgba(255,255,255,.07) 0 1px, transparent 2px),
-            linear-gradient(115deg, transparent 20%, rgba(255,255,255,.035) 21%, transparent 22%, transparent 48%, rgba(255,255,255,.025) 49%, transparent 50%);
-          background-size: 140px 110px, 180px 150px, 420px 360px;
-          mix-blend-mode: screen;
-        }
-
-        main > nav {
-          background: rgba(0,0,0,.82) !important;
-          border-color: rgba(255,255,255,.12) !important;
-          backdrop-filter: blur(18px);
-        }
-        main > nav a { color: rgba(255,255,255,.55) !important; }
-        main > nav a:hover { color: #fff !important; }
-        main > nav > div > div:first-child > div {
-          background: #fff !important;
-          color: #000 !important;
-        }
-
-        section { position: relative; }
-        section > div, footer > div { position: relative; z-index: 2; }
-
-        /* Smooth section reveal: subtle, premium, and lightweight. */
         .reveal-on-scroll {
           opacity: 0;
           transform: translate3d(0, 28px, 0);
@@ -663,7 +598,7 @@ function IronCoreSalesPage() {
         </div>
       </nav>
 
-      <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing"><div className="hero-water" aria-hidden="true"><span /><i /><b /></div>
+      <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing"><div className="hero-water" aria-hidden="true"><div className="water-ribbon water-ribbon-left" /><div className="water-ribbon water-ribbon-right" /><div className="water-highlight water-highlight-left" /><div className="water-highlight water-highlight-right" /><div className="water-droplets" /></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(217,255,0,.11),transparent_30%),linear-gradient(120deg,#050505,#090b03,#050505)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
