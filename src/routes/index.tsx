@@ -406,7 +406,9 @@ function IronCoreSalesPage() {
             {cards.map(([Icon,title,text],i) => {
               const I = Icon as typeof Dumbbell;
               return <article key={String(title)} className="rounded-2xl border border-white/10 bg-white/[.025] p-7 hover:border-[#d9ff00]/30">
-                <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl border border-[#d9ff00]/20 bg-[#d9ff00]/5 text-[#d9ff00]"><I size={21}/></div>
+                <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-2xl border border-white/15 bg-white/[.03] text-white">
+                  <I size={38} strokeWidth={1.6}/>
+                </div>
                 <h3 className="mt-2 text-xl font-black uppercase">{String(title)}</h3>
                 <p className="mt-3 text-sm leading-7 text-white/45">{String(text)}</p>
               </article>;
