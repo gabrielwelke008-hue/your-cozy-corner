@@ -464,6 +464,7 @@ function IronCoreSalesPage() {
           section:first-of-type p:first-child { margin-bottom: 22px; font-size: 9px; line-height: 1.5; letter-spacing: .28em; }
           section:first-of-type p.text-xl { font-size: 1.15rem !important; margin-top: 22px; }
           section:first-of-type a { width: 100%; justify-content: center; margin-top: 28px; padding: 16px 18px; }
+          section:first-of-type .grid { width: 100%; }
 
           h2 { font-size: clamp(2.25rem, 11vw, 4rem) !important; line-height: .94 !important; letter-spacing: -.045em !important; }
           h3 { letter-spacing: -.02em; }
@@ -517,6 +518,20 @@ function IronCoreSalesPage() {
             <p className="mt-7 text-xl font-semibold text-white/70 sm:text-2xl">sem depender de personal.</p>
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/40">Treinamento pensado para a sua realidade, com direção profissional e uma estratégia que cabe na sua rotina.</p>
             <a href="#impactamos" className="mt-9 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
+            <div className="mt-7 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
+              <div className="rounded-xl border border-white/10 bg-white/[.025] px-4 py-4 text-center">
+                <p className="text-lg font-black">+5 MIL</p>
+                <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">Alunos</p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/[.025] px-4 py-4 text-center">
+                <p className="text-lg font-black">✓ CONFIÁVEL</p>
+                <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">Site seguro</p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-white/[.025] px-4 py-4 text-center">
+                <p className="text-lg font-black">GARANTIA</p>
+                <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">De resultado</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
