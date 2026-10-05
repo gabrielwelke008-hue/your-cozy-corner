@@ -270,9 +270,12 @@ function QuizAndOffer() {
 function IronCoreSalesPage() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [demoNotice, setDemoNotice] = useState(false);
+  const demoPurchases = [60,75,45,90,20,40,50,50,70,25,35,53,75,23,64];
+  const [demoPurchaseIndex, setDemoPurchaseIndex] = useState(0);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
+      setDemoPurchaseIndex((value) => (value + 1) % demoPurchases.length);
       setDemoNotice(true);
       window.setTimeout(() => setDemoNotice(false), 5000);
     }, 15000);
@@ -319,7 +322,7 @@ function IronCoreSalesPage() {
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black text-sm font-black">✓</div>
             <div>
-              <p className="text-[11px] font-black uppercase tracking-[.08em] text-white">60 pessoas adquiriram</p>
+              <p className="text-[11px] font-black uppercase tracking-[.08em] text-white">{demoPurchases[demoPurchaseIndex]} pessoas garantiram</p>
               <p className="mt-1 text-[9px] font-black uppercase tracking-[.16em] text-white/35">oferta especial • DEMONSTRAÇÃO</p>
             </div>
           </div>
@@ -431,11 +434,35 @@ function IronCoreSalesPage() {
           position: relative;
           z-index: 30;
         }
+        #hero-trust-strip {
+          grid-template-columns: repeat(3, max-content);
+          align-items: center;
+          justify-content: center;
+          gap: 0;
+          max-width: 760px !important;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 12px 18px;
+          border-radius: 999px;
+          background: radial-gradient(circle at center, rgba(255,255,255,.09), rgba(255,255,255,.025) 65%, transparent 100%);
+          box-shadow: 0 0 55px rgba(255,255,255,.055);
+        }
         #hero-trust-strip > div {
-          min-height: 82px;
-          border-color: rgba(255,255,255,.22) !important;
-          background: rgba(255,255,255,.055) !important;
-          box-shadow: 0 12px 36px rgba(0,0,0,.35);
+          min-height: auto;
+          border: 0 !important;
+          background: transparent !important;
+          box-shadow: none !important;
+          padding: 8px 20px !important;
+          position: relative;
+        }
+        #hero-trust-strip > div:not(:last-child)::after {
+          content: "•";
+          position: absolute;
+          right: -3px;
+          top: 50%;
+          transform: translateY(-50%);
+          color: rgba(255,255,255,.42);
+          font-size: 14px;
         }
         section:first-of-type {
           background:
@@ -497,8 +524,10 @@ function IronCoreSalesPage() {
           section:first-of-type p.text-xl { font-size: 1.15rem !important; margin-top: 22px; }
           section:first-of-type a { width: 100%; justify-content: center; margin-top: 28px; padding: 16px 18px; }
           section:first-of-type .grid { width: 100%; }
-          #hero-trust-strip { margin-top: 28px; }
-          #hero-trust-strip > div { min-height: 72px; }
+          #hero-trust-strip { grid-template-columns: 1fr; width: min(100%, 520px) !important; border-radius: 22px; padding: 8px 10px; }
+          #hero-trust-strip > div { padding: 9px 12px !important; }
+          #hero-trust-strip > div:not(:last-child)::after { display: none; }
+          #hero-trust-strip > div:not(:last-child) { border-bottom: 1px solid rgba(255,255,255,.08) !important; }
 
           h2 { font-size: clamp(2.25rem, 11vw, 4rem) !important; line-height: .94 !important; letter-spacing: -.045em !important; }
           h3 { letter-spacing: -.02em; }
@@ -546,12 +575,12 @@ function IronCoreSalesPage() {
       <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(217,255,0,.11),transparent_30%),linear-gradient(120deg,#050505,#090b03,#050505)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
-          <div className="relative z-10">
+          <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
             <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#d9ff00]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
             <h1 className="max-w-4xl text-5xl font-black uppercase leading-[.88] tracking-[-.045em] sm:text-7xl lg:text-[6.5rem]">DO ZERO AO<br/><span className="text-[#d9ff00]">SHAPE DE PRAIA</span></h1>
             <p className="mt-7 text-xl font-semibold text-white/70 sm:text-2xl">sem depender de personal.</p>
-            <p className="mt-5 max-w-xl text-sm leading-7 text-white/40">Treinamento pensado para a sua realidade, com direção profissional e uma estratégia que cabe na sua rotina.</p>
-            <a href="#impactamos" className="mt-9 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
+            <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/40">Treinamento pensado para a sua realidade, com direção profissional e uma estratégia que cabe na sua rotina.</p>
+            <a href="#impactamos" className="mx-auto mt-9 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
             <div id="hero-trust-strip" className="relative z-30 mt-8 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
               <div className="rounded-xl border border-white/10 bg-white/[.025] px-4 py-4 text-center">
                 <p className="text-lg font-black">+5 MIL</p>
