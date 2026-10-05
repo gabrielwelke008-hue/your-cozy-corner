@@ -323,7 +323,7 @@ function IronCoreSalesPage() {
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black text-sm font-black">✓</div>
             <div>
               <p className="text-[11px] font-black uppercase tracking-[.08em] text-white">{demoPurchases[demoPurchaseIndex]} pessoas garantiram</p>
-              <p className="mt-1 text-[9px] font-black uppercase tracking-[.16em] text-white/35">oferta especial • DEMONSTRAÇÃO</p>
+              <p className="mt-1 text-[9px] font-black uppercase tracking-[.16em] text-white/35">oferta especial</p>
             </div>
           </div>
         </div>
