@@ -469,14 +469,12 @@ function IronCoreSalesPage() {
 
       <section id="impactamos" className="border-t border-white/10 bg-[#080808] py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <p className="text-[10px] font-black uppercase tracking-[.35em] text-[#d9ff00]">02 • O impacto</p>
           <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">O QUE IMPACTAMOS<br/><span className="text-white/35">NA SUA VIDA</span></h2>
           <div className="mt-16 grid gap-4 md:grid-cols-2">
             {cards.map(([Icon,title,text],i) => {
               const I = Icon as typeof Dumbbell;
               return <article key={String(title)} className="rounded-2xl border border-white/10 bg-white/[.025] p-7 hover:border-[#d9ff00]/30">
                 <div className="mb-8 flex h-12 w-12 items-center justify-center rounded-xl border border-[#d9ff00]/20 bg-[#d9ff00]/5 text-[#d9ff00]"><I size={21}/></div>
-                <span className="text-[10px] font-black text-white/20">0{i+1}</span>
                 <h3 className="mt-2 text-xl font-black uppercase">{String(title)}</h3>
                 <p className="mt-3 text-sm leading-7 text-white/45">{String(text)}</p>
               </article>;
@@ -487,7 +485,6 @@ function IronCoreSalesPage() {
 
       <section id="como-funciona" className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <p className="text-[10px] font-black uppercase tracking-[.35em] text-[#d9ff00]">03 • O método</p>
           <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">COMO<br/><span className="text-[#d9ff00]">FUNCIONA</span></h2>
           <div className="mt-16 grid gap-5 lg:grid-cols-3">
             {[
@@ -505,7 +502,6 @@ function IronCoreSalesPage() {
 
       <section className="border-y border-white/10 bg-[#080808] py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <p className="text-[10px] font-black uppercase tracking-[.35em] text-[#d9ff00]">04 • Resultados</p>
           <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">ANTES X DEPOIS<br/><span className="text-white/35">E MENSAGENS REAIS</span></h2>
           <p className="mt-5 max-w-xl text-sm leading-7 text-white/40">Os espaços abaixo já estão preparados. Quando você enviar as fotos e mensagens, elas entram aqui sem precisar reconstruir a seção.</p>
           <div className="mt-12 overflow-hidden">
@@ -529,7 +525,6 @@ function IronCoreSalesPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[.35em] text-[#d9ff00]">05 • A origem</p>
               <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">A HISTÓRIA<br/><span className="text-[#d9ff00]">POR TRÁS</span></h2>
               <div className="mt-10 aspect-[4/5] overflow-hidden rounded-2xl border border-dashed border-white/15 bg-white/[.02]">
                 <div className="flex h-full flex-col items-center justify-center p-8 text-center"><Utensils size={42} className="text-white/10"/><p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/25">Espaço reservado para a foto</p><p className="mt-2 text-xs text-white/20">Envie a foto e ela será colocada aqui.</p></div>
@@ -546,7 +541,6 @@ function IronCoreSalesPage() {
       <section id="quiz-iron-core" className="border-t border-white/10 bg-[#050505] py-24 sm:py-32">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[10px] font-black uppercase tracking-[.35em] text-white/35">06 • Seu próximo passo</p>
             <h2 className="mt-5 text-4xl font-black uppercase leading-[.95] sm:text-6xl">DESCUBRA O MELHOR CAMINHO PARA O SEU SHAPE</h2>
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/45 sm:text-base">
               Responda algumas perguntas rápidas sobre seus objetivos e seu momento atual. No final, vamos direcionar o melhor caminho para o seu shape.
