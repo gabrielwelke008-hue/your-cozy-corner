@@ -442,8 +442,8 @@ function IronCoreSalesPage() {
           section > div, footer > div { width: min(100% - 64px, 1280px); }
           section:first-of-type > div:last-child { padding-top: 28px; padding-bottom: 28px; }
           section:first-of-type h1 { max-width: 980px; }
-          #impactamos > div > div { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-          #impactamos article { min-height: 300px; padding: 34px; }
+           #impactamos > div > div { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+          #impactamos article { min-height: 0; padding: 16px; }
           #como-funciona > div > div { gap: 22px; }
           #como-funciona article { min-height: 280px; }
           #quiz-iron-core > div { max-width: 920px; }
@@ -475,12 +475,12 @@ function IronCoreSalesPage() {
           h2 { font-size: clamp(2.25rem, 11vw, 4rem) !important; line-height: .94 !important; letter-spacing: -.045em !important; }
           h3 { letter-spacing: -.02em; }
 
-          #impactamos > div > div { grid-template-columns: 1fr !important; gap: 14px; margin-top: 36px; }
-          #impactamos article { padding: 24px; min-height: 0; }
-          #impactamos article > div { width: 64px; height: 64px; margin-bottom: 22px; }
-          #impactamos article svg { width: 31px; height: 31px; }
-          #impactamos article h3 { font-size: 1rem; }
-          #impactamos article p { font-size: .82rem; line-height: 1.65; }
+          #impactamos > div > div { grid-template-columns: 1fr !important; gap: 10px; margin-top: 24px; }
+          #impactamos article { padding: 14px; min-height: 0; }
+          #impactamos article > div { width: 40px; height: 40px; margin-bottom: 10px; }
+          #impactamos article svg { width: 21px; height: 21px; }
+          #impactamos article h3 { font-size: .9rem; }
+          #impactamos article p { font-size: .78rem; line-height: 1.5; }
 
           #como-funciona > div > div { grid-template-columns: 1fr !important; gap: 14px; margin-top: 36px; }
           #como-funciona article { min-height: 0; padding: 24px; }
@@ -504,7 +504,8 @@ function IronCoreSalesPage() {
           nav a { font-size: 8px; }
           section > div { padding-left: 16px; padding-right: 16px; }
           section:first-of-type h1 { font-size: 2.8rem !important; }
-          #impactamos article, #como-funciona article { padding: 20px; }
+          #impactamos article { padding: 12px; }
+          #como-funciona article { padding: 20px; }
         }
       `}</style>
 
