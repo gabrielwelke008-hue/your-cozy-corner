@@ -485,18 +485,22 @@ function IronCoreSalesPage() {
 
       <section id="como-funciona" className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">COMO<br/><span className="text-[#d9ff00]">FUNCIONA</span></h2>
-          <div className="mt-16 grid gap-5 lg:grid-cols-3">
+          <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">COMO FUNCIONA A <span className="text-[#d9ff00]">IRON CORE?</span></h2>
+          <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
-              ["01","Você responde","Entendemos seus objetivos, sua rotina, seu nível e o físico que você quer construir."],
-              ["02","Recebe sua direção","Você recebe uma estratégia de treino pensada para o seu momento, sem complicação desnecessária."],
-              ["03","Executa e evolui","Você segue o caminho com clareza, economiza tempo e ajusta sua evolução com muito mais direção."],
-            ].map(([n,t,d]) => <article key={n} className="rounded-2xl border border-white/10 bg-[#090909] p-8">
-              <span className="text-sm font-black text-[#d9ff00]">{n}</span>
-              <h3 className="mt-16 text-2xl font-black uppercase">{t}</h3>
-              <p className="mt-4 text-sm leading-7 text-white/45">{d}</p>
+              ["01","ENTENDEMOS VOCÊ","Entendemos seus objetivos, sua rotina, seu nível atual e o físico que você quer construir."],
+              ["02","IDENTIFICAMOS O QUE VOCÊ PRECISA","Você não precisa ficar tentando descobrir sozinho qual treino seguir ou por onde começar. A partir do seu objetivo, encontramos a direção mais adequada para você."],
+              ["03","VOCÊ RECEBE SUA ESTRATÉGIA","Tenha acesso a estratégias de treino e orientação para saber exatamente o que fazer, sem depender de tentativa e erro."],
+              ["04","VOCÊ SABE O QUE FAZER","Chega de entrar na academia sem saber qual exercício fazer, quantas séries ou como organizar sua evolução. Você passa a ter um caminho claro para seguir."],
+              ["05","VOCÊ EVOLUI COM MAIS CLAREZA","Conforme avança, você entende melhor seu corpo, acompanha sua evolução e sabe quais pontos precisa melhorar."],
+              ["06","MENOS COMPLICAÇÃO. MAIS DIREÇÃO.","A Iron Core reúne o conhecimento e as estratégias que você precisa em um só lugar, para que você possa focar no que realmente importa: construir o seu shape."],
+            ].map(([number,heading,description]) => <article key={number} className="rounded-2xl border border-white/10 bg-[#090909] p-8">
+              <span className="text-sm font-black text-[#d9ff00]">{number}</span>
+              <h3 className="mt-8 text-xl font-black uppercase leading-tight">{heading}</h3>
+              <p className="mt-4 text-sm leading-7 text-white/45">{description}</p>
             </article>)}
           </div>
+          <p className="mx-auto mt-12 max-w-3xl text-center text-lg font-semibold leading-8 text-white/65 sm:text-xl">Você não precisa passar anos tentando descobrir sozinho o que funciona. A Iron Core organiza o caminho para você.</p>
         </div>
       </section>
 
