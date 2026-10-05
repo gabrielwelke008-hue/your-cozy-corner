@@ -435,11 +435,69 @@ function IronCoreSalesPage() {
         button { color: #fff; }
         a { transition: transform .2s ease, opacity .2s ease, border-color .2s ease; }
 
+        /* Desktop + mobile layout system. */
+        @media (min-width: 769px) {
+          section > div, footer > div { width: min(100% - 64px, 1280px); }
+          section:first-of-type > div:last-child { padding-top: 28px; padding-bottom: 28px; }
+          section:first-of-type h1 { max-width: 980px; }
+          #impactamos > div > div { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+          #impactamos article { min-height: 300px; padding: 34px; }
+          #como-funciona > div > div { gap: 22px; }
+          #como-funciona article { min-height: 280px; }
+          #quiz-iron-core > div { max-width: 920px; }
+        }
+
         @media (max-width: 768px) {
-          section:first-of-type > div:last-child { grid-template-columns: 1fr !important; }
-          .hero-visual { height: 360px; margin-top: 8px; }
-          h1 { font-size: clamp(3.4rem, 16vw, 6rem) !important; }
-          h2 { font-size: clamp(2.7rem, 12vw, 4.5rem) !important; }
+          main { overflow-x: hidden; }
+          nav .mx-auto { height: 60px; padding-left: 16px; padding-right: 16px; }
+          nav span { font-size: 11px; letter-spacing: .22em; }
+          nav a { font-size: 9px; letter-spacing: .14em; }
+
+          section { overflow: hidden; }
+          section > div, footer > div { width: 100%; max-width: 100%; }
+          section > div { padding-left: 20px; padding-right: 20px; }
+          section { padding-top: 72px !important; padding-bottom: 72px !important; }
+
+          section:first-of-type { min-height: auto; padding-top: 60px !important; }
+          section:first-of-type > div:last-child { min-height: calc(100svh - 60px); padding-top: 54px; padding-bottom: 54px; }
+          section:first-of-type h1 { font-size: clamp(3rem, 14.5vw, 4.8rem) !important; line-height: .9 !important; letter-spacing: -.05em !important; }
+          section:first-of-type p:first-child { margin-bottom: 22px; font-size: 9px; line-height: 1.5; letter-spacing: .28em; }
+          section:first-of-type p.text-xl { font-size: 1.15rem !important; margin-top: 22px; }
+          section:first-of-type a { width: 100%; justify-content: center; margin-top: 28px; padding: 16px 18px; }
+
+          h2 { font-size: clamp(2.25rem, 11vw, 4rem) !important; line-height: .94 !important; letter-spacing: -.045em !important; }
+          h3 { letter-spacing: -.02em; }
+
+          #impactamos > div > div { grid-template-columns: 1fr !important; gap: 14px; margin-top: 36px; }
+          #impactamos article { padding: 24px; min-height: 0; }
+          #impactamos article > div { width: 64px; height: 64px; margin-bottom: 22px; }
+          #impactamos article svg { width: 31px; height: 31px; }
+          #impactamos article h3 { font-size: 1rem; }
+          #impactamos article p { font-size: .82rem; line-height: 1.65; }
+
+          #como-funciona > div > div { grid-template-columns: 1fr !important; gap: 14px; margin-top: 36px; }
+          #como-funciona article { min-height: 0; padding: 24px; }
+          #como-funciona article h3 { margin-top: 20px; font-size: 1rem; }
+          #como-funciona article p { margin-top: 12px; font-size: .82rem; line-height: 1.65; }
+          #como-funciona > div > p { margin-top: 32px; font-size: 1rem; line-height: 1.65; }
+
+          #quiz-iron-core > div { padding-left: 16px; padding-right: 16px; }
+          #quiz-iron-core h2 { font-size: clamp(2.15rem, 10.5vw, 3.5rem) !important; }
+          .reveal-on-scroll { transform: translate3d(0, 18px, 0); filter: blur(3px); }
+
+          footer { padding-top: 28px !important; padding-bottom: 28px !important; }
+          footer > div { font-size: 8px; letter-spacing: .18em; line-height: 1.7; }
+
+          /* Prevent long labels and prices from overflowing narrow screens. */
+          button, a { max-width: 100%; }
+          .font-mono { font-size: clamp(2rem, 11vw, 3rem) !important; letter-spacing: .04em !important; }
+        }
+
+        @media (max-width: 380px) {
+          nav a { font-size: 8px; }
+          section > div { padding-left: 16px; padding-right: 16px; }
+          section:first-of-type h1 { font-size: 2.8rem !important; }
+          #impactamos article, #como-funciona article { padding: 20px; }
         }
       `}</style>
 
