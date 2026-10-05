@@ -269,6 +269,26 @@ function QuizAndOffer() {
 
 function IronCoreSalesPage() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll<HTMLElement>(".reveal-on-scroll");
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, []);
   const testimonials = [
     "ESPAÇO PARA FOTO DE ANTES E DEPOIS",
     "ESPAÇO PARA MENSAGEM DE CLIENTE",
@@ -340,6 +360,31 @@ function IronCoreSalesPage() {
         section { position: relative; }
         section > div, footer > div { position: relative; z-index: 2; }
 
+        /* Smooth section reveal: subtle, premium, and lightweight. */
+        .reveal-on-scroll {
+          opacity: 0;
+          transform: translate3d(0, 28px, 0);
+          filter: blur(4px);
+          transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1), filter .8s cubic-bezier(.22,1,.36,1);
+          will-change: opacity, transform, filter;
+        }
+        .reveal-on-scroll.is-visible {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+          filter: blur(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          html { scroll-behavior: auto; }
+          .reveal-on-scroll,
+          .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: none;
+            filter: none;
+            transition: none;
+          }
+          article:hover { transform: none; }
+        }
+
         /* Remove the original neon palette without touching any existing copy. */
         [class*="d9ff00"], [class*="d9ff55"], [class*="eaff9b"], [class*="efffb0"], [class*="dffb82"], [class*="b9ff00"] {
           color: #fff !important;
@@ -405,7 +450,7 @@ function IronCoreSalesPage() {
         </div>
       </nav>
 
-      <section className="relative min-h-screen overflow-hidden pt-16">
+      <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(217,255,0,.11),transparent_30%),linear-gradient(120deg,#050505,#090b03,#050505)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10">
@@ -418,7 +463,7 @@ function IronCoreSalesPage() {
         </div>
       </section>
 
-      <section id="impactamos" className="border-t border-white/10 bg-[#080808] py-24 sm:py-32">
+      <section id="impactamos" className="reveal-on-scroll border-t border-white/10 bg-[#080808] py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">O QUE IMPACTAMOS<br/><span className="text-white/35">NA SUA VIDA</span></h2>
           <div className="mt-16 grid gap-4 md:grid-cols-2">
@@ -436,7 +481,7 @@ function IronCoreSalesPage() {
         </div>
       </section>
 
-      <section id="como-funciona" className="py-24 sm:py-32">
+      <section id="como-funciona" className="reveal-on-scroll py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">COMO FUNCIONA A <span className="text-[#d9ff00]">IRON CORE?</span></h2>
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -457,7 +502,7 @@ function IronCoreSalesPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#080808] py-24 sm:py-32">
+      <section className="reveal-on-scroll border-y border-white/10 bg-[#080808] py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">ANTES X DEPOIS<br/><span className="text-white/35">E MENSAGENS REAIS</span></h2>
           <p className="mt-5 max-w-xl text-sm leading-7 text-white/40">Os espaços abaixo já estão preparados. Quando você enviar as fotos e mensagens, elas entram aqui sem precisar reconstruir a seção.</p>
@@ -478,7 +523,7 @@ function IronCoreSalesPage() {
         </div>
       </section>
 
-      <section className="py-24 sm:py-32">
+      <section className="reveal-on-scroll py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
             <div>
@@ -495,7 +540,7 @@ function IronCoreSalesPage() {
       </section>
 
 
-      <section id="quiz-iron-core" className="border-t border-white/10 bg-[#050505] py-24 sm:py-32">
+      <section id="quiz-iron-core" className="reveal-on-scroll border-t border-white/10 bg-[#050505] py-24 sm:py-32">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mt-5 text-4xl font-black uppercase leading-[.95] sm:text-6xl">DESCUBRA O MELHOR CAMINHO PARA O SEU SHAPE</h2>
