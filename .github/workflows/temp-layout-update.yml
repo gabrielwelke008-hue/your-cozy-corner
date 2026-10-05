@@ -1,0 +1,60 @@
+name: temp-layout-update
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  update-layout:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace section
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('src/routes/index.tsx')
+          s = p.read_text()
+          start = s.index('      <section id="como-funciona"')
+          end = s.index('      <section className="reveal-on-scroll border-y border-white/10 bg-[#080808]', start)
+          new = '''      <section id="como-funciona" className="reveal-on-scroll border-y border-white/10 bg-[#080808] py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <p className="text-[10px] font-black uppercase tracking-[.35em] text-[#d9ff00]">RESULTADOS QUE FALAM POR SI</p>
+          <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">ANTES X DEPOIS<br/><span className="text-white/35">E MENSAGENS REAIS</span></h2>
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-white/40">Veja transformações e relatos reais de quem decidiu parar de tentar no escuro e começou a seguir uma direção.</p>
+          <div className="mt-12 overflow-hidden">
+            <div className="flex gap-4 transition-transform duration-500" style={{transform:`translateX(-${testimonialIndex * 25}%)`}}>
+              {testimonials.map((item,i)=><article key={i} className="min-w-[78%] sm:min-w-[42%] lg:min-w-[31%]">
+                <div className="flex aspect-[4/5] flex-col items-center justify-center rounded-2xl border border-dashed border-white/15 bg-white/[.02] p-6 text-center">
+                  <Sparkles size={42} className="text-white/10"/>
+                  <p className="mt-5 text-[10px] font-black uppercase tracking-[.25em] text-[#d9ff00]">{item}</p>
+                  <p className="mt-3 text-xs leading-6 text-white/30">Antes e depois + mensagem do aluno</p>
+                </div>
+              </article>)}
+            </div>
+          </div>
+          <div className="mt-6 flex justify-between">
+            <div className="flex gap-2">{testimonials.map((_,i)=><button key={i} onClick={()=>setTestimonialIndex(i)} aria-label={"Item "+(i+1)} className={"h-1.5 rounded-full "+(i===testimonialIndex?"w-8 bg-[#d9ff00]":"w-2 bg-white/20")}/>)}</div>
+            <div className="flex gap-2"><button onClick={()=>setTestimonialIndex(v=>Math.max(0,v-1))} className="rounded-full border border-white/10 p-2"><ChevronLeft size={17}/></button><button onClick={()=>setTestimonialIndex(v=>Math.min(testimonials.length-1,v+1))} className="rounded-full border border-white/10 p-2"><ChevronRight size={17}/></button></div>
+          </div>
+        </div>
+      </section>
+
+'''
+          s = s[:start] + new + s[end:]
+          marker = '      <section className="reveal-on-scroll border-y border-white/10 bg-[#080808] py-24 sm:py-32">'
+          old_start = s.find(marker, start + len(new))
+          if old_start != -1:
+              old_end = s.index('      <section className="reveal-on-scroll py-24 sm:py-32">', old_start)
+              s = s[:old_start] + s[old_end:]
+          s = s.replace('href="#como-funciona" className="text-xs font-bold uppercase tracking-[.2em] text-white/45 hover:text-[#d9ff00]">Como funciona</a>', 'href="#como-funciona" className="text-xs font-bold uppercase tracking-[.2em] text-white/45 hover:text-[#d9ff00]">Antes x Depois e Mensagens Reais</a>')
+          p.write_text(s)
+      - name: Commit and remove temporary workflow
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/routes/index.tsx
+          git rm .github/workflows/temp-layout-update.yml
+          git commit -m "Replace how-it-works section with real results"
+          git push
