@@ -545,15 +545,15 @@ function IronCoreSalesPage() {
       <section id="impactamos" className="reveal-on-scroll border-t border-white/10 bg-[#080808] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <h2 className="mt-4 text-3xl font-black uppercase leading-none sm:text-5xl">O QUE IMPACTAMOS<br/><span className="text-white/35">NA SUA VIDA</span></h2>
-          <div className="mt-10 grid gap-3 md:grid-cols-2">
+          <div className="mt-8 grid gap-3 md:grid-cols-2">
             {cards.map(([Icon,title,text],i) => {
               const I = Icon as typeof Dumbbell;
-              return <article key={String(title)} className="rounded-2xl border border-white/10 bg-white/[.025] p-5 hover:border-[#d9ff00]/30">
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl border border-white/15 bg-white/[.03] text-white">
-                  <I size={28} strokeWidth={1.6}/>
+              return <article key={String(title)} className="rounded-xl border border-white/10 bg-white/[.025] p-4 hover:border-[#d9ff00]/30">
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/[.03] text-white">
+                  <I size={21} strokeWidth={1.6}/>
                 </div>
-                <h3 className="mt-2 text-lg font-black uppercase">{String(title)}</h3>
-                <p className="mt-2 text-sm leading-6 text-white/45">{String(text)}</p>
+                <h3 className="text-base font-black uppercase">{String(title)}</h3>
+                
               </article>;
             })}
           </div>
