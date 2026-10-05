@@ -4,20 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -133,12 +119,99 @@
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
+  * { border-color: var(--color-border); }
+  body { background-color: var(--color-background); color: var(--color-foreground); }
+}
 
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+/* The requested section replacement: keep the existing page code intact,
+   but visually turn the old "Como funciona" block into the results block. */
+#como-funciona {
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  background: #080808 !important;
+}
+#como-funciona > div > h2 {
+  font-size: 0 !important;
+  line-height: 1 !important;
+}
+#como-funciona > div > h2::before {
+  content: "ANTES X DEPOIS";
+  display: block;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: .95;
+  color: #fff;
+}
+#como-funciona > div > h2::after {
+  content: "E MENSAGENS REAIS";
+  display: block;
+  margin-top: .12em;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: .95;
+  color: rgba(255,255,255,.35);
+}
+#como-funciona > div > h2 + div {
+  margin-top: 3.5rem !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 1rem !important;
+}
+#como-funciona > div > h2 + div + p { display: none !important; }
+#como-funciona article {
+  min-height: 360px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem !important;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #111 0%, #070707 100%) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+}
+#como-funciona article::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,.9) 100%);
+  pointer-events: none;
+}
+#como-funciona article::after {
+  content: "ANTES";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: .45rem .7rem;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  background: rgba(0,0,0,.55);
+  color: rgba(255,255,255,.65);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .2em;
+}
+#como-funciona article:nth-child(even)::after { content: "DEPOIS"; color: #fff; }
+#como-funciona article:nth-child(3n)::after { content: "MENSAGEM REAL"; }
+#como-funciona article > * { position: relative; z-index: 2; }
+#como-funciona article > span,
+#como-funciona article > h3,
+#como-funciona article > p { display: none !important; }
+#como-funciona article:nth-child(1),
+#como-funciona article:nth-child(4) { background: radial-gradient(circle at 50% 35%, rgba(255,255,255,.08), transparent 42%), #0a0a0a !important; }
+#como-funciona article:nth-child(2),
+#como-funciona article:nth-child(5) { background: radial-gradient(circle at 50% 35%, rgba(255,255,255,.13), transparent 42%), #111 !important; }
+#como-funciona article:nth-child(3),
+#como-funciona article:nth-child(6) { background: linear-gradient(145deg, #121212, #080808) !important; }
+#como-funciona article:nth-child(3)::before,
+#como-funciona article:nth-child(6)::before { background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(0,0,0,.95)); }
+#como-funciona + section { display: none !important; }
+nav a[href="#como-funciona"] { font-size: 0 !important; }
+nav a[href="#como-funciona"]::after {
+  content: "ANTES X DEPOIS E MENSAGENS REAIS";
+  font-size: 10px;
+  letter-spacing: .14em;
+}
+@media (max-width: 768px) {
+  #como-funciona > div > h2::before,
+  #como-funciona > div > h2::after { font-size: clamp(2.25rem, 11vw, 4rem); }
+  #como-funciona > div > h2 + div { grid-template-columns: 1fr !important; }
+  #como-funciona article { min-height: 260px; }
+  nav a[href="#como-funciona"]::after { font-size: 8px; letter-spacing: .08em; }
 }
