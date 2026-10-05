@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight, Dumbbell, ShieldCheck, Sparkles, Timer, Utensils, Zap } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Dumbbell, ListChecks, ShieldCheck, Sparkles, Timer, Utensils, Zap } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({ component: IronCoreSalesPage });
@@ -223,7 +223,7 @@ function QuizAndOffer() {
             <button onClick={() => setExitWarning(false)} className="mt-4 text-[10px] font-black uppercase tracking-[.18em] text-white/30">Sair mesmo assim</button>
           </div>
         </div>
-      )
+      )}
       <div className="rounded-[30px] border border-white/10 bg-white/[.025] p-7 sm:p-12">
         <p className="text-[10px] font-black uppercase tracking-[.35em] text-white/35">IRON CORE • DIREÇÃO CERTA</p>
         <h3 className="mt-5 text-3xl font-black uppercase leading-tight sm:text-5xl">SEU CAMINHO ESTÁ PRONTO. 🔥</h3>
@@ -308,7 +308,7 @@ function IronCoreSalesPage() {
   const cards = [
     [Dumbbell, "Treino específico para você", "Imagine ter um treino específico para você por um profissional, sem te cobrar um absurdo por isso."],
     [Zap, "Treine de forma rápida", "Você não precisa correr atrás de personal para tirar dúvidas. Já te oferecemos respostas e direção."],
-    [Timer, "Treino que cabe na sua rotina", "Um treino rápido e pensado para o seu dia a dia, para que o treino não seja mais um fardo da sua correria."],
+    [ListChecks, "Treino que cabe na sua rotina", "Um treino rápido e pensado para o seu dia a dia, para que o treino não seja mais um fardo da sua correria."],
     [ShieldCheck, "Garantia de 1 semana", "Se o que entregamos não fizer sentido para você neste momento, devolvemos seu dinheiro dentro do período de garantia."],
   ];
 
@@ -425,6 +425,18 @@ function IronCoreSalesPage() {
         h2 { font-weight: 800 !important; letter-spacing: -.03em; }
 
         /* Hero: sculpture-card / dark luxury treatment. */
+        #hero-trust-strip {
+          display: grid !important;
+          visibility: visible !important;
+          position: relative;
+          z-index: 30;
+        }
+        #hero-trust-strip > div {
+          min-height: 82px;
+          border-color: rgba(255,255,255,.22) !important;
+          background: rgba(255,255,255,.055) !important;
+          box-shadow: 0 12px 36px rgba(0,0,0,.35);
+        }
         section:first-of-type {
           background:
             radial-gradient(ellipse at 72% 50%, rgba(255,255,255,.075), transparent 23%),
@@ -485,6 +497,8 @@ function IronCoreSalesPage() {
           section:first-of-type p.text-xl { font-size: 1.15rem !important; margin-top: 22px; }
           section:first-of-type a { width: 100%; justify-content: center; margin-top: 28px; padding: 16px 18px; }
           section:first-of-type .grid { width: 100%; }
+          #hero-trust-strip { margin-top: 28px; }
+          #hero-trust-strip > div { min-height: 72px; }
 
           h2 { font-size: clamp(2.25rem, 11vw, 4rem) !important; line-height: .94 !important; letter-spacing: -.045em !important; }
           h3 { letter-spacing: -.02em; }
@@ -538,7 +552,7 @@ function IronCoreSalesPage() {
             <p className="mt-7 text-xl font-semibold text-white/70 sm:text-2xl">sem depender de personal.</p>
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/40">Treinamento pensado para a sua realidade, com direção profissional e uma estratégia que cabe na sua rotina.</p>
             <a href="#impactamos" className="mt-9 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
-            <div className="mt-7 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
+            <div id="hero-trust-strip" className="relative z-30 mt-8 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
               <div className="rounded-xl border border-white/10 bg-white/[.025] px-4 py-4 text-center">
                 <p className="text-lg font-black">+5 MIL</p>
                 <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">Alunos</p>
