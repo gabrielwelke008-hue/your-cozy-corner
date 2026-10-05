@@ -4,20 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -133,156 +119,112 @@
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
+  * { border-color: var(--color-border); }
+  body { background-color: var(--color-background); color: var(--color-foreground); }
 }
 
-/* Botanical hero treatment: realistic foliage framing the first page while
-   the existing copy remains fixed and readable underneath the leaves. */
+/* Cinematic first-screen composition: big wet black jaguar behind the existing copy. */
 section:first-of-type.hero-landing {
   isolation: isolate;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(42, 76, 48, .2), transparent 38%),
-    linear-gradient(180deg, #020302 0%, #050805 100%) !important;
+  background: #020403 !important;
 }
 
+section:first-of-type.hero-landing > div:first-child {
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.28) 35%, rgba(0,0,0,.18) 62%, rgba(0,0,0,.76) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.38) 0%, rgba(0,0,0,.06) 45%, rgba(0,0,0,.88) 100%),
+    url("https://image.tensorartassets.com/cdn-cgi/image/anim%3Dtrue%2Cplain%3Dfalse%2Cw%3D2048%2Cf%3Djpeg%2Cq%3D85/posts/images/651901346324357389/c74bb239-61b6-4690-a249-94e9b5c624b1.jpg");
+  background-size: cover;
+  background-position: center 42%;
+  background-repeat: no-repeat;
+  filter: saturate(.92) contrast(1.08);
+  transform: scale(1.025);
+}
+
+/* Side foliage layers deliberately overlap the text, creating the poster-style depth from the reference. */
 section:first-of-type.hero-landing::before,
 section:first-of-type.hero-landing::after {
   content: "";
   position: absolute;
-  top: -8%;
-  bottom: -8%;
-  width: min(42vw, 560px);
-  z-index: 20;
+  top: -5%;
+  bottom: -7%;
+  width: min(34vw, 500px);
+  z-index: 24;
   pointer-events: none;
   background-image:
-    linear-gradient(90deg, rgba(0,0,0,.35), transparent 34%),
+    linear-gradient(90deg, rgba(0,0,0,.4), transparent 45%),
     url("https://images.unsplash.com/photo-1525490829609-d166ddb58678?q=90&w=1800&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
-  filter: saturate(1.15) contrast(1.08) drop-shadow(0 28px 32px rgba(0,0,0,.5));
-  transform-origin: center bottom;
+  filter: saturate(1.15) contrast(1.1) drop-shadow(0 30px 35px rgba(0,0,0,.55));
+  opacity: .82;
   will-change: transform;
-  opacity: .94;
-  animation: botanical-drift 8s ease-in-out infinite;
 }
 
 section:first-of-type.hero-landing::before {
-  left: -8%;
-  border-radius: 0 48% 72% 0 / 0 36% 64% 0;
-  clip-path: polygon(0 0, 82% 0, 100% 18%, 84% 38%, 100% 55%, 78% 72%, 94% 100%, 0 100%);
-  background-position: 8% center;
-  transform: perspective(900px) rotateY(14deg) rotateZ(-3deg) translateY(-8px);
+  left: -11%;
+  clip-path: polygon(0 0, 82% 0, 100% 17%, 83% 32%, 100% 49%, 79% 66%, 94% 100%, 0 100%);
+  transform: perspective(900px) rotateY(13deg) rotateZ(-2deg) translate3d(0,-4px,0);
+  background-position: 4% center;
 }
 
 section:first-of-type.hero-landing::after {
-  right: -8%;
-  border-radius: 48% 0 0 72% / 36% 0 0 64%;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 6% 100%, 22% 72%, 0 55%, 16% 38%, 0 18%);
-  background-position: 92% center;
-  transform: perspective(900px) rotateY(-14deg) rotateZ(3deg) translateY(12px) scaleX(-1);
-  animation-delay: -3.5s;
+  right: -11%;
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 6% 100%, 22% 70%, 0 51%, 17% 34%, 0 16%);
+  transform: perspective(900px) rotateY(-13deg) rotateZ(2deg) translate3d(0,8px,0) scaleX(-1);
+  background-position: 96% center;
 }
 
-/* Fine water drops layered over the foliage for a fresh, high-resolution look. */
+/* Water drops on top of the foliage and around the hero. */
 section:first-of-type.hero-landing > div:first-child::before,
 section:first-of-type.hero-landing > div:first-child::after {
   content: "";
   position: absolute;
-  z-index: 22;
+  z-index: 28;
   pointer-events: none;
-  width: 10px;
-  height: 14px;
+  width: 9px;
+  height: 13px;
   border-radius: 58% 42% 62% 38% / 68% 54% 46% 32%;
-  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.98) 0 8%, rgba(210,245,238,.72) 18%, rgba(120,205,188,.28) 46%, rgba(0,0,0,.2) 72%, transparent 74%);
-  box-shadow: 0 2px 8px rgba(0,0,0,.38), inset -1px -2px 3px rgba(255,255,255,.18);
-  filter: blur(.1px);
+  background: radial-gradient(circle at 30% 23%, rgba(255,255,255,.98) 0 7%, rgba(215,250,244,.78) 18%, rgba(111,196,180,.35) 45%, rgba(0,0,0,.24) 72%, transparent 74%);
+  box-shadow: 0 2px 9px rgba(0,0,0,.55), inset -1px -2px 3px rgba(255,255,255,.2);
   animation: dew-float 4.8s ease-in-out infinite;
 }
+section:first-of-type.hero-landing > div:first-child::before { left: 13%; top: 35%; }
+section:first-of-type.hero-landing > div:first-child::after { right: 17%; top: 57%; width: 7px; height: 10px; animation-delay: -2.1s; }
 
-section:first-of-type.hero-landing > div:first-child::before {
-  left: 12%;
-  top: 31%;
-}
-
-section:first-of-type.hero-landing > div:first-child::after {
-  right: 14%;
-  top: 54%;
-  width: 7px;
-  height: 10px;
-  animation-delay: -2.2s;
-}
-
-section:first-of-type.hero-landing > div:last-child {
-  position: relative;
-  z-index: 10;
-}
-
+section:first-of-type.hero-landing > div:last-child { position: relative; z-index: 10; }
 section:first-of-type.hero-landing h1,
 section:first-of-type.hero-landing p,
-section:first-of-type.hero-landing a {
-  position: relative;
-  z-index: 12;
-}
+section:first-of-type.hero-landing a { position: relative; z-index: 12; }
 
+/* The copy stays fixed/clean while the foliage is allowed to cross its edges. */
 section:first-of-type.hero-landing h1 {
-  text-shadow: 0 4px 32px rgba(0,0,0,.9), 0 0 16px rgba(255,255,255,.05) !important;
+  text-shadow: 0 5px 34px rgba(0,0,0,.95), 0 0 18px rgba(0,0,0,.7) !important;
 }
-
-section:first-of-type.hero-landing .relative.mx-auto.grid {
-  overflow: visible;
-}
-
-@keyframes botanical-drift {
-  0%, 100% { transform: perspective(900px) rotateY(14deg) rotateZ(-3deg) translate3d(0,-8px,0); }
-  50% { transform: perspective(900px) rotateY(18deg) rotateZ(-1deg) translate3d(18px,12px,25px); }
-}
-
-section:first-of-type.hero-landing::after {
-  animation-name: botanical-drift-right;
-}
-
-@keyframes botanical-drift-right {
-  0%, 100% { transform: perspective(900px) rotateY(-14deg) rotateZ(3deg) translate3d(0,12px,0) scaleX(-1); }
-  50% { transform: perspective(900px) rotateY(-18deg) rotateZ(1deg) translate3d(-18px,-8px,25px) scaleX(-1); }
-}
+section:first-of-type.hero-landing h1 span { color: #fff !important; }
+section:first-of-type.hero-landing p { color: rgba(255,255,255,.62); }
 
 @keyframes dew-float {
-  0%, 100% { transform: translateY(0) scale(1); opacity: .82; }
-  50% { transform: translateY(7px) scale(1.06); opacity: 1; }
+  0%,100% { transform: translateY(0) scale(1); opacity: .72; }
+  50% { transform: translateY(7px) scale(1.08); opacity: 1; }
 }
 
 @media (max-width: 768px) {
+  section:first-of-type.hero-landing > div:first-child {
+    background-position: 62% 34%;
+    transform: scale(1.08);
+  }
   section:first-of-type.hero-landing::before,
   section:first-of-type.hero-landing::after {
-    width: 48vw;
-    opacity: .9;
+    width: 47vw;
+    opacity: .76;
   }
-
-  section:first-of-type.hero-landing::before {
-    left: -18%;
-  }
-
-  section:first-of-type.hero-landing::after {
-    right: -18%;
-  }
-
-  section:first-of-type.hero-landing h1 {
-    text-shadow: 0 5px 26px rgba(0,0,0,.95) !important;
-  }
+  section:first-of-type.hero-landing::before { left: -18%; }
+  section:first-of-type.hero-landing::after { right: -18%; }
+  section:first-of-type.hero-landing h1 { text-shadow: 0 6px 28px rgba(0,0,0,.98) !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  section:first-of-type.hero-landing::before,
-  section:first-of-type.hero-landing::after,
   section:first-of-type.hero-landing > div:first-child::before,
-  section:first-of-type.hero-landing > div:first-child::after {
-    animation: none;
-  }
+  section:first-of-type.hero-landing > div:first-child::after { animation: none; }
 }
