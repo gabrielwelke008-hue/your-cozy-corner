@@ -309,10 +309,10 @@ function IronCoreSalesPage() {
   ];
 
   const cards = [
-    [Dumbbell, "Treino específico para você", "Imagine ter um treino específico para você por um profissional, sem te cobrar um absurdo por isso."],
-    [Zap, "Treine de forma rápida", "Você não precisa correr atrás de personal para tirar dúvidas. Já te oferecemos respostas e direção."],
-    [ListChecks, "Treino que cabe na sua rotina", "Um treino rápido e pensado para o seu dia a dia, para que o treino não seja mais um fardo da sua correria."],
-    [ShieldCheck, "Garantia de 1 semana", "Se o que entregamos não fizer sentido para você neste momento, devolvemos seu dinheiro dentro do período de garantia."],
+    [Dumbbell, "Treino personalizado", "Treinos pensados para você e para o seu objetivo."],
+    [Zap, "Mais praticidade", "Direção para treinar melhor, sem depender de personal."],
+    [ListChecks, "Cabe na rotina", "Estratégia simples para evoluir sem complicar seu dia."],
+    [ShieldCheck, "7 dias de garantia", "Não fez sentido? Você pode pedir seu dinheiro de volta."],
   ];
 
   return (
@@ -542,18 +542,18 @@ function IronCoreSalesPage() {
         </div>
       </section>
 
-      <section id="impactamos" className="reveal-on-scroll border-t border-white/10 bg-[#080808] py-24 sm:py-32">
+      <section id="impactamos" className="reveal-on-scroll border-t border-white/10 bg-[#080808] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">O QUE IMPACTAMOS<br/><span className="text-white/35">NA SUA VIDA</span></h2>
-          <div className="mt-16 grid gap-4 md:grid-cols-2">
+          <h2 className="mt-4 text-3xl font-black uppercase leading-none sm:text-5xl">O QUE IMPACTAMOS<br/><span className="text-white/35">NA SUA VIDA</span></h2>
+          <div className="mt-10 grid gap-3 md:grid-cols-2">
             {cards.map(([Icon,title,text],i) => {
               const I = Icon as typeof Dumbbell;
-              return <article key={String(title)} className="rounded-2xl border border-white/10 bg-white/[.025] p-7 hover:border-[#d9ff00]/30">
-                <div className="mb-8 flex h-20 w-20 items-center justify-center rounded-2xl border border-white/15 bg-white/[.03] text-white">
-                  <I size={38} strokeWidth={1.6}/>
+              return <article key={String(title)} className="rounded-2xl border border-white/10 bg-white/[.025] p-5 hover:border-[#d9ff00]/30">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl border border-white/15 bg-white/[.03] text-white">
+                  <I size={28} strokeWidth={1.6}/>
                 </div>
-                <h3 className="mt-2 text-xl font-black uppercase">{String(title)}</h3>
-                <p className="mt-3 text-sm leading-7 text-white/45">{String(text)}</p>
+                <h3 className="mt-2 text-lg font-black uppercase">{String(title)}</h3>
+                <p className="mt-2 text-sm leading-6 text-white/45">{String(text)}</p>
               </article>;
             })}
           </div>
