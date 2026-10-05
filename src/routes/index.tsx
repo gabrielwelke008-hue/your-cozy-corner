@@ -331,85 +331,47 @@ function IronCoreSalesPage() {
       <style>{`
 
         .hero-landing { isolation: isolate; }
-         .hero-leaf {
-          position: absolute;
-          z-index: 20;
-          width: 170px;
-          height: 360px;
-          pointer-events: none;
-          opacity: .9;
-          border-radius: 72% 28% 78% 22% / 86% 34% 66% 14%;
-          background:
-            radial-gradient(ellipse at 34% 18%, rgba(255,255,255,.24), transparent 18%),
-            radial-gradient(ellipse at 68% 72%, rgba(217,255,0,.16), transparent 38%),
-            linear-gradient(145deg, rgba(238,255,175,.46) 0%, rgba(150,190,45,.29) 32%, rgba(58,74,13,.25) 64%, rgba(4,6,1,.72) 100%);
-          border: 1px solid rgba(226,255,126,.26);
-          box-shadow: inset -30px -40px 54px rgba(0,0,0,.6), inset 18px 12px 30px rgba(255,255,255,.1), 0 34px 82px rgba(0,0,0,.86), 0 0 30px rgba(217,255,0,.06);
-          filter: saturate(.95) contrast(1.08);
-          transform-style: preserve-3d;
+         .hero-water {
+          position:absolute;
+          z-index:20;
+          pointer-events:none;
+          left:0; right:0; top:8%; height:78%;
+          overflow:visible;
         }
-        .hero-leaf::before {
-          content: "";
-          pointer-events: none;
-          position: absolute;
-          left: 48%; top: 3%; width: 3px; height: 94%; border-radius: 999px;
-          background: linear-gradient(to bottom, rgba(255,255,255,.42), rgba(217,255,0,.22), rgba(0,0,0,.55));
-          transform: rotate(7deg);
+        .hero-water::before,
+        .hero-water::after {
+          content:"";
+          position:absolute;
+          top:-5%; width:5px; height:62%;
+          border-radius:999px;
+          background:linear-gradient(to bottom, rgba(255,255,255,.05), rgba(210,242,255,.72) 20%, rgba(120,190,230,.38) 70%, transparent);
+          filter:blur(.3px) drop-shadow(0 0 8px rgba(160,225,255,.24));
+          animation:waterFall 3.2s ease-in-out infinite;
         }
-        .hero-leaf::after {
-          content: "";
-          pointer-events: none;
-          position: absolute;
-          left: 49%; top: 23%; width: 34%; height: 1px;
-          background: rgba(226,255,126,.24);
-          box-shadow: 0 46px rgba(226,255,126,.14), 0 92px rgba(226,255,126,.1), 0 138px rgba(226,255,126,.07);
-          transform: rotate(-28deg);
-          transform-origin: left center;
+        .hero-water::before { left:9%; transform:rotate(7deg); }
+        .hero-water::after { right:10%; height:54%; transform:rotate(-6deg); animation-delay:1.1s; }
+        .hero-water span,
+        .hero-water i,
+        .hero-water b {
+          position:absolute; display:block; pointer-events:none;
+          border-radius:50%;
+          background:radial-gradient(circle at 35% 25%, rgba(255,255,255,.95), rgba(180,235,255,.58) 38%, rgba(75,145,190,.18) 68%, transparent 72%);
+          box-shadow:0 0 12px rgba(160,225,255,.28);
         }
-        .hero-leaf span {
-          position: absolute; left: 47%; top: 23%; width: 31%; height: 1px;
-          background: rgba(255,255,255,.18); transform: rotate(28deg); transform-origin: left center;
+        .hero-water span { left:18%; top:18%; width:18px; height:30px; animation:waterDrop 2.7s infinite; }
+        .hero-water i { right:22%; top:31%; width:12px; height:21px; animation:waterDrop 3.4s .7s infinite; }
+        .hero-water b { left:50%; top:8%; width:9px; height:15px; animation:waterDrop 2.9s 1.3s infinite; }
+        @keyframes waterFall {
+          0%,100% { transform:translateY(-8px) scaleY(.88); opacity:.18; }
+          45% { opacity:.78; }
+          70% { transform:translateY(30px) scaleY(1.04); opacity:.5; }
         }
-        .hero-leaf i,
-        .hero-leaf b {
-          position: absolute;
-          display: block;
-          z-index: 3;
-          pointer-events: none;
-          font-style: normal;
+        @keyframes waterDrop {
+          0% { transform:translateY(-10px) scale(.75); opacity:0; }
+          20% { opacity:.9; }
+          70% { transform:translateY(110px) scale(1); opacity:.7; }
+          100% { transform:translateY(190px) scale(.55); opacity:0; }
         }
-        .hero-leaf i {
-          width: 7px; height: 12px;
-          left: 56%; top: 43%;
-          border-radius: 65% 35% 65% 35%;
-          background: linear-gradient(145deg, rgba(255,255,255,.92), rgba(150,225,255,.46) 45%, rgba(70,145,180,.2));
-          box-shadow: 18px 58px 0 -1px rgba(190,240,255,.48), -12px 112px 0 -2px rgba(190,240,255,.38), 10px 170px 0 -2px rgba(190,240,255,.3);
-          filter: drop-shadow(0 3px 5px rgba(120,210,255,.25));
-          animation: leafWater 3.8s ease-in-out infinite;
-        }
-        .hero-leaf b {
-          width: 3px; height: 3px;
-          left: 39%; top: 31%;
-          border-radius: 50%;
-          background: rgba(255,255,255,.8);
-          box-shadow: 34px 26px 0 rgba(255,255,255,.5), -18px 74px 0 rgba(210,245,255,.42), 24px 126px 0 rgba(210,245,255,.34), -6px 190px 0 rgba(210,245,255,.28);
-          animation: leafGlint 2.7s ease-in-out infinite;
-        }
-        @keyframes leafWater {
-          0%,100% { transform: translateY(0) scaleY(1); opacity: .72; }
-          45% { transform: translateY(7px) scaleY(1.06); opacity: 1; }
-          65% { transform: translateY(20px) scaleY(1.12); opacity: .45; }
-        }
-        @keyframes leafGlint {
-          0%,100% { opacity: .35; }
-          50% { opacity: .95; }
-        }
-        .hero-leaf-left-1 { left: -42px; top: 11%; transform: rotate(18deg) perspective(700px) rotateY(12deg); }
-        .hero-leaf-left-2 { left: 14px; bottom: 1%; width: 120px; height: 270px; opacity: .58; transform: rotate(-14deg) scale(.78) perspective(700px) rotateY(-12deg); }
-        .hero-leaf-left-3 { left: 68px; top: 29%; width: 82px; height: 180px; opacity: .42; transform: rotate(35deg) scale(.62) perspective(700px) rotateY(8deg); }
-        .hero-leaf-right-1 { right: -42px; top: 12%; transform: rotate(-18deg) scaleX(-1) perspective(700px) rotateY(12deg); }
-        .hero-leaf-right-2 { right: 14px; bottom: 0; width: 124px; height: 282px; opacity: .56; transform: rotate(14deg) scale(.78) scaleX(-1) perspective(700px) rotateY(-12deg); }
-        .hero-leaf-right-3 { right: 68px; top: 31%; width: 82px; height: 180px; opacity: .42; transform: rotate(-35deg) scale(.62) scaleX(-1) perspective(700px) rotateY(8deg); }
         @media (max-width: 767px) {
           .hero-leaf { width: 105px; height: 245px; opacity: .48; }
           .hero-leaf-left-1 { left: -46px; top: 16%; }
@@ -662,13 +624,7 @@ function IronCoreSalesPage() {
         </div>
       </nav>
 
-      <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing">
-        <div className="hero-leaf hero-leaf-left hero-leaf-left-1" aria-hidden="true"><span /><i /><b /></div>
-        <div className="hero-leaf hero-leaf-left hero-leaf-left-2" aria-hidden="true"><span /><i /><b /></div>
-        <div className="hero-leaf hero-leaf-left hero-leaf-left-3" aria-hidden="true"><span /><i /><b /></div>
-        <div className="hero-leaf hero-leaf-right hero-leaf-right-1" aria-hidden="true"><span /><i /><b /></div>
-        <div className="hero-leaf hero-leaf-right hero-leaf-right-2" aria-hidden="true"><span /><i /><b /></div>
-        <div className="hero-leaf hero-leaf-right hero-leaf-right-3" aria-hidden="true"><span /><i /><b /></div>
+      <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing"><div className="hero-water" aria-hidden="true"><span /><i /><b /></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(217,255,0,.11),transparent_30%),linear-gradient(120deg,#050505,#090b03,#050505)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
