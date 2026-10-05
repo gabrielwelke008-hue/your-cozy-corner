@@ -561,7 +561,7 @@ function IronCoreSalesPage() {
 
       <section id="como-funciona" className="reveal-on-scroll py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">COMO FUNCIONA A <span className="text-[#d9ff00]">IRON CORE?</span></h2>
+          <h2 className="mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">COMO FUNCIONA A <span className="text-[#d9ff00]">IRON CORE?</span></h2>
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
               ["01","ENTENDEMOS VOCÊ","Entendemos seus objetivos, sua rotina, seu nível atual e o físico que você quer construir."],
@@ -601,17 +601,17 @@ function IronCoreSalesPage() {
         </div>
       </section>
 
-      <section className="reveal-on-scroll py-24 sm:py-32">
+      <section className="reveal-on-scroll py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
+          <div className="grid gap-7 lg:grid-cols-[.8fr_1.2fr]">
             <div>
               <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">A HISTÓRIA<br/><span className="text-[#d9ff00]">POR TRÁS</span></h2>
-              <div className="mt-10 aspect-[4/5] overflow-hidden rounded-2xl border border-dashed border-white/15 bg-white/[.02]">
+              <div className="mt-6 aspect-[4/5] overflow-hidden rounded-2xl border border-dashed border-white/15 bg-white/[.02]">
                 <div className="flex h-full flex-col items-center justify-center p-8 text-center"><Utensils size={42} className="text-white/10"/><p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/25">Espaço reservado para a foto</p><p className="mt-2 text-xs text-white/20">Envie a foto e ela será colocada aqui.</p></div>
               </div>
             </div>
-            <article className="text-sm leading-7 text-white/60 sm:text-base sm:leading-8">
-              {story.map((p,i)=><p key={i} className={i===0||i===6||i===11||i===14 ? "mb-5 text-lg font-bold leading-7 text-white sm:text-xl" : "mb-5"}>{p}</p>)}
+            <article className="text-[13px] leading-6 text-white/60 sm:text-sm sm:leading-7">
+              {story.map((p,i)=><p key={i} className={i===0||i===6||i===11||i===14 ? "mb-3 text-base font-bold leading-6 text-white sm:text-lg" : "mb-3"}>{p}</p>)}
             </article>
           </div>
         </div>
