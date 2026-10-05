@@ -337,33 +337,39 @@ function IronCoreSalesPage() {
           pointer-events:none;
           inset:0;
           overflow:visible;
+          mix-blend-mode:screen;
         }
         .hero-water::before,
         .hero-water::after {
           content:"";
           position:absolute;
-          top:14%;
-          width:clamp(180px, 28vw, 390px);
-          height:clamp(300px, 62vh, 650px);
-          border-radius:46% 54% 62% 38% / 28% 42% 58% 72%;
+          top:-4%;
+          width:clamp(150px, 20vw, 280px);
+          height:118%;
+          opacity:.72;
+          filter:blur(.15px) drop-shadow(0 0 18px rgba(185,225,255,.18));
           background:
-            radial-gradient(ellipse at 35% 18%, rgba(255,255,255,.98), transparent 15%),
-            radial-gradient(ellipse at 52% 45%, rgba(190,238,255,.76), rgba(70,150,205,.34) 44%, transparent 72%),
-            linear-gradient(105deg, rgba(255,255,255,.78), rgba(105,195,240,.38) 38%, rgba(20,80,125,.14) 72%, transparent);
-          filter:blur(.4px) drop-shadow(0 0 26px rgba(110,205,255,.38));
-          opacity:.86;
-          animation:waterSurge 3.8s cubic-bezier(.22,1,.36,1) infinite;
+            radial-gradient(ellipse at 50% 8%, rgba(255,255,255,.78) 0 1%, transparent 4%),
+            radial-gradient(ellipse at 42% 18%, rgba(225,247,255,.55) 0 2%, transparent 7%),
+            radial-gradient(ellipse at 58% 32%, rgba(135,195,225,.45) 0 1.5%, transparent 6%),
+            radial-gradient(ellipse at 40% 48%, rgba(245,252,255,.5) 0 2%, transparent 7%),
+            radial-gradient(ellipse at 63% 67%, rgba(105,175,215,.38) 0 1.5%, transparent 7%),
+            linear-gradient(90deg, transparent 0%, rgba(190,230,248,.22) 22%, rgba(255,255,255,.42) 44%, rgba(115,185,220,.2) 62%, transparent 100%);
+          background-size:100% 100%, 85% 45%, 90% 55%, 100% 60%, 80% 55%, 100% 100%;
+          animation:realWater 4.6s cubic-bezier(.4,0,.2,1) infinite;
         }
         .hero-water::before {
-          left:-10%;
-          transform:rotate(-18deg) skewY(-8deg);
-          clip-path:polygon(0 0, 68% 8%, 100% 22%, 74% 31%, 96% 42%, 64% 50%, 92% 65%, 55% 72%, 78% 86%, 32% 100%, 0 94%);
+          left:-7%;
+          transform:skewX(-10deg) rotate(-8deg);
+          border-radius:0 48% 42% 0 / 0 18% 82% 0;
+          clip-path:polygon(0 0, 74% 0, 88% 8%, 67% 16%, 96% 24%, 72% 33%, 100% 43%, 69% 51%, 95% 62%, 63% 70%, 88% 81%, 58% 91%, 74% 100%, 0 100%);
         }
         .hero-water::after {
-          right:-10%;
-          transform:rotate(18deg) scaleX(-1) skewY(-8deg);
-          animation-delay:1.15s;
-          clip-path:polygon(0 8%, 34% 0, 100% 0, 78% 17%, 100% 30%, 70% 39%, 96% 54%, 62% 62%, 88% 78%, 48% 88%, 66% 100%, 0 92%);
+          right:-7%;
+          transform:skewX(10deg) rotate(8deg);
+          border-radius:48% 0 0 42% / 18% 0 82% 0;
+          clip-path:polygon(26% 0, 100% 0, 100% 100%, 26% 100%, 42% 91%, 12% 81%, 37% 70%, 5% 62%, 31% 51%, 0 43%, 28% 33%, 4% 24%, 33% 16%, 12% 8%);
+          animation-delay:1.3s;
         }
         .hero-water span,
         .hero-water i,
@@ -371,45 +377,39 @@ function IronCoreSalesPage() {
           position:absolute;
           display:block;
           pointer-events:none;
-          border-radius:50% 50% 62% 38%;
-          background:radial-gradient(circle at 35% 25%, rgba(255,255,255,.98), rgba(185,235,255,.74) 32%, rgba(60,145,200,.3) 65%, transparent 74%);
-          box-shadow:0 0 18px rgba(130,215,255,.4);
-          filter:blur(.2px);
+          background:
+            radial-gradient(ellipse at 35% 20%, rgba(255,255,255,.95), transparent 16%),
+            radial-gradient(ellipse at 58% 48%, rgba(205,238,252,.68), rgba(85,155,190,.24) 48%, transparent 72%);
+          filter:blur(.15px);
+          box-shadow:0 0 14px rgba(180,225,250,.2);
         }
         .hero-water span {
-          left:8%;
-          top:19%;
-          width:38px;
-          height:108px;
-          transform:rotate(24deg);
-          animation:waterStrike 2.3s ease-in infinite;
+          left:17%; top:9%; width:4px; height:210px;
+          border-radius:80%;
+          animation:waterStream 2.2s linear infinite;
         }
         .hero-water i {
-          right:8%;
-          top:33%;
-          width:31px;
-          height:88px;
-          transform:rotate(-28deg);
-          animation:waterStrike 2.7s .55s ease-in infinite;
+          right:19%; top:22%; width:5px; height:180px;
+          border-radius:80%;
+          animation:waterStream 2.8s .7s linear infinite;
         }
         .hero-water b {
-          left:46%;
-          top:6%;
-          width:15px;
-          height:52px;
-          animation:waterStrike 2.1s 1.2s ease-in infinite;
+          left:49%; top:0%; width:2px; height:130px;
+          border-radius:80%;
+          animation:waterStream 2.4s 1.1s linear infinite;
         }
-        @keyframes waterSurge {
-          0%,100% { transform:translateX(0) scale(.86) skewX(0); opacity:.2; }
-          35% { transform:translateX(10px) scale(1) skewX(-3deg); opacity:.82; }
-          52% { transform:translateX(24px) scale(1.07) skewX(-6deg); opacity:.94; }
-          72% { transform:translateX(5px) scale(.97) skewX(2deg); opacity:.58; }
+        @keyframes realWater {
+          0%,100% { transform:translateX(0) scaleX(.9); opacity:.18; }
+          20% { opacity:.42; }
+          48% { transform:translateX(18px) scaleX(1.05); opacity:.82; }
+          58% { transform:translateX(28px) scaleX(1.08); opacity:.72; }
+          78% { transform:translateX(5px) scaleX(.98); opacity:.38; }
         }
-        @keyframes waterStrike {
-          0% { transform:translateY(-90px) scaleY(.5) rotate(20deg); opacity:0; }
-          22% { opacity:.98; }
-          68% { transform:translateY(130px) scaleY(1.12) rotate(20deg); opacity:.84; }
-          100% { transform:translateY(250px) scaleY(.58) rotate(20deg); opacity:0; }
+        @keyframes waterStream {
+          0% { transform:translateY(-180px) scaleY(.7); opacity:0; }
+          18% { opacity:.8; }
+          65% { transform:translateY(180px) scaleY(1); opacity:.58; }
+          100% { transform:translateY(420px) scaleY(.55); opacity:0; }
         }
         @media (max-width: 767px) {
           .hero-leaf { width: 105px; height: 245px; opacity: .48; }
