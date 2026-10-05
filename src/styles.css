@@ -4,6 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -86,18 +100,18 @@
 .dark {
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
   --card: oklch(0.208 0.042 265.755);
   --card-foreground: oklch(0.984 0.003 247.858);
   --popover: oklch(0.208 0.042 265.755);
   --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
   --secondary: oklch(0.279 0.041 260.031);
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
   --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  --accent-foreground: oklch(0.984 0.003 247.858);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(1 0 0 / 10%);
@@ -113,118 +127,18 @@
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
   --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
-  body { background-color: var(--color-background); color: var(--color-foreground); }
-}
-
-/* Cinematic first-screen composition: big wet black jaguar behind the existing copy. */
-section:first-of-type.hero-landing {
-  isolation: isolate;
-  background: #020403 !important;
-}
-
-section:first-of-type.hero-landing > div:first-child {
-  background-image:
-    linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.28) 35%, rgba(0,0,0,.18) 62%, rgba(0,0,0,.76) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.38) 0%, rgba(0,0,0,.06) 45%, rgba(0,0,0,.88) 100%),
-    url("https://image.tensorartassets.com/cdn-cgi/image/anim%3Dtrue%2Cplain%3Dfalse%2Cw%3D2048%2Cf%3Djpeg%2Cq%3D85/posts/images/651901346324357389/c74bb239-61b6-4690-a249-94e9b5c624b1.jpg");
-  background-size: cover;
-  background-position: center 42%;
-  background-repeat: no-repeat;
-  filter: saturate(.92) contrast(1.08);
-  transform: scale(1.025);
-}
-
-/* Side foliage layers deliberately overlap the text, creating the poster-style depth from the reference. */
-section:first-of-type.hero-landing::before,
-section:first-of-type.hero-landing::after {
-  content: "";
-  position: absolute;
-  top: -5%;
-  bottom: -7%;
-  width: min(34vw, 500px);
-  z-index: 24;
-  pointer-events: none;
-  background-image:
-    linear-gradient(90deg, rgba(0,0,0,.4), transparent 45%),
-    url("https://images.unsplash.com/photo-1525490829609-d166ddb58678?q=90&w=1800&auto=format&fit=crop");
-  background-size: cover;
-  background-position: center;
-  filter: saturate(1.15) contrast(1.1) drop-shadow(0 30px 35px rgba(0,0,0,.55));
-  opacity: .82;
-  will-change: transform;
-}
-
-section:first-of-type.hero-landing::before {
-  left: -11%;
-  clip-path: polygon(0 0, 82% 0, 100% 17%, 83% 32%, 100% 49%, 79% 66%, 94% 100%, 0 100%);
-  transform: perspective(900px) rotateY(13deg) rotateZ(-2deg) translate3d(0,-4px,0);
-  background-position: 4% center;
-}
-
-section:first-of-type.hero-landing::after {
-  right: -11%;
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 6% 100%, 22% 70%, 0 51%, 17% 34%, 0 16%);
-  transform: perspective(900px) rotateY(-13deg) rotateZ(2deg) translate3d(0,8px,0) scaleX(-1);
-  background-position: 96% center;
-}
-
-/* Water drops on top of the foliage and around the hero. */
-section:first-of-type.hero-landing > div:first-child::before,
-section:first-of-type.hero-landing > div:first-child::after {
-  content: "";
-  position: absolute;
-  z-index: 28;
-  pointer-events: none;
-  width: 9px;
-  height: 13px;
-  border-radius: 58% 42% 62% 38% / 68% 54% 46% 32%;
-  background: radial-gradient(circle at 30% 23%, rgba(255,255,255,.98) 0 7%, rgba(215,250,244,.78) 18%, rgba(111,196,180,.35) 45%, rgba(0,0,0,.24) 72%, transparent 74%);
-  box-shadow: 0 2px 9px rgba(0,0,0,.55), inset -1px -2px 3px rgba(255,255,255,.2);
-  animation: dew-float 4.8s ease-in-out infinite;
-}
-section:first-of-type.hero-landing > div:first-child::before { left: 13%; top: 35%; }
-section:first-of-type.hero-landing > div:first-child::after { right: 17%; top: 57%; width: 7px; height: 10px; animation-delay: -2.1s; }
-
-section:first-of-type.hero-landing > div:last-child { position: relative; z-index: 10; }
-section:first-of-type.hero-landing h1,
-section:first-of-type.hero-landing p,
-section:first-of-type.hero-landing a { position: relative; z-index: 12; }
-
-/* The copy stays fixed/clean while the foliage is allowed to cross its edges. */
-section:first-of-type.hero-landing h1 {
-  text-shadow: 0 5px 34px rgba(0,0,0,.95), 0 0 18px rgba(0,0,0,.7) !important;
-}
-section:first-of-type.hero-landing h1 span { color: #fff !important; }
-section:first-of-type.hero-landing p { color: rgba(255,255,255,.62); }
-
-@keyframes dew-float {
-  0%,100% { transform: translateY(0) scale(1); opacity: .72; }
-  50% { transform: translateY(7px) scale(1.08); opacity: 1; }
-}
-
-@media (max-width: 768px) {
-  section:first-of-type.hero-landing > div:first-child {
-    background-position: 62% 34%;
-    transform: scale(1.08);
+  * {
+    border-color: var(--color-border);
   }
-  section:first-of-type.hero-landing::before,
-  section:first-of-type.hero-landing::after {
-    width: 47vw;
-    opacity: .76;
-  }
-  section:first-of-type.hero-landing::before { left: -18%; }
-  section:first-of-type.hero-landing::after { right: -18%; }
-  section:first-of-type.hero-landing h1 { text-shadow: 0 6px 28px rgba(0,0,0,.98) !important; }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  section:first-of-type.hero-landing > div:first-child::before,
-  section:first-of-type.hero-landing > div:first-child::after { animation: none; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
 }
