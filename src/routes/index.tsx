@@ -26,10 +26,10 @@ function AnatomicalModel() {
   return (
     <div className="relative mx-auto h-[500px] w-[280px] [perspective:1000px] sm:h-[620px] sm:w-[360px]">
       <div className="absolute inset-0 rounded-full bg-[#b9ff00]/10 blur-[90px]" />
-      <div className="anatomy-spin relative h-full w-full [transform-style:preserve-3d]">
+      <div className="anatomy-spin relative h-full w-full [transform-style:preserve-3d]"><div className="anatomy-breath relative h-full w-full">
         <svg viewBox="0 0 260 620" className="relative z-10 h-full w-full" aria-label="Modelo anatômico futurista">
-          <ellipse cx="130" cy="64" rx="35" ry="45" fill="none" stroke="#eaff9b" strokeWidth="3" />
-          <path d="M108 52 Q130 40 152 52 M105 68 Q130 58 155 68 M108 84 Q130 76 152 84" fill="none" stroke="#dffb82" strokeWidth="2" />
+          <ellipse cx="130" cy="64" rx="35" ry="45" fill="none" stroke="#eaff9b" strokeWidth="5" />
+          <path d="M108 52 Q130 40 152 52 M105 68 Q130 58 155 68 M108 84 Q130 76 152 84" fill="none" stroke="#dffb82" strokeWidth="3" />
           <path d="M118 106 L142 106 L150 145 L145 185 L115 185 L110 145 Z" fill="none" stroke="#eaff9b" strokeWidth="4" />
           <path d="M115 110 Q93 116 84 143 L99 205 L115 185 L130 143 Z" fill="#d9ff55" opacity=".9" />
           <path d="M145 110 Q167 116 176 143 L161 205 L145 185 L130 143 Z" fill="#d9ff55" opacity=".9" />
@@ -41,6 +41,7 @@ function AnatomicalModel() {
           <path d="M112 307 L94 455 M148 307 L166 455" fill="none" stroke="#eaff9b" strokeWidth="11" strokeLinecap="round" />
           <path d="M94 455 L83 590 M166 455 L177 590" stroke="#eaff9b" strokeWidth="9" strokeLinecap="round" />
         </svg>
+        </div>
       </div>
       <div className="absolute bottom-0 left-1/2 z-20 -translate-x-1/2 rounded-full border border-[#d9ff00]/25 bg-black/70 px-4 py-2 text-[9px] font-black uppercase tracking-[.3em] text-[#d9ff00]">Muscle protocol • 360°</div>
     </div>
@@ -67,8 +68,12 @@ function IronCoreSalesPage() {
     <main className="min-h-screen bg-[#050505] text-white">
       <style>{`
         html { scroll-behavior: smooth; }
-        @keyframes anatomySpin { from { transform: rotateY(-18deg); } 50% { transform: rotateY(18deg) scale(1.015); } to { transform: rotateY(-18deg); } }
-        .anatomy-spin { animation: anatomySpin 8s ease-in-out infinite; transform-style: preserve-3d; }
+        @keyframes anatomySpin { 0%,100% { transform: rotateY(-10deg); } 50% { transform: rotateY(10deg); } }
+        @keyframes anatomyBreath { 0%,100% { transform: scaleY(1) scaleX(1); } 50% { transform: scaleY(1.025) scaleX(1.012); } }
+        @keyframes anatomyGlow { 0%,100% { opacity:.5; transform:scale(.97); } 50% { opacity:.9; transform:scale(1.04); } }
+        .anatomy-spin { animation: anatomySpin 7s ease-in-out infinite; transform-style: preserve-3d; }
+        .anatomy-breath { animation: anatomyBreath 4.2s ease-in-out infinite; transform-origin:center bottom; }
+        .anatomy-spin svg { filter: drop-shadow(0 0 8px rgba(217,255,0,.45)); }
       `}</style>
 
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
