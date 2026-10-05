@@ -524,7 +524,7 @@ function IronCoreSalesPage() {
             <h1 className="max-w-4xl text-5xl font-black uppercase leading-[.88] tracking-[-.045em] sm:text-7xl lg:text-[6.5rem]">DO ZERO AO<br/><span className="text-[#d9ff00]">SHAPE DE PRAIA</span></h1>
             <p className="mt-7 text-xl font-semibold text-white/70 sm:text-2xl">sem depender de personal.</p>
             <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/40">Treinamento pensado para a sua realidade, com direção profissional e uma estratégia que cabe na sua rotina.</p>
-            <a href="#impactamos" className="mx-auto mt-9 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
+            <a href="#como-funciona" className="mx-auto mt-9 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
             <div id="hero-trust-strip" className="relative z-30 mt-8 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
               <div className="rounded-xl border border-white/10 bg-white/[.025] px-4 py-4 text-center">
                 <p className="text-lg font-black">+5 MIL</p>
@@ -555,23 +555,6 @@ function IronCoreSalesPage() {
                 );
               })}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="impactamos" className="reveal-on-scroll border-t border-white/10 bg-[#080808] py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="mt-8 grid gap-3 md:grid-cols-2">
-            {cards.map(([Icon,title,text],i) => {
-              const I = Icon as typeof Dumbbell;
-              return <article key={String(title)} className="rounded-xl border border-white/10 bg-white/[.025] p-4 hover:border-[#d9ff00]/30">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 bg-white/[.03] text-white">
-                  <I size={21} strokeWidth={1.6}/>
-                </div>
-                <h3 className="text-base font-black uppercase">{String(title)}</h3>
-                
-              </article>;
-            })}
           </div>
         </div>
       </section>
