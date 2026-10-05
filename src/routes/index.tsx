@@ -567,7 +567,7 @@ function IronCoreSalesPage() {
 
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-          <div className="flex items-center gap-3"><div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#d9ff00] text-black"><Dumbbell size={19}/></div><span className="text-sm font-black tracking-[.3em]">IRON CORE</span></div>
+          <div className="flex items-center"><span className="text-sm font-black tracking-[.3em]">IRON CORE</span></div>
           <a href="#como-funciona" className="text-xs font-bold uppercase tracking-[.2em] text-white/45 hover:text-[#d9ff00]">Como funciona</a>
         </div>
       </nav>
