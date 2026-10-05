@@ -127,6 +127,16 @@ function QuizAndOffer() {
   const [answers, setAnswers] = useState<string[]>([]);
   const [finished, setFinished] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(2 * 60 * 60 + 37 * 60);
+  const [exitWarning, setExitWarning] = useState(false);
+
+  useEffect(() => {
+    if (!finished) return;
+    const handleExitIntent = (event: MouseEvent) => {
+      if (event.clientY <= 8) setExitWarning(true);
+    };
+    window.addEventListener("mouseout", handleExitIntent);
+    return () => window.removeEventListener("mouseout", handleExitIntent);
+  }, [finished]);
 
   useEffect(() => {
     if (!finished || secondsLeft <= 0) return;
@@ -202,7 +212,18 @@ function QuizAndOffer() {
   }
 
   return (
-    <div className="mx-auto mt-14 max-w-2xl text-center">
+    <div className="relative mx-auto mt-14 max-w-2xl text-center">
+      {exitWarning && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 px-5 backdrop-blur-sm" onClick={() => setExitWarning(false)}>
+          <div className="w-full max-w-md rounded-3xl border border-white/15 bg-[#0a0a0a] p-7 text-center shadow-2xl" onClick={(e) => e.stopPropagation()}>
+            <p className="text-[10px] font-black uppercase tracking-[.3em] text-white/40">ATENÇÃO</p>
+            <h4 className="mt-4 text-2xl font-black uppercase leading-tight">Sua condição especial pode ser perdida.</h4>
+            <p className="mt-4 text-sm leading-6 text-white/50">Você acabou de liberar uma condição de entrada na Iron Core. Se sair agora, poderá não encontrá-la novamente quando voltar.</p>
+            <button onClick={() => setExitWarning(false)} className="mt-7 w-full rounded-2xl bg-white px-6 py-4 text-xs font-black uppercase tracking-[.15em] text-black">Continuar com minha condição</button>
+            <button onClick={() => setExitWarning(false)} className="mt-4 text-[10px] font-black uppercase tracking-[.18em] text-white/30">Sair mesmo assim</button>
+          </div>
+        </div>
+      )
       <div className="rounded-[30px] border border-white/10 bg-white/[.025] p-7 sm:p-12">
         <p className="text-[10px] font-black uppercase tracking-[.35em] text-white/35">IRON CORE • DIREÇÃO CERTA</p>
         <h3 className="mt-5 text-3xl font-black uppercase leading-tight sm:text-5xl">SEU CAMINHO ESTÁ PRONTO. 🔥</h3>
