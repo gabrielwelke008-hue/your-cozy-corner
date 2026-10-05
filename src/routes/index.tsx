@@ -338,7 +338,7 @@ function IronCoreSalesPage() {
           height: 410px;
           pointer-events: none;
           opacity: .92;
-          border-radius: 92% 8% 92% 8%;
+          border-radius: 90% 10% 90% 10%;
           background:
             radial-gradient(ellipse at 32% 18%, rgba(255,255,255,.24), transparent 20%),
             radial-gradient(ellipse at 70% 72%, rgba(217,255,0,.16), transparent 38%),
@@ -385,14 +385,18 @@ function IronCoreSalesPage() {
         }
         .hero-leaf-left-1 { left: -52px; top: 10%; transform: rotate(31deg) perspective(700px) rotateY(10deg); }
         .hero-leaf-left-2 { left: 18px; bottom: 1%; width: 135px; height: 300px; opacity: .62; transform: rotate(-17deg) scale(.78) perspective(700px) rotateY(-12deg); }
+        .hero-leaf-left-3 { left: 72px; top: 28%; width: 92px; height: 205px; opacity: .46; transform: rotate(52deg) scale(.62) perspective(700px) rotateY(8deg); }
         .hero-leaf-right-1 { right: -52px; top: 12%; transform: rotate(-31deg) scaleX(-1) perspective(700px) rotateY(10deg); }
         .hero-leaf-right-2 { right: 18px; bottom: 0; width: 140px; height: 315px; opacity: .60; transform: rotate(18deg) scale(.8) scaleX(-1) perspective(700px) rotateY(-12deg); }
+        .hero-leaf-right-3 { right: 72px; top: 30%; width: 92px; height: 205px; opacity: .46; transform: rotate(-52deg) scale(.62) scaleX(-1) perspective(700px) rotateY(8deg); }
         @media (max-width: 767px) {
           .hero-leaf { width: 105px; height: 245px; opacity: .48; }
           .hero-leaf-left-1 { left: -46px; top: 16%; }
           .hero-leaf-left-2 { left: -8px; bottom: 4%; width: 84px; height: 195px; }
+          .hero-leaf-left-3 { left: 28px; top: 32%; width: 66px; height: 145px; opacity: .30; }
           .hero-leaf-right-1 { right: -46px; top: 17%; }
           .hero-leaf-right-2 { right: -8px; bottom: 2%; width: 88px; height: 205px; }
+          .hero-leaf-right-3 { right: 28px; top: 34%; width: 66px; height: 145px; opacity: .30; }
         }
 
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap');
@@ -640,8 +644,10 @@ function IronCoreSalesPage() {
       <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing">
         <div className="hero-leaf hero-leaf-left hero-leaf-left-1" aria-hidden="true"><span /></div>
         <div className="hero-leaf hero-leaf-left hero-leaf-left-2" aria-hidden="true"><span /></div>
+        <div className="hero-leaf hero-leaf-left hero-leaf-left-3" aria-hidden="true"><span /></div>
         <div className="hero-leaf hero-leaf-right hero-leaf-right-1" aria-hidden="true"><span /></div>
         <div className="hero-leaf hero-leaf-right hero-leaf-right-2" aria-hidden="true"><span /></div>
+        <div className="hero-leaf hero-leaf-right hero-leaf-right-3" aria-hidden="true"><span /></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(217,255,0,.11),transparent_30%),linear-gradient(120deg,#050505,#090b03,#050505)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
