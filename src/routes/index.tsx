@@ -131,14 +131,13 @@ function IronCoreSalesPage() {
         [class*="border-[#d9ff00]"] { border-color: rgba(255,255,255,.18) !important; }
 
         h1, h2, h3, .font-black {
-          font-family: 'Anton', 'Montserrat', Arial, sans-serif;
-          font-weight: 900 !important;
-          letter-spacing: -.035em;
+          font-family: 'Montserrat', Arial, sans-serif;
+          font-weight: 800 !important;
+          letter-spacing: -.025em;
+          text-shadow: none !important;
         }
-        h1 {
-          text-shadow: 0 10px 45px rgba(255,255,255,.06);
-        }
-        h2 { letter-spacing: -.045em; }
+        h1 { font-weight: 800 !important; }
+        h2 { font-weight: 800 !important; letter-spacing: -.03em; }
 
         /* Hero: sculpture-card / dark luxury treatment. */
         section:first-of-type {
@@ -147,11 +146,10 @@ function IronCoreSalesPage() {
             linear-gradient(180deg,#000,#030303 60%,#000) !important;
         }
         section:first-of-type > div:last-child {
-          grid-template-columns: minmax(0,1fr) 440px;
+          grid-template-columns: 1fr;
         }
-        section:first-of-type .anatomical-model,
         section:first-of-type .relative.mx-auto {
-          border-radius: 32px;
+          display: none !important;
         }
         section:first-of-type .relative.mx-auto::before {
           content: "";
@@ -187,7 +185,7 @@ function IronCoreSalesPage() {
 
         @media (max-width: 768px) {
           section:first-of-type > div:last-child { grid-template-columns: 1fr !important; }
-          section:first-of-type .relative.mx-auto { width: min(86vw, 360px); }
+          section:first-of-type .relative.mx-auto { display: none !important; }
           h1 { font-size: clamp(3.4rem, 16vw, 6rem) !important; }
           h2 { font-size: clamp(2.7rem, 12vw, 4.5rem) !important; }
         }
