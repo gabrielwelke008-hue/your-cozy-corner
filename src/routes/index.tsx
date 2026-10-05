@@ -269,6 +269,15 @@ function QuizAndOffer() {
 
 function IronCoreSalesPage() {
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [demoNotice, setDemoNotice] = useState(false);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setDemoNotice(true);
+      window.setTimeout(() => setDemoNotice(false), 5000);
+    }, 15000);
+    return () => window.clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>(".reveal-on-scroll");
@@ -305,6 +314,17 @@ function IronCoreSalesPage() {
 
   return (
     <main className="min-h-screen bg-[#050505] text-white">
+      {demoNotice && (
+        <div className="fixed bottom-5 left-5 z-[90] max-w-[calc(100vw-40px)] rounded-2xl border border-white/15 bg-[#0a0a0a]/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:left-7 sm:bottom-7">
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black text-sm font-black">✓</div>
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-[.08em] text-white">60 pessoas adquiriram</p>
+              <p className="mt-1 text-[9px] font-black uppercase tracking-[.16em] text-white/35">oferta especial • DEMONSTRAÇÃO</p>
+            </div>
+          </div>
+        </div>
+      )}
       <style>{`
 
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap');
