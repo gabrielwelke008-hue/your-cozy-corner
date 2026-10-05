@@ -347,71 +347,7 @@ function IronCoreSalesPage() {
             linear-gradient(180deg,#000,#030303 60%,#000) !important;
         }
         section:first-of-type > div:last-child {
-          grid-template-columns: 1fr 440px;
-        }
-        .hero-visual {
-          position: relative;
-          height: 500px;
-          width: 100%;
-          max-width: 440px;
-          margin-inline: auto;
-          border: 1px solid rgba(255,255,255,.12);
-          border-radius: 32px;
-          overflow: hidden;
-          background:
-            radial-gradient(circle at 50% 45%, rgba(255,255,255,.08), transparent 28%),
-            linear-gradient(145deg, #101010 0%, #030303 55%, #0c0c0c 100%);
-          box-shadow: 0 30px 100px rgba(0,0,0,.65), inset 0 0 80px rgba(255,255,255,.025);
-        }
-        .hero-visual::before {
-          content: "";
-          position: absolute;
-          inset: 10%;
-          border: 1px solid rgba(255,255,255,.07);
-          border-radius: 50%;
-          box-shadow:
-            0 0 0 35px rgba(255,255,255,.012),
-            0 0 0 70px rgba(255,255,255,.008);
-          transform: rotate(18deg) scaleX(.72);
-        }
-        .hero-visual::after {
-          content: "IRON CORE";
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%,-50%) rotate(-90deg);
-          white-space: nowrap;
-          font-size: clamp(3.5rem, 8vw, 6.5rem);
-          line-height: 1;
-          font-weight: 800;
-          letter-spacing: -.06em;
-          color: rgba(255,255,255,.055);
-        }
-        .hero-visual-mark {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          width: 116px;
-          height: 116px;
-          transform: translate(-50%,-50%) rotate(45deg);
-          border: 1px solid rgba(255,255,255,.25);
-          box-shadow: 0 0 70px rgba(255,255,255,.05), inset 0 0 35px rgba(255,255,255,.035);
-        }
-        .hero-visual-mark::after {
-          content: "";
-          position: absolute;
-          inset: 25%;
-          border: 1px solid rgba(255,255,255,.35);
-        }
-        .hero-visual-label {
-          position: absolute;
-          left: 28px;
-          bottom: 24px;
-          font-size: 9px;
-          font-weight: 700;
-          letter-spacing: .28em;
-          text-transform: uppercase;
-          color: rgba(255,255,255,.38);
+          grid-template-columns: 1fr;
         }
         section:first-of-type h1 span { color: #fff !important; }
         section:first-of-type p { color: rgba(255,255,255,.52); }
@@ -459,10 +395,6 @@ function IronCoreSalesPage() {
             <p className="mt-7 text-xl font-semibold text-white/70 sm:text-2xl">sem depender de personal.</p>
             <p className="mt-5 max-w-xl text-sm leading-7 text-white/40">Treinamento pensado para a sua realidade, com direção profissional e uma estratégia que cabe na sua rotina.</p>
             <a href="#impactamos" className="mt-9 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
-          </div>
-          <div className="hero-visual" aria-hidden="true">
-            <div className="hero-visual-mark" />
-            <span className="hero-visual-label">Direção • Execução • Evolução</span>
           </div>
         </div>
       </section>
