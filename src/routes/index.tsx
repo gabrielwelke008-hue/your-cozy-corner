@@ -333,32 +333,35 @@ function IronCoreSalesPage() {
         .hero-landing { isolation: isolate; }
         .hero-leaf {
           position: absolute;
-          z-index: 1;
-          width: 170px;
-          height: 360px;
+          z-index: 4;
+          width: 190px;
+          height: 410px;
           pointer-events: none;
-          opacity: .78;
-          border-radius: 100% 0 100% 0;
+          opacity: .92;
+          border-radius: 92% 8% 92% 8%;
           background:
-            radial-gradient(ellipse at 30% 22%, rgba(255,255,255,.18), transparent 24%),
-            linear-gradient(145deg, rgba(226,255,126,.28) 0%, rgba(105,139,24,.18) 38%, rgba(18,24,4,.08) 72%, rgba(0,0,0,.32) 100%);
-          border: 1px solid rgba(217,255,0,.12);
+            radial-gradient(ellipse at 32% 18%, rgba(255,255,255,.24), transparent 20%),
+            radial-gradient(ellipse at 70% 72%, rgba(217,255,0,.16), transparent 38%),
+            linear-gradient(145deg, rgba(238,255,175,.42) 0%, rgba(150,190,45,.27) 30%, rgba(58,74,13,.24) 62%, rgba(4,6,1,.72) 100%);
+          border: 1px solid rgba(226,255,126,.28);
           box-shadow:
-            inset -24px -35px 45px rgba(0,0,0,.5),
-            inset 16px 10px 30px rgba(255,255,255,.08),
-            0 45px 75px rgba(0,0,0,.72);
-          filter: saturate(.82);
+            inset -34px -45px 58px rgba(0,0,0,.62),
+            inset 20px 14px 34px rgba(255,255,255,.12),
+            0 38px 90px rgba(0,0,0,.88),
+            0 0 34px rgba(217,255,0,.07);
+          filter: saturate(.95) contrast(1.08);
           transform-style: preserve-3d;
         }
         .hero-leaf::before {
           content: "";
           position: absolute;
-          left: 49%;
-          top: 5%;
-          width: 2px;
-          height: 90%;
+          left: 48%;
+          top: 4%;
+          width: 3px;
+          height: 92%;
           border-radius: 999px;
-          background: linear-gradient(to bottom, rgba(255,255,255,.28), rgba(217,255,0,.12), rgba(0,0,0,.35));
+          background: linear-gradient(to bottom, rgba(255,255,255,.42), rgba(217,255,0,.22), rgba(0,0,0,.55));
+          box-shadow: 0 0 12px rgba(255,255,255,.08);
           transform: rotate(7deg);
         }
         .hero-leaf::after {
@@ -371,25 +374,25 @@ function IronCoreSalesPage() {
         }
         .hero-leaf span {
           position: absolute;
-          left: 50%;
-          top: 30%;
-          width: 42%;
-          height: 1px;
-          background: rgba(217,255,0,.12);
-          box-shadow: 0 42px rgba(217,255,0,.08), 0 84px rgba(217,255,0,.06);
-          transform: rotate(-28deg);
+          left: 49%;
+          top: 27%;
+          width: 48%;
+          height: 2px;
+          background: rgba(226,255,126,.22);
+          box-shadow: 0 48px rgba(226,255,126,.14), 0 96px rgba(226,255,126,.10), 0 144px rgba(226,255,126,.07);
+          transform: rotate(-30deg);
           transform-origin: left center;
         }
-        .hero-leaf-left-1 { left: -82px; top: 13%; transform: rotate(31deg); }
-        .hero-leaf-left-2 { left: 10px; bottom: 2%; width: 120px; height: 270px; opacity: .48; transform: rotate(-17deg) scale(.78); }
-        .hero-leaf-right-1 { right: -78px; top: 16%; transform: rotate(-31deg) scaleX(-1); }
-        .hero-leaf-right-2 { right: 8px; bottom: 0; width: 125px; height: 285px; opacity: .46; transform: rotate(18deg) scale(.8) scaleX(-1); }
+        .hero-leaf-left-1 { left: -52px; top: 10%; transform: rotate(31deg) perspective(700px) rotateY(10deg); }
+        .hero-leaf-left-2 { left: 18px; bottom: 1%; width: 135px; height: 300px; opacity: .62; transform: rotate(-17deg) scale(.78) perspective(700px) rotateY(-12deg); }
+        .hero-leaf-right-1 { right: -52px; top: 12%; transform: rotate(-31deg) scaleX(-1) perspective(700px) rotateY(10deg); }
+        .hero-leaf-right-2 { right: 18px; bottom: 0; width: 140px; height: 315px; opacity: .60; transform: rotate(18deg) scale(.8) scaleX(-1) perspective(700px) rotateY(-12deg); }
         @media (max-width: 767px) {
-          .hero-leaf { width: 95px; height: 220px; opacity: .32; }
-          .hero-leaf-left-1 { left: -54px; top: 18%; }
-          .hero-leaf-left-2 { left: -18px; bottom: 4%; width: 78px; height: 180px; }
-          .hero-leaf-right-1 { right: -54px; top: 19%; }
-          .hero-leaf-right-2 { right: -16px; bottom: 2%; width: 82px; height: 190px; }
+          .hero-leaf { width: 105px; height: 245px; opacity: .48; }
+          .hero-leaf-left-1 { left: -46px; top: 16%; }
+          .hero-leaf-left-2 { left: -8px; bottom: 4%; width: 84px; height: 195px; }
+          .hero-leaf-right-1 { right: -46px; top: 17%; }
+          .hero-leaf-right-2 { right: -8px; bottom: 2%; width: 88px; height: 205px; }
         }
 
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap');
