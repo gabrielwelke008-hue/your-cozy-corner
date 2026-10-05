@@ -219,8 +219,8 @@ function QuizAndOffer() {
             <p className="text-[10px] font-black uppercase tracking-[.3em] text-white/40">ATENÇÃO</p>
             <h4 className="mt-4 text-2xl font-black uppercase leading-tight">Sua condição especial pode ser perdida.</h4>
             <p className="mt-4 text-sm leading-6 text-white/50">Você acabou de liberar uma condição de entrada na Iron Core. Se sair agora, poderá não encontrá-la novamente quando voltar.</p>
-            <button onClick={() => setExitWarning(false)} className="mt-7 w-full rounded-2xl bg-white px-6 py-4 text-xs font-black uppercase tracking-[.15em] text-black">QUERO GARANTIR MINHA CONDIÇÃO</button>
-            <button onClick={() => setExitWarning(false)} className="mt-4 text-[10px] font-black uppercase tracking-[.18em] text-white/30">Sair mesmo assim</button>
+            <button onClick={() => setExitWarning(false)} className="mt-7 w-full rounded-2xl bg-white px-6 py-4 text-xs font-black uppercase tracking-[.15em] text-black transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/90 active:scale-[.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50">QUERO GARANTIR MINHA CONDIÇÃO</button>
+            <button onClick={() => setExitWarning(false)} className="mt-4 rounded-lg px-3 py-2 text-[10px] font-black uppercase tracking-[.18em] text-white/30 transition-all duration-300 hover:scale-105 hover:text-white/60 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20">Sair mesmo assim</button>
           </div>
         </div>
       )}
