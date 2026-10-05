@@ -517,7 +517,7 @@ function IronCoreSalesPage() {
       </nav>
 
       <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing">
-<div className="absolute inset-0 bg-black/45 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/ocean-bg.webp')" }} />
+<div className="absolute inset-0 bg-black/45 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/ocean-bg.svg')" }} />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
             <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#d9ff00]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
