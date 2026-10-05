@@ -331,64 +331,49 @@ function IronCoreSalesPage() {
       <style>{`
 
         .hero-landing { isolation: isolate; }
-        .hero-leaf {
+         .hero-leaf {
           position: absolute;
           z-index: 4;
-          width: 190px;
-          height: 410px;
+          width: 170px;
+          height: 360px;
           pointer-events: none;
-          opacity: .92;
-          border-radius: 90% 10% 90% 10%;
+          opacity: .9;
+          border-radius: 4% 96% 8% 92%;
           background:
-            radial-gradient(ellipse at 32% 18%, rgba(255,255,255,.24), transparent 20%),
-            radial-gradient(ellipse at 70% 72%, rgba(217,255,0,.16), transparent 38%),
-            linear-gradient(145deg, rgba(238,255,175,.42) 0%, rgba(150,190,45,.27) 30%, rgba(58,74,13,.24) 62%, rgba(4,6,1,.72) 100%);
-          border: 1px solid rgba(226,255,126,.28);
-          box-shadow:
-            inset -34px -45px 58px rgba(0,0,0,.62),
-            inset 20px 14px 34px rgba(255,255,255,.12),
-            0 38px 90px rgba(0,0,0,.88),
-            0 0 34px rgba(217,255,0,.07);
+            radial-gradient(ellipse at 34% 18%, rgba(255,255,255,.24), transparent 18%),
+            radial-gradient(ellipse at 68% 72%, rgba(217,255,0,.16), transparent 38%),
+            linear-gradient(145deg, rgba(238,255,175,.46) 0%, rgba(150,190,45,.29) 32%, rgba(58,74,13,.25) 64%, rgba(4,6,1,.72) 100%);
+          border: 1px solid rgba(226,255,126,.26);
+          box-shadow: inset -30px -40px 54px rgba(0,0,0,.6), inset 18px 12px 30px rgba(255,255,255,.1), 0 34px 82px rgba(0,0,0,.86), 0 0 30px rgba(217,255,0,.06);
           filter: saturate(.95) contrast(1.08);
           transform-style: preserve-3d;
         }
         .hero-leaf::before {
           content: "";
           position: absolute;
-          left: 48%;
-          top: 4%;
-          width: 3px;
-          height: 92%;
-          border-radius: 999px;
+          left: 48%; top: 3%; width: 3px; height: 94%; border-radius: 999px;
           background: linear-gradient(to bottom, rgba(255,255,255,.42), rgba(217,255,0,.22), rgba(0,0,0,.55));
-          box-shadow: 0 0 12px rgba(255,255,255,.08);
           transform: rotate(7deg);
         }
         .hero-leaf::after {
           content: "";
           position: absolute;
-          inset: 9% 20%;
-          border-radius: 50%;
-          background: radial-gradient(ellipse, rgba(255,255,255,.08), transparent 64%);
-          transform: rotate(-18deg);
-        }
-        .hero-leaf span {
-          position: absolute;
-          left: 49%;
-          top: 27%;
-          width: 48%;
-          height: 2px;
-          background: rgba(226,255,126,.22);
-          box-shadow: 0 48px rgba(226,255,126,.14), 0 96px rgba(226,255,126,.10), 0 144px rgba(226,255,126,.07);
-          transform: rotate(-30deg);
+          left: 49%; top: 23%; width: 34%; height: 1px;
+          background: rgba(226,255,126,.24);
+          box-shadow: 0 46px rgba(226,255,126,.14), 0 92px rgba(226,255,126,.1), 0 138px rgba(226,255,126,.07);
+          transform: rotate(-28deg);
           transform-origin: left center;
         }
-        .hero-leaf-left-1 { left: -52px; top: 10%; transform: rotate(31deg) perspective(700px) rotateY(10deg); }
-        .hero-leaf-left-2 { left: 18px; bottom: 1%; width: 135px; height: 300px; opacity: .62; transform: rotate(-17deg) scale(.78) perspective(700px) rotateY(-12deg); }
-        .hero-leaf-left-3 { left: 72px; top: 28%; width: 92px; height: 205px; opacity: .46; transform: rotate(52deg) scale(.62) perspective(700px) rotateY(8deg); }
-        .hero-leaf-right-1 { right: -52px; top: 12%; transform: rotate(-31deg) scaleX(-1) perspective(700px) rotateY(10deg); }
-        .hero-leaf-right-2 { right: 18px; bottom: 0; width: 140px; height: 315px; opacity: .60; transform: rotate(18deg) scale(.8) scaleX(-1) perspective(700px) rotateY(-12deg); }
-        .hero-leaf-right-3 { right: 72px; top: 30%; width: 92px; height: 205px; opacity: .46; transform: rotate(-52deg) scale(.62) scaleX(-1) perspective(700px) rotateY(8deg); }
+        .hero-leaf span {
+          position: absolute; left: 47%; top: 23%; width: 31%; height: 1px;
+          background: rgba(255,255,255,.18); transform: rotate(28deg); transform-origin: left center;
+        }
+        .hero-leaf-left-1 { left: -42px; top: 11%; transform: rotate(18deg) perspective(700px) rotateY(12deg); }
+        .hero-leaf-left-2 { left: 14px; bottom: 1%; width: 120px; height: 270px; opacity: .58; transform: rotate(-14deg) scale(.78) perspective(700px) rotateY(-12deg); }
+        .hero-leaf-left-3 { left: 68px; top: 29%; width: 82px; height: 180px; opacity: .42; transform: rotate(35deg) scale(.62) perspective(700px) rotateY(8deg); }
+        .hero-leaf-right-1 { right: -42px; top: 12%; transform: rotate(-18deg) scaleX(-1) perspective(700px) rotateY(12deg); }
+        .hero-leaf-right-2 { right: 14px; bottom: 0; width: 124px; height: 282px; opacity: .56; transform: rotate(14deg) scale(.78) scaleX(-1) perspective(700px) rotateY(-12deg); }
+        .hero-leaf-right-3 { right: 68px; top: 31%; width: 82px; height: 180px; opacity: .42; transform: rotate(-35deg) scale(.62) scaleX(-1) perspective(700px) rotateY(8deg); }
         @media (max-width: 767px) {
           .hero-leaf { width: 105px; height: 245px; opacity: .48; }
           .hero-leaf-left-1 { left: -46px; top: 16%; }
