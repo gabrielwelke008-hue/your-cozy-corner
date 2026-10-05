@@ -411,11 +411,7 @@ function IronCoreSalesPage() {
           color: rgba(255,255,255,.42);
           font-size: 14px;
         }
-        section:first-of-type {
-          background:
-            radial-gradient(ellipse at 72% 50%, rgba(255,255,255,.075), transparent 23%),
-            linear-gradient(180deg,#000,#030303 60%,#000) !important;
-        }
+        section:first-of-type { background: #000 !important; }
         section:first-of-type > div:last-child {
           grid-template-columns: 1fr;
         }
@@ -520,7 +516,7 @@ function IronCoreSalesPage() {
       </nav>
 
       <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing">
-<div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(217,255,0,.11),transparent_30%),linear-gradient(120deg,#050505,#090b03,#050505)]" />
+<div className="absolute inset-0 bg-black" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
             <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#d9ff00]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
