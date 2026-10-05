@@ -331,85 +331,6 @@ function IronCoreSalesPage() {
       <style>{`
 
         .hero-landing { isolation: isolate; }
-         .hero-water {
-          position:absolute;
-          z-index:20;
-          inset:0;
-          pointer-events:none;
-          overflow:hidden;
-          mix-blend-mode:screen;
-        }
-        .water-ribbon {
-          position:absolute;
-          top:-10%;
-          width:34vw;
-          min-width:240px;
-          height:120%;
-          opacity:.68;
-          filter:blur(.35px);
-          background:
-            radial-gradient(ellipse 38% 10% at 50% 5%,rgba(255,255,255,.8),transparent 70%),
-            radial-gradient(ellipse 24% 16% at 38% 22%,rgba(220,248,255,.62),transparent 72%),
-            radial-gradient(ellipse 30% 13% at 62% 39%,rgba(125,190,220,.42),transparent 74%),
-            radial-gradient(ellipse 22% 18% at 43% 58%,rgba(245,253,255,.58),transparent 72%),
-            radial-gradient(ellipse 32% 12% at 58% 78%,rgba(105,175,215,.36),transparent 74%);
-          -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 20%,#000 78%,transparent 100%);
-          mask-image:linear-gradient(90deg,transparent 0%,#000 20%,#000 78%,transparent 100%);
-          animation:liquidFlow 5.2s cubic-bezier(.42,0,.18,1) infinite;
-        }
-        .water-ribbon-left {
-          left:-15%;
-          transform:rotate(-7deg) skewX(-7deg);
-          border-radius:58% 42% 50% 30% / 12% 35% 65% 88%;
-        }
-        .water-ribbon-right {
-          right:-15%;
-          transform:rotate(7deg) skewX(7deg);
-          border-radius:42% 58% 30% 50% / 35% 12% 88% 65%;
-          animation-delay:1.2s;
-        }
-        .water-highlight {
-          position:absolute;
-          top:-8%;
-          width:22vw;
-          min-width:150px;
-          height:115%;
-          border-radius:50%;
-          background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),rgba(210,244,255,.58),rgba(255,255,255,.16),transparent);
-          filter:blur(1px);
-          opacity:.65;
-          animation:highlightFlow 3.8s ease-in-out infinite;
-        }
-        .water-highlight-left { left:4%; transform:rotate(-9deg); }
-        .water-highlight-right { right:4%; transform:rotate(9deg); animation-delay:1.1s; }
-        .water-droplets {
-          position:absolute;
-          inset:0;
-          opacity:.75;
-          background:
-            radial-gradient(ellipse 3px 11px at 28% 18%,rgba(255,255,255,.85),transparent 70%),
-            radial-gradient(ellipse 2px 8px at 35% 38%,rgba(210,245,255,.72),transparent 70%),
-            radial-gradient(ellipse 3px 12px at 72% 24%,rgba(255,255,255,.8),transparent 70%),
-            radial-gradient(ellipse 2px 9px at 65% 51%,rgba(210,245,255,.65),transparent 70%);
-          animation:dropsFlow 2.8s linear infinite;
-        }
-        @keyframes liquidFlow {
-          0%,100% { transform:translateX(0) scaleX(.9); opacity:.2; }
-          35% { transform:translateX(20px) scaleX(1.02); opacity:.62; }
-          52% { transform:translateX(36px) scaleX(1.1); opacity:.8; }
-          75% { transform:translateX(8px) scaleX(.96); opacity:.42; }
-        }
-        @keyframes highlightFlow {
-          0%,100% { transform:translateX(0) rotate(-9deg); opacity:.18; }
-          45% { transform:translateX(24px) rotate(-6deg); opacity:.72; }
-          70% { transform:translateX(8px) rotate(-10deg); opacity:.36; }
-        }
-        @keyframes dropsFlow {
-          0% { transform:translateY(-100px); opacity:0; }
-          20% { opacity:.75; }
-          75% { transform:translateY(220px); opacity:.42; }
-          100% { transform:translateY(420px); opacity:0; }
-        }
         .reveal-on-scroll {
           opacity: 0;
           transform: translate3d(0, 28px, 0);
@@ -598,8 +519,8 @@ function IronCoreSalesPage() {
         </div>
       </nav>
 
-      <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing"><div className="hero-water" aria-hidden="true"><div className="water-ribbon water-ribbon-left" /><div className="water-ribbon water-ribbon-right" /><div className="water-highlight water-highlight-left" /><div className="water-highlight water-highlight-right" /><div className="water-droplets" /></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(217,255,0,.11),transparent_30%),linear-gradient(120deg,#050505,#090b03,#050505)]" />
+      <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing">
+<div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(217,255,0,.11),transparent_30%),linear-gradient(120deg,#050505,#090b03,#050505)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
             <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#d9ff00]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
