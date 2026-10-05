@@ -539,6 +539,22 @@ function IronCoreSalesPage() {
                 <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">De resultado</p>
               </div>
             </div>
+            <div id="hero-impact-cards" className="mx-auto mt-6 grid w-full max-w-3xl grid-cols-2 gap-2 sm:grid-cols-4">
+              {[
+                [Dumbbell, "Treino personalizado"],
+                [Zap, "Mais praticidade"],
+                [ListChecks, "Cabe na rotina"],
+                [ShieldCheck, "7 dias de garantia"],
+              ].map(([Icon, title]) => {
+                const I = Icon as typeof Dumbbell;
+                return (
+                  <div key={String(title)} className="flex min-h-[64px] flex-col items-center justify-center rounded-xl border border-white/10 bg-white/[.025] px-2 py-3 text-center">
+                    <I size={17} strokeWidth={1.7} />
+                    <p className="mt-2 text-[9px] font-black uppercase leading-tight tracking-[.05em] text-white/75">{String(title)}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
