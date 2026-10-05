@@ -219,7 +219,7 @@ function QuizAndOffer() {
             <p className="text-[10px] font-black uppercase tracking-[.3em] text-white/40">ATENÇÃO</p>
             <h4 className="mt-4 text-2xl font-black uppercase leading-tight">Sua condição especial pode ser perdida.</h4>
             <p className="mt-4 text-sm leading-6 text-white/50">Você acabou de liberar uma condição de entrada na Iron Core. Se sair agora, poderá não encontrá-la novamente quando voltar.</p>
-            <button onClick={() => setExitWarning(false)} className="mt-7 w-full rounded-2xl bg-white px-6 py-4 text-xs font-black uppercase tracking-[.15em] text-black">Continuar com minha condição</button>
+            <button onClick={() => setExitWarning(false)} className="mt-7 w-full rounded-2xl bg-white px-6 py-4 text-xs font-black uppercase tracking-[.15em] text-black">QUERO GARANTIR MINHA CONDIÇÃO</button>
             <button onClick={() => setExitWarning(false)} className="mt-4 text-[10px] font-black uppercase tracking-[.18em] text-white/30">Sair mesmo assim</button>
           </div>
         </div>
