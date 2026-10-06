@@ -597,7 +597,6 @@ function IronCoreSalesPage() {
             <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#E3EF27]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
             <h1 className="max-w-4xl text-5xl font-black uppercase leading-[.88] tracking-[-.045em] sm:text-7xl lg:text-[6.5rem]">DO ZERO AO<br/><span className="text-[#E3EF27]">SHAPE DE PRAIA</span></h1>
             <p className="mt-3 text-2xl font-black uppercase leading-[.88] tracking-[-.045em] text-white/70 sm:text-3xl">sem depender de personal.</p>
-            <a href="#como-funciona" className="mx-auto mt-8 inline-flex items-center gap-3 rounded-xl bg-[#E3EF27] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
             <div id="hero-impact-cards" className="mx-auto mt-6 grid w-full max-w-3xl grid-cols-2 gap-2 sm:grid-cols-4">
               {[
                 [Dumbbell, "Treino personalizado"],
@@ -614,6 +613,7 @@ function IronCoreSalesPage() {
                 );
               })}
             </div>
+            <a href="#como-funciona" className="mx-auto mt-5 inline-flex items-center gap-3 rounded-xl bg-[#E3EF27] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
           </div>
         </div>
       </section>
