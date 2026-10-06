@@ -239,6 +239,21 @@ function QuizAndOffer() {
         <p className="mt-1 text-xl font-black uppercase text-white/60">POR APENAS</p>
         <p className="mt-1 text-4xl font-black sm:text-5xl">R$ 27,31</p>
         <p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/30">CONDIÇÃO ÚNICA DE ENTRADA</p>
+        <div className="mx-auto mt-8 grid max-w-2xl grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[.025]">
+  <div className="px-3 py-4 text-center">
+    <p className="text-lg font-black">+5 MIL</p>
+    <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">Alunos</p>
+  </div>
+  <div className="border-x border-white/10 px-3 py-4 text-center">
+    <p className="text-lg font-black">✓ CONFIÁVEL</p>
+    <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">Site seguro</p>
+  </div>
+  <div className="px-3 py-4 text-center">
+    <p className="text-lg font-black">GARANTIA</p>
+    <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">De resultado</p>
+  </div>
+</div>
+
         <p className="mx-auto mt-5 max-w-lg text-xs leading-6 text-white/35">
           Essa condição especial foi criada para novos alunos que estão começando agora e fica disponível enquanto o contador estiver ativo.
         </p>
