@@ -677,8 +677,8 @@ function IronCoreSalesPage() {
                 <div className="flex h-full flex-col items-center justify-center p-8 text-center"><Utensils size={42} className="text-white/10"/><p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/25">Espaço reservado para a foto</p><p className="mt-2 text-xs text-white/20">Envie a foto e ela será colocada aqui.</p></div>
               </div>
             </div>
-            <article className="story-copy bg-transparent text-[13px] leading-6 text-white/60 sm:text-sm sm:leading-7">
-              {story.map((p,i)=><p key={i} className={i===0||i===6||i===11||i===14 ? "mb-3 text-base font-bold leading-6 text-white sm:text-lg" : "mb-3"}>{p}</p>)}
+            <article className="story-copy bg-transparent text-[13px] leading-[1.45] text-white/60 sm:text-sm sm:leading-[1.55]">
+              {story.map((p,i)=><p key={i} className={i===0||i===6||i===11||i===14 ? "mb-2 text-base font-bold leading-[1.35] text-white sm:text-lg" : "mb-2"}>{p}</p>)}
             </article>
           </div>
         </div>
