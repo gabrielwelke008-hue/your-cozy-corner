@@ -341,54 +341,9 @@ function IronCoreSalesPage() {
         section {
           position: relative;
         }
-        section::before,
-        section::after {
-          content: "";
-          position: absolute;
-          width: 150px;
-          height: 150px;
-          pointer-events: none;
-          opacity: .42;
-          z-index: 0;
-          background:
-            linear-gradient(rgba(166, 229, 101, .22), rgba(166, 229, 101, .22)) 0 0 / 42px 1px no-repeat,
-            linear-gradient(rgba(166, 229, 101, .22), rgba(166, 229, 101, .22)) 0 0 / 1px 42px no-repeat;
-        }
-        section::before {
-          top: 22px;
-          left: 22px;
-          border-top: 1px solid rgba(166, 229, 101, .10);
-          border-left: 1px solid rgba(166, 229, 101, .10);
-          border-radius: 18px 0 0 0;
-        }
-        section::after {
-          right: 22px;
-          bottom: 22px;
-          transform: rotate(180deg);
-          border-top: 1px solid rgba(166, 229, 101, .08);
-          border-left: 1px solid rgba(166, 229, 101, .08);
-          border-radius: 18px 0 0 0;
-        }
         section > div {
           position: relative;
           z-index: 1;
-        }
-        section:first-of-type {
-          background:
-            radial-gradient(circle at 72% 38%, rgba(143, 222, 81, .09), transparent 24%),
-            radial-gradient(circle at 18% 75%, rgba(190, 235, 120, .05), transparent 22%),
-            #020402 !important;
-        }
-        section:first-of-type::before {
-          width: 220px;
-          height: 220px;
-          border-color: rgba(166, 229, 101, .16);
-          box-shadow: 0 0 90px rgba(126, 205, 72, .08);
-        }
-        section:first-of-type::after {
-          width: 180px;
-          height: 180px;
-          border-color: rgba(166, 229, 101, .12);
         }
         #hero-trust-strip {
           background: linear-gradient(90deg, rgba(111, 170, 62, .08), rgba(255,255,255,.025), rgba(111, 170, 62, .08));
@@ -504,6 +459,13 @@ function IronCoreSalesPage() {
           border-color: rgba(255,255,255,.3) !important;
           transform: translateY(-2px);
           transition: .25s ease;
+        }
+        .story-copy,
+        .story-copy:hover {
+          background: transparent !important;
+          border: 0 !important;
+          box-shadow: none !important;
+          transform: none !important;
         }
 
         footer { background: #000 !important; border-color: rgba(255,255,255,.12) !important; }
@@ -683,7 +645,7 @@ function IronCoreSalesPage() {
                 <div className="flex h-full flex-col items-center justify-center p-8 text-center"><Utensils size={42} className="text-white/10"/><p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/25">Espaço reservado para a foto</p><p className="mt-2 text-xs text-white/20">Envie a foto e ela será colocada aqui.</p></div>
               </div>
             </div>
-            <article className="text-[13px] leading-6 text-white/60 sm:text-sm sm:leading-7">
+            <article className="story-copy bg-transparent text-[13px] leading-6 text-white/60 sm:text-sm sm:leading-7">
               {story.map((p,i)=><p key={i} className={i===0||i===6||i===11||i===14 ? "mb-3 text-base font-bold leading-6 text-white sm:text-lg" : "mb-3"}>{p}</p>)}
             </article>
           </div>
