@@ -197,3 +197,109 @@
     opacity: .22;
   }
 }
+
+
+/* IRON CORE — identidade visual global: nenhum módulo/tela deve voltar ao preto genérico. */
+.iron-core-theme {
+  --iron-green: #9fe35b;
+  --iron-green-bright: #b8f47a;
+  --iron-green-deep: #18351a;
+  --iron-surface: rgba(10, 18, 10, .88);
+  --iron-surface-soft: rgba(16, 28, 16, .72);
+  position: relative;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(139, 220, 82, .16), transparent 62%),
+    radial-gradient(ellipse 55% 40% at 100% 20%, rgba(166, 229, 101, .10), transparent 65%),
+    radial-gradient(ellipse 65% 50% at 50% 100%, rgba(82, 125, 53, .08), transparent 70%),
+    #040604 !important;
+}
+
+.iron-core-theme::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .55;
+  background:
+    linear-gradient(90deg, transparent 0 49.8%, rgba(166,229,101,.025) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 0 49.8%, rgba(166,229,101,.02) 50%, transparent 50.2%);
+  background-size: 120px 120px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.iron-core-theme > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Recolore superfícies antigas para a identidade IRON CORE sem alterar a lógica. */
+.iron-core-theme [class*="bg-[#090909]"],
+.iron-core-theme [class*="bg-[#080808]"],
+.iron-core-theme [class*="bg-[#050505]"],
+.iron-core-theme [class*="bg-[#0a0a0a]"] {
+  background:
+    linear-gradient(145deg, rgba(20, 42, 18, .78), rgba(7, 12, 7, .94) 58%, rgba(10, 20, 9, .96)) !important;
+}
+
+.iron-core-theme [class*="bg-white/[.02]"],
+.iron-core-theme [class*="bg-white/[.025]"] {
+  background: linear-gradient(145deg, rgba(139,220,82,.075), rgba(255,255,255,.018)) !important;
+}
+
+.iron-core-theme [class*="bg-black"] {
+  background: #050805 !important;
+}
+
+.iron-core-theme [class*="border-white/10"],
+.iron-core-theme [class*="border-white/15"] {
+  border-color: rgba(166,229,101,.16) !important;
+}
+
+.iron-core-theme [class*="border-dashed"] {
+  border-color: rgba(166,229,101,.22) !important;
+}
+
+.iron-core-theme [class*="text-[#d9ff00]"],
+.iron-core-theme [class*="text-[#b9ff00]"],
+.iron-core-theme [class*="text-[#eaff9b]"],
+.iron-core-theme [class*="text-[#dffb82]"] {
+  color: var(--iron-green-bright) !important;
+}
+
+.iron-core-theme [class*="bg-[#d9ff00]"] {
+  background: linear-gradient(135deg, var(--iron-green-bright), var(--iron-green)) !important;
+  color: #071006 !important;
+  box-shadow: 0 0 28px rgba(159,227,91,.18);
+}
+
+.iron-core-theme [class*="bg-[#b9ff00]"] {
+  background: rgba(159,227,91,.10) !important;
+}
+
+.iron-core-theme [class*="bg-white"] {
+  background: linear-gradient(145deg, rgba(139,220,82,.10), rgba(255,255,255,.025)) !important;
+}
+
+.iron-core-theme button:not([disabled]):hover,
+.iron-core-theme a:hover {
+  border-color: rgba(166,229,101,.34);
+}
+
+.iron-core-theme section:nth-of-type(even) {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(139,220,82,.055), transparent 28%),
+    radial-gradient(circle at 90% 80%, rgba(166,229,101,.035), transparent 30%);
+}
+
+.iron-core-theme article:hover,
+.iron-core-theme [data-slot="card"]:hover {
+  border-color: rgba(166,229,101,.28);
+  box-shadow: 0 14px 45px rgba(42, 94, 35, .14);
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+@media (max-width: 768px) {
+  .iron-core-theme::before { opacity: .28; background-size: 80px 80px; }
+}
