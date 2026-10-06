@@ -334,16 +334,27 @@ function IronCoreSalesPage() {
         /* Subtle sugarcane-green atmosphere: contrast, depth and corner accents without overpowering the page. */
         main {
           background:
-            radial-gradient(ellipse 70% 55% at 8% 0%, rgba(75, 135, 45, .10), transparent 65%),
-            radial-gradient(ellipse 55% 45% at 92% 25%, rgba(96, 155, 55, .055), transparent 70%),
-            linear-gradient(135deg, #020302 0%, #050905 48%, #020302 100%) !important;
+            radial-gradient(ellipse 90% 55% at 8% 8%, rgba(82, 145, 48, .12), transparent 72%),
+            radial-gradient(ellipse 75% 50% at 92% 38%, rgba(72, 132, 46, .075), transparent 74%),
+            radial-gradient(ellipse 85% 58% at 50% 78%, rgba(45, 98, 38, .07), transparent 76%),
+            linear-gradient(180deg, #020302 0%, #050805 32%, #071007 58%, #030503 100%) !important;
+          background-attachment: scroll;
         }
-        /* Transição contínua: nenhuma seção cria um bloco de cor diferente. */
+        /* Uma única atmosfera contínua: as seções não podem criar blocos pretos/verdes. */
         main > section,
-        main > footer {
+        main > footer,
+        main > section[class*="bg-"],
+        main > section[class*="border-"],
+        main > footer[class*="border-"] {
           background: transparent !important;
           border-top: 0 !important;
           border-bottom: 0 !important;
+        }
+        main > section::before,
+        main > section::after,
+        main > footer::before,
+        main > footer::after {
+          display: none !important;
         }
         /* CTA final sempre legível. */
         [class*="bg-[#E3EF27]"] {
