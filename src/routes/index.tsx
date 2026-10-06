@@ -320,7 +320,7 @@ function IronCoreSalesPage() {
       {demoNotice && (
         <div className="fixed bottom-5 left-5 z-[90] max-w-[calc(100vw-40px)] rounded-2xl border border-white/15 bg-black/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:left-7 sm:bottom-7">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black text-sm font-black">✓</div>
+            <div className="purchase-check-circle flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black text-sm font-black">✓</div>
             <div>
               <p className="text-[11px] font-black uppercase tracking-[.08em] text-white">{demoPurchases[demoPurchaseIndex]} pessoas garantiram</p>
               <p className="mt-1 text-[9px] font-black uppercase tracking-[.16em] text-white/50">oferta especial</p>
@@ -365,7 +365,7 @@ function IronCoreSalesPage() {
           opacity: 1 !important;
           border: 0 !important;
         }
-        .iron-path-cta, .iron-path-cta:hover, .iron-path-cta:focus, .iron-path-cta:active { background: #ffffff !important; background-color: #ffffff !important; color: #000000 !important; opacity: 1 !important; }\n        .iron-path-cta svg { color: #000 !important; stroke: #000 !important; }
+        .iron-path-cta, .iron-path-cta:hover, .iron-path-cta:focus, .iron-path-cta:active { background: #ffffff !important; background-color: #ffffff !important; color: #000000 !important; opacity: 1 !important; }\n        .iron-path-cta svg { color: #000 !important; stroke: #000 !important; }\n        /* Círculo de confirmação da notificação: branco sólido, sem herdar o verde global. */\n        .purchase-check-circle,\n        .purchase-check-circle:hover {\n          background: #ffffff !important;\n          background-color: #ffffff !important;\n          color: #000000 !important;\n          opacity: 1 !important;\n        }
 
         /* CTA final sempre legível. */
         [class*="bg-[#E3EF27]"] {
