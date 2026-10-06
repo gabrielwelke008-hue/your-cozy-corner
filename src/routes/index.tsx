@@ -316,7 +316,7 @@ function IronCoreSalesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(ellipse_at_8%_8%,rgba(139,220,82,.16),transparent_32%),radial-gradient(ellipse_at_92%_22%,rgba(166,229,101,.10),transparent_30%),radial-gradient(ellipse_at_50%_100%,rgba(82,125,53,.08),transparent_42%),linear-gradient(135deg,#040604_0%,#071008_48%,#050705_100%)] text-white">
+    <main className="min-h-screen bg-[radial-gradient(ellipse_at_8%_8%,rgba(139,220,82,.055),transparent_32%),radial-gradient(ellipse_at_92%_22%,rgba(166,229,101,.035),transparent_30%),radial-gradient(ellipse_at_50%_100%,rgba(82,125,53,.025),transparent_42%),linear-gradient(135deg,#020302_0%,#040704_48%,#020302_100%)] text-white">
       {demoNotice && (
         <div className="fixed bottom-5 left-5 z-[90] max-w-[calc(100vw-40px)] rounded-2xl border border-white/15 bg-[#0a0a0a]/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:left-7 sm:bottom-7">
           <div className="flex items-center gap-3">
@@ -346,12 +346,12 @@ function IronCoreSalesPage() {
           z-index: 1;
         }
         #hero-trust-strip {
-          background: linear-gradient(90deg, rgba(111, 170, 62, .08), rgba(255,255,255,.025), rgba(111, 170, 62, .08));
-          border: 1px solid rgba(166, 229, 101, .10);
+          background: linear-gradient(90deg, rgba(111, 170, 62, .035), rgba(255,255,255,.025), rgba(111, 170, 62, .08));
+          border: 1px solid rgba(166, 229, 101, .05);
         }
         article {
           background:
-            linear-gradient(145deg, rgba(145, 215, 82, .055), rgba(255,255,255,.018) 45%, rgba(0,0,0,.18)) !important;
+            linear-gradient(145deg, rgba(145, 215, 82, .025), rgba(255,255,255,.018) 45%, rgba(0,0,0,.18)) !important;
         }
         @media (max-width: 768px) {
           section::before,
@@ -553,7 +553,7 @@ function IronCoreSalesPage() {
       </nav>
 
       <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing">
-<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_18%,rgba(139,220,82,.20),transparent_38%),radial-gradient(ellipse_at_82%_32%,rgba(166,229,101,.12),transparent_34%),linear-gradient(135deg,#030603_0%,#081408_45%,#050805_100%)]" />
+<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_18%,rgba(139,220,82,.07),transparent_38%),radial-gradient(ellipse_at_82%_32%,rgba(166,229,101,.04),transparent_34%),linear-gradient(135deg,#010201_0%,#040704_45%,#020302_100%)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
             <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#E3EF27]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
