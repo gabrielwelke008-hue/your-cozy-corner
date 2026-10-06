@@ -693,6 +693,19 @@ function IronCoreSalesPage() {
 
       <section id="quiz-iron-core" className="reveal-on-scroll border-t border-white/10 bg-[#050505] py-24 sm:py-32">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
+          <div id="final-trust-strip" className="mx-auto mb-10 grid max-w-2xl grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[.025]">
+            <div className="px-3 py-4 text-center">
+              <p className="text-lg font-black">Alunos</p>
+            </div>
+            <div className="border-x border-white/10 px-3 py-4 text-center">
+              <p className="text-lg font-black">✓ CONFIÁVEL</p>
+              <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">Site seguro</p>
+            </div>
+            <div className="px-3 py-4 text-center">
+              <p className="text-lg font-black">GARANTIA</p>
+              <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">De resultado</p>
+            </div>
+          </div>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mt-5 text-4xl font-black uppercase leading-[.95] sm:text-6xl">DESCUBRA O MELHOR CAMINHO PARA O SEU SHAPE</h2>
             <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/45 sm:text-base">
