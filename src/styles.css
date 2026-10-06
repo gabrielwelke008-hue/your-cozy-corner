@@ -252,6 +252,24 @@
   transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
 }
 
+/* Notificação de compra: círculo de confirmação sempre branco, sem depender de hover. */
+.iron-core-theme .purchase-check-circle,
+.iron-core-theme .purchase-check-circle:hover,
+.iron-core-theme .purchase-check-circle:focus,
+.iron-core-theme .purchase-check-circle:active {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #000000 !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+.iron-core-theme .purchase-check-circle::before,
+.iron-core-theme .purchase-check-circle::after {
+  display: none !important;
+}
+
 /* IRON CORE — sem linhas separando uma seção/página da outra. */
 .iron-core-theme section,
 .iron-core-theme footer {
