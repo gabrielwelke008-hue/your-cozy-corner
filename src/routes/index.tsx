@@ -318,7 +318,7 @@ function IronCoreSalesPage() {
   return (
     <main className="min-h-screen text-white">
       {demoNotice && (
-        <div className="fixed bottom-5 left-5 z-[90] max-w-[calc(100vw-40px)] rounded-2xl border border-white/15 bg-[#0a0a0a]/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:left-7 sm:bottom-7">
+        <div className="fixed bottom-5 left-5 z-[90] max-w-[calc(100vw-40px)] rounded-2xl border border-[#b9ff72]/35 bg-[#b9ff72]/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:left-7 sm:bottom-7">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black text-sm font-black">✓</div>
             <div>
@@ -334,9 +334,24 @@ function IronCoreSalesPage() {
         /* Subtle sugarcane-green atmosphere: contrast, depth and corner accents without overpowering the page. */
         main {
           background:
-            radial-gradient(circle at 8% 8%, rgba(139, 220, 82, .10), transparent 26%),
-            radial-gradient(circle at 92% 18%, rgba(178, 235, 112, .07), transparent 24%),
-            linear-gradient(135deg, #050705 0%, #071008 48%, #050505 100%) !important;
+            radial-gradient(ellipse 70% 55% at 8% 0%, rgba(75, 135, 45, .10), transparent 65%),
+            radial-gradient(ellipse 55% 45% at 92% 25%, rgba(96, 155, 55, .055), transparent 70%),
+            linear-gradient(135deg, #020302 0%, #050905 48%, #020302 100%) !important;
+        }
+        /* Transição contínua: nenhuma seção cria um bloco de cor diferente. */
+        main > section,
+        main > footer {
+          background: transparent !important;
+          border-top: 0 !important;
+          border-bottom: 0 !important;
+        }
+        /* CTA final sempre legível. */
+        [class*="bg-[#E3EF27]"] {
+          background: #fff !important;
+          color: #000 !important;
+        }
+        [class*="bg-[#E3EF27]"] * {
+          color: #000 !important;
         }
         section {
           position: relative;
