@@ -318,12 +318,12 @@ function IronCoreSalesPage() {
   return (
     <main className="min-h-screen text-white">
       {demoNotice && (
-        <div className="fixed bottom-5 left-5 z-[90] max-w-[calc(100vw-40px)] rounded-2xl border border-[#b9ff72]/35 bg-[#b9ff72]/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:left-7 sm:bottom-7">
+        <div className="fixed bottom-5 left-5 z-[90] max-w-[calc(100vw-40px)] rounded-2xl border border-white/15 bg-black/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:left-7 sm:bottom-7">
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white text-black text-sm font-black">✓</div>
             <div>
               <p className="text-[11px] font-black uppercase tracking-[.08em] text-white">{demoPurchases[demoPurchaseIndex]} pessoas garantiram</p>
-              <p className="mt-1 text-[9px] font-black uppercase tracking-[.16em] text-white/35">oferta especial</p>
+              <p className="mt-1 text-[9px] font-black uppercase tracking-[.16em] text-white/50">oferta especial</p>
             </div>
           </div>
         </div>
