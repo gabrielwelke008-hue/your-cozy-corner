@@ -242,7 +242,7 @@ function QuizAndOffer() {
         <div className="my-10 h-px bg-white/10" />
 
         <p className="text-xs font-black uppercase tracking-[.22em] text-white/45">VOCÊ LIBEROU UMA CONDIÇÃO ESPECIAL DE ENTRADA NA IRON CORE.</p>
-        <p className="mt-7 text-5xl font-black tracking-[-.04em] sm:text-7xl">65% OFF</p>
+        <p className="mt-7 text-5xl font-black tracking-[-.04em] sm:text-7xl">57% OFF</p>
         <p className="mt-5 text-sm text-white/35 line-through">De R$ 79,90</p>
         <p className="mt-1 text-xl font-black uppercase text-white/60">POR APENAS</p>
         <p className="mt-1 text-4xl font-black sm:text-5xl">R$ 34,11</p>
