@@ -107,7 +107,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="iron-core-theme">
         {children}
         <Scripts />
       </body>
