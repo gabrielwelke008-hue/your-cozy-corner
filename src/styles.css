@@ -136,9 +136,7 @@
 .iron-core-theme {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 7% 9%, rgba(139, 220, 82, .055), transparent 24%),
-    radial-gradient(circle at 93% 18%, rgba(178, 235, 112, .035), transparent 22%),
-    linear-gradient(135deg, #050705 0%, #071008 48%, #050505 100%);
+    radial-gradient(ellipse 70% 55% at 8% 0%, rgba(75, 135, 45, .12), transparent 65%), radial-gradient(ellipse 55% 45% at 92% 25%, rgba(96, 155, 55, .07), transparent 70%), linear-gradient(135deg, #020302 0%, #050905 48%, #020302 100%);
 }
 .iron-core-theme #root,
 .iron-core-theme main {
@@ -172,18 +170,15 @@
 
 /* IRON CORE — identidade visual global: nenhum módulo/tela deve voltar ao preto genérico. */
 .iron-core-theme {
-  --iron-green: #9fe35b;
-  --iron-green-bright: #b8f47a;
+  --iron-green: #6f9f45;
+  --iron-green-bright: #86ad58;
   --iron-green-deep: #18351a;
   --iron-surface: rgba(10, 18, 10, .88);
   --iron-surface-soft: rgba(16, 28, 16, .72);
   position: relative;
   overflow-x: hidden;
   background:
-    radial-gradient(ellipse 70% 45% at 0% 0%, rgba(139, 220, 82, .075), transparent 62%),
-    radial-gradient(ellipse 55% 40% at 100% 20%, rgba(166, 229, 101, .045), transparent 65%),
-    radial-gradient(ellipse 65% 50% at 50% 100%, rgba(82, 125, 53, .035), transparent 70%),
-    #040604 !important;
+    radial-gradient(ellipse 70% 55% at 8% 0%, rgba(75, 135, 45, .12), transparent 65%), radial-gradient(ellipse 55% 45% at 92% 25%, rgba(96, 155, 55, .07), transparent 70%), radial-gradient(ellipse 65% 55% at 50% 100%, rgba(48, 92, 38, .05), transparent 72%), linear-gradient(135deg, #020302 0%, #050905 48%, #020302 100%) !important;
 }
 
 .iron-core-theme > * {
