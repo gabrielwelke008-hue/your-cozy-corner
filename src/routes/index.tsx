@@ -681,8 +681,8 @@ function IronCoreSalesPage() {
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <div id="final-trust-strip" className="mx-auto mb-10 grid max-w-2xl grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[.025]">
             <div className="px-3 py-4 text-center">
-              <p className="text-lg font-black">Alunos</p>
-              <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">+5 MIL</p>
+              <p className="text-lg font-black">+5 MIL</p>
+              <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">Alunos</p>
             </div>
             <div className="border-x border-white/10 px-3 py-4 text-center">
               <p className="text-lg font-black">✓ CONFIÁVEL</p>
