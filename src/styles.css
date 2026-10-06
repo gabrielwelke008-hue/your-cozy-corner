@@ -252,3 +252,15 @@
   transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
 }
 
+/* IRON CORE — sem linhas separando uma seção/página da outra. */
+.iron-core-theme section,
+.iron-core-theme footer {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
+.iron-core-theme section.border-y,
+.iron-core-theme section.border-t,
+.iron-core-theme footer.border-t {
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
