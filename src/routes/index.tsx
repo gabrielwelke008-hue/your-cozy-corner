@@ -245,7 +245,7 @@ function QuizAndOffer() {
         <p className="mt-7 text-5xl font-black tracking-[-.04em] sm:text-7xl">65% OFF</p>
         <p className="mt-5 text-sm text-white/35 line-through">De R$ 79,90</p>
         <p className="mt-1 text-xl font-black uppercase text-white/60">POR APENAS</p>
-        <p className="mt-1 text-4xl font-black sm:text-5xl">R$ 27,31</p>
+        <p className="mt-1 text-4xl font-black sm:text-5xl">R$ 34,81</p>
         <p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/30">CONDIÇÃO ÚNICA DE ENTRADA</p>
         <p className="mx-auto mt-5 max-w-lg text-xs leading-6 text-white/35">
           Essa condição especial foi criada para novos alunos que estão começando agora e fica disponível enquanto o contador estiver ativo.
