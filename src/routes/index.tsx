@@ -174,7 +174,7 @@ function QuizAndOffer() {
       <div className="mx-auto mt-14 max-w-xl">
         <button
           onClick={() => setStarted(true)}
-          className="iron-path-cta group flex w-full items-center justify-center gap-3 rounded-2xl bg-white px-7 py-5 text-xs font-black uppercase tracking-[.16em] !text-black shadow-[0_12px_40px_rgba(255,255,255,.08)] transition hover:-translate-y-1 hover:bg-white/90"
+          className="iron-path-cta group flex w-full items-center justify-center gap-3 rounded-2xl !bg-white !text-black px-7 py-5 text-xs font-black uppercase tracking-[.16em] shadow-[0_12px_40px_rgba(255,255,255,.08)] transition hover:-translate-y-1 hover:!bg-white" style={{ backgroundColor: "#fff", color: "#000" }}
         >
           QUERO DESCOBRIR MEU CAMINHO <ArrowRight size={17} />
         </button>
@@ -365,7 +365,7 @@ function IronCoreSalesPage() {
           opacity: 1 !important;
           border: 0 !important;
         }
-        .iron-path-cta svg { color: #000 !important; }
+        .iron-path-cta, .iron-path-cta:hover, .iron-path-cta:focus, .iron-path-cta:active { background: #ffffff !important; background-color: #ffffff !important; color: #000000 !important; opacity: 1 !important; }\n        .iron-path-cta svg { color: #000 !important; stroke: #000 !important; }
 
         /* CTA final sempre legível. */
         [class*="bg-[#E3EF27]"] {
