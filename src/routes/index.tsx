@@ -316,7 +316,7 @@ function IronCoreSalesPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#050505] text-white">
+    <main className="min-h-screen bg-[radial-gradient(ellipse_at_8%_8%,rgba(139,220,82,.16),transparent_32%),radial-gradient(ellipse_at_92%_22%,rgba(166,229,101,.10),transparent_30%),radial-gradient(ellipse_at_50%_100%,rgba(82,125,53,.08),transparent_42%),linear-gradient(135deg,#040604_0%,#071008_48%,#050705_100%)] text-white">
       {demoNotice && (
         <div className="fixed bottom-5 left-5 z-[90] max-w-[calc(100vw-40px)] rounded-2xl border border-white/15 bg-[#0a0a0a]/95 px-5 py-4 shadow-2xl backdrop-blur-xl sm:left-7 sm:bottom-7">
           <div className="flex items-center gap-3">
