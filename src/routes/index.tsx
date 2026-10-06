@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Dumbbell, ListChecks, ShieldCheck, Sparkles, Timer, Utensils, Zap } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
-const storyPhoto = "/src/assets/story-photo.jpg";
+const storyPhoto = "/story-photo.jpg";
 
 export const Route = createFileRoute("/")({ component: IronCoreSalesPage });
 
