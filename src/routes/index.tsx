@@ -591,7 +591,7 @@ function IronCoreSalesPage() {
       </nav>
 
       <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing">
-<div className="absolute inset-0 bg-black" />
+<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_18%,rgba(139,220,82,.20),transparent_38%),radial-gradient(ellipse_at_82%_32%,rgba(166,229,101,.12),transparent_34%),linear-gradient(135deg,#030603_0%,#081408_45%,#050805_100%)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
             <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#d9ff00]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
