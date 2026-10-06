@@ -174,7 +174,7 @@ function QuizAndOffer() {
       <div className="mx-auto mt-14 max-w-xl">
         <button
           onClick={() => setStarted(true)}
-          className="iron-path-cta group flex w-full items-center justify-center gap-3 rounded-2xl !bg-white !text-black px-7 py-5 text-xs font-black uppercase tracking-[.16em] shadow-[0_12px_40px_rgba(255,255,255,.08)] transition hover:-translate-y-1 hover:!bg-white" style={{ backgroundColor: "#fff", color: "#000" }}
+          className="iron-path-cta group flex w-full items-center justify-center gap-3 rounded-2xl px-7 py-5 text-xs font-black uppercase tracking-[.16em] shadow-[0_12px_40px_rgba(255,255,255,.08)] transition hover:-translate-y-1" style={{ background: "#ffffff", backgroundColor: "#ffffff", color: "#000000", opacity: 1 }}
         >
           QUERO DESCOBRIR MEU CAMINHO <ArrowRight size={17} />
         </button>
