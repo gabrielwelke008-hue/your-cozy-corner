@@ -523,8 +523,7 @@ function IronCoreSalesPage() {
             <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#d9ff00]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
             <h1 className="max-w-4xl text-5xl font-black uppercase leading-[.88] tracking-[-.045em] sm:text-7xl lg:text-[6.5rem]">DO ZERO AO<br/><span className="text-[#d9ff00]">SHAPE DE PRAIA</span></h1>
             <p className="mt-3 text-2xl font-black uppercase leading-[.88] tracking-[-.045em] text-white/70 sm:text-3xl">sem depender de personal.</p>
-            <a href="#como-funciona" className="mx-auto mt-9 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
-            <div id="hero-trust-strip" className="relative z-30 mt-8 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
+            <div id="hero-trust-strip" className="relative z-30 mt-6 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
               <div className="rounded-xl border border-white/10 bg-white/[.025] px-4 py-4 text-center">
                 <p className="text-lg font-black">+5 MIL</p>
                 <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">Alunos</p>
@@ -538,6 +537,7 @@ function IronCoreSalesPage() {
                 <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">De resultado</p>
               </div>
             </div>
+            <a href="#como-funciona" className="mx-auto mt-8 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
             <div id="hero-impact-cards" className="mx-auto mt-6 grid w-full max-w-3xl grid-cols-2 gap-2 sm:grid-cols-4">
               {[
                 [Dumbbell, "Treino personalizado"],
