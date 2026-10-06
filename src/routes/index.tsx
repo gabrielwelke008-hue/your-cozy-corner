@@ -365,7 +365,7 @@ function IronCoreSalesPage() {
           opacity: 1 !important;
           border: 0 !important;
         }
-        .iron-path-cta, .iron-path-cta:hover, .iron-path-cta:focus, .iron-path-cta:active { background: #ffffff !important; background-color: #ffffff !important; color: #000000 !important; opacity: 1 !important; }\n        .iron-path-cta svg { color: #000 !important; stroke: #000 !important; }\n        /* Círculo de confirmação da notificação: branco sólido, sem herdar o verde global. */\n        .purchase-check-circle,\n        .purchase-check-circle:hover {\n          background: #ffffff !important;\n          background-color: #ffffff !important;\n          color: #000000 !important;\n          opacity: 1 !important;\n        }
+        .iron-path-cta, .iron-path-cta:hover, .iron-path-cta:focus, .iron-path-cta:active { background: #ffffff !important; background-color: #ffffff !important; color: #000000 !important; opacity: 1 !important; }\n        .iron-path-cta svg { color: #000 !important; stroke: #000 !important; }\n        /* Círculo de confirmação da notificação: branco sólido, sem herdar o verde global. */\n        .purchase-check-circle,\n        .purchase-check-circle:hover,\n        .purchase-check-circle:focus,\n        .purchase-check-circle:active {\n          background: #ffffff !important;\n          background-color: #ffffff !important;\n          background-image: none !important;\n          color: #000000 !important;\n          opacity: 1 !important;\n          box-shadow: none !important;\n        }\n        .purchase-check-circle::before,\n        .purchase-check-circle::after {\n          display: none !important;\n        }
 
         /* CTA final sempre legível. */
         [class*="bg-[#E3EF27]"] {
