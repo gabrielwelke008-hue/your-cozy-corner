@@ -23,25 +23,25 @@ const story = [
 function AnatomicalModel() {
   return (
     <div className="relative mx-auto h-[500px] w-[280px] [perspective:1000px] sm:h-[620px] sm:w-[360px]">
-      <div className="absolute inset-0 rounded-full bg-[#b9ff00]/10 blur-[90px]" />
+      <div className="absolute inset-0 rounded-full bg-[#E3EF27]/10 blur-[90px]" />
       <div className="anatomy-spin relative h-full w-full [transform-style:preserve-3d]"><div className="anatomy-breath relative h-full w-full">
         <svg viewBox="0 0 260 620" className="relative z-10 h-full w-full" aria-label="Modelo anatômico futurista">
-          <ellipse cx="130" cy="64" rx="35" ry="45" fill="none" stroke="#eaff9b" strokeWidth="5" />
-          <path d="M108 52 Q130 40 152 52 M105 68 Q130 58 155 68 M108 84 Q130 76 152 84" fill="none" stroke="#dffb82" strokeWidth="3" />
-          <path d="M118 106 L142 106 L150 145 L145 185 L115 185 L110 145 Z" fill="none" stroke="#eaff9b" strokeWidth="4" />
-          <path d="M115 110 Q93 116 84 143 L99 205 L115 185 L130 143 Z" fill="#d9ff55" opacity=".9" />
-          <path d="M145 110 Q167 116 176 143 L161 205 L145 185 L130 143 Z" fill="#d9ff55" opacity=".9" />
-          <path d="M99 137 Q130 158 161 137 M98 159 Q130 181 162 159 M102 181 Q130 202 158 181" fill="none" stroke="#efffb0" strokeWidth="2" />
-          <path d="M84 143 L57 260 M176 143 L203 260" fill="none" stroke="#eaff9b" strokeWidth="10" strokeLinecap="round" />
-          <path d="M57 260 L45 365 M203 260 L215 365" stroke="#eaff9b" strokeWidth="9" strokeLinecap="round" />
-          <path d="M108 184 L112 310 L130 337 L148 310 L152 184" fill="none" stroke="#eaff9b" strokeWidth="5" />
-          <path d="M105 190 Q130 210 155 190 L149 302 L130 325 L111 302 Z" fill="none" stroke="#d9ff55" strokeWidth="3" />
-          <path d="M112 307 L94 455 M148 307 L166 455" fill="none" stroke="#eaff9b" strokeWidth="11" strokeLinecap="round" />
-          <path d="M94 455 L83 590 M166 455 L177 590" stroke="#eaff9b" strokeWidth="9" strokeLinecap="round" />
+          <ellipse cx="130" cy="64" rx="35" ry="45" fill="none" stroke="#E3EF27" strokeWidth="5" />
+          <path d="M108 52 Q130 40 152 52 M105 68 Q130 58 155 68 M108 84 Q130 76 152 84" fill="none" stroke="#E3EF27" strokeWidth="3" />
+          <path d="M118 106 L142 106 L150 145 L145 185 L115 185 L110 145 Z" fill="none" stroke="#E3EF27" strokeWidth="4" />
+          <path d="M115 110 Q93 116 84 143 L99 205 L115 185 L130 143 Z" fill="#E3EF27" opacity=".9" />
+          <path d="M145 110 Q167 116 176 143 L161 205 L145 185 L130 143 Z" fill="#E3EF27" opacity=".9" />
+          <path d="M99 137 Q130 158 161 137 M98 159 Q130 181 162 159 M102 181 Q130 202 158 181" fill="none" stroke="#E3EF27" strokeWidth="2" />
+          <path d="M84 143 L57 260 M176 143 L203 260" fill="none" stroke="#E3EF27" strokeWidth="10" strokeLinecap="round" />
+          <path d="M57 260 L45 365 M203 260 L215 365" stroke="#E3EF27" strokeWidth="9" strokeLinecap="round" />
+          <path d="M108 184 L112 310 L130 337 L148 310 L152 184" fill="none" stroke="#E3EF27" strokeWidth="5" />
+          <path d="M105 190 Q130 210 155 190 L149 302 L130 325 L111 302 Z" fill="none" stroke="#E3EF27" strokeWidth="3" />
+          <path d="M112 307 L94 455 M148 307 L166 455" fill="none" stroke="#E3EF27" strokeWidth="11" strokeLinecap="round" />
+          <path d="M94 455 L83 590 M166 455 L177 590" stroke="#E3EF27" strokeWidth="9" strokeLinecap="round" />
         </svg>
         </div>
       </div>
-      <div className="absolute bottom-0 left-1/2 z-20 -translate-x-1/2 rounded-full border border-[#d9ff00]/25 bg-black/70 px-4 py-2 text-[9px] font-black uppercase tracking-[.3em] text-[#d9ff00]">Muscle protocol • 360°</div>
+      <div className="absolute bottom-0 left-1/2 z-20 -translate-x-1/2 rounded-full border border-[#E3EF27]/25 bg-black/70 px-4 py-2 text-[9px] font-black uppercase tracking-[.3em] text-[#E3EF27]">Muscle protocol • 360°</div>
     </div>
   );
 }
@@ -390,9 +390,9 @@ function IronCoreSalesPage() {
           border-color: rgba(255,255,255,.18) !important;
           background-color: rgba(255,255,255,.025) !important;
         }
-        [class*="bg-[#d9ff00]"] { background: #fff !important; color: #000 !important; }
-        [class*="text-[#d9ff00]"] { color: #fff !important; }
-        [class*="border-[#d9ff00]"] { border-color: rgba(255,255,255,.18) !important; }
+        [class*="bg-[#E3EF27]"] { background: #fff !important; color: #000 !important; }
+        [class*="text-[#E3EF27]"] { color: #fff !important; }
+        [class*="border-[#E3EF27]"] { border-color: rgba(255,255,255,.18) !important; }
 
         h1, h2, h3, .font-black {
           font-family: 'Montserrat', Arial, sans-serif;
@@ -548,7 +548,7 @@ function IronCoreSalesPage() {
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
           <div className="flex items-center"><span className="text-sm font-black tracking-[.3em]">IRON CORE</span></div>
-          <a href="#como-funciona" className="bg-transparent !bg-transparent shadow-none text-xs font-bold uppercase tracking-[.2em] text-white/45 hover:text-[#d9ff00]">Como funciona</a>
+          <a href="#como-funciona" className="bg-transparent !bg-transparent shadow-none text-xs font-bold uppercase tracking-[.2em] text-white/45 hover:text-[#E3EF27]">Como funciona</a>
         </div>
       </nav>
 
@@ -556,8 +556,8 @@ function IronCoreSalesPage() {
 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_18%_18%,rgba(139,220,82,.20),transparent_38%),radial-gradient(ellipse_at_82%_32%,rgba(166,229,101,.12),transparent_34%),linear-gradient(135deg,#030603_0%,#081408_45%,#050805_100%)]" />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
-            <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#d9ff00]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
-            <h1 className="max-w-4xl text-5xl font-black uppercase leading-[.88] tracking-[-.045em] sm:text-7xl lg:text-[6.5rem]">DO ZERO AO<br/><span className="text-[#d9ff00]">SHAPE DE PRAIA</span></h1>
+            <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#E3EF27]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
+            <h1 className="max-w-4xl text-5xl font-black uppercase leading-[.88] tracking-[-.045em] sm:text-7xl lg:text-[6.5rem]">DO ZERO AO<br/><span className="text-[#E3EF27]">SHAPE DE PRAIA</span></h1>
             <p className="mt-3 text-2xl font-black uppercase leading-[.88] tracking-[-.045em] text-white/70 sm:text-3xl">sem depender de personal.</p>
             <div id="hero-trust-strip" className="relative z-30 mt-6 grid w-full max-w-2xl grid-cols-1 gap-3 sm:grid-cols-3">
               <div className="rounded-xl border border-white/10 bg-white/[.025] px-4 py-4 text-center">
@@ -573,7 +573,7 @@ function IronCoreSalesPage() {
                 <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">De resultado</p>
               </div>
             </div>
-            <a href="#como-funciona" className="mx-auto mt-8 inline-flex items-center gap-3 rounded-xl bg-[#d9ff00] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
+            <a href="#como-funciona" className="mx-auto mt-8 inline-flex items-center gap-3 rounded-xl bg-[#E3EF27] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
             <div id="hero-impact-cards" className="mx-auto mt-6 grid w-full max-w-3xl grid-cols-2 gap-2 sm:grid-cols-4">
               {[
                 [Dumbbell, "Treino personalizado"],
@@ -596,7 +596,7 @@ function IronCoreSalesPage() {
 
       <section id="como-funciona" className="reveal-on-scroll py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h2 className="bg-transparent !bg-transparent shadow-none mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">COMO FUNCIONA A <span className="bg-transparent !bg-transparent shadow-none text-[#d9ff00]">IRON CORE?</span></h2>
+          <h2 className="bg-transparent !bg-transparent shadow-none mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">COMO FUNCIONA A <span className="bg-transparent !bg-transparent shadow-none text-[#E3EF27]">IRON CORE?</span></h2>
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
               ["01","ENTENDEMOS VOCÊ","Entendemos seus objetivos, sua rotina, seu nível atual e o físico que você quer construir."],
@@ -606,7 +606,7 @@ function IronCoreSalesPage() {
               ["05","VOCÊ EVOLUI COM MAIS CLAREZA","Conforme avança, você entende melhor seu corpo, acompanha sua evolução e sabe quais pontos precisa melhorar."],
               ["06","MENOS COMPLICAÇÃO. MAIS DIREÇÃO.","A Iron Core reúne o conhecimento e as estratégias que você precisa em um só lugar, para que você possa focar no que realmente importa: construir o seu shape."],
             ].map(([number,heading,description]) => <article key={number} className="rounded-2xl border border-white/10 bg-[#090909] p-8">
-              <span className="text-sm font-black text-[#d9ff00]">{number}</span>
+              <span className="text-sm font-black text-[#E3EF27]">{number}</span>
               <h3 className="mt-8 text-xl font-black uppercase leading-tight">{heading}</h3>
               <p className="mt-4 text-sm leading-7 text-white/45">{description}</p>
             </article>)}
@@ -624,13 +624,13 @@ function IronCoreSalesPage() {
               {testimonials.map((item,i)=><article key={i} className="min-w-[78%] sm:min-w-[42%] lg:min-w-[31%]">
                 <div className="flex aspect-[4/5] flex-col items-center justify-center rounded-2xl border border-dashed border-white/15 bg-white/[.02] p-6 text-center">
                   <Sparkles size={42} className="text-white/10"/>
-                  <p className="mt-5 text-[10px] font-black uppercase tracking-[.25em] text-[#d9ff00]">{item}</p>
+                  <p className="mt-5 text-[10px] font-black uppercase tracking-[.25em] text-[#E3EF27]">{item}</p>
                 </div>
               </article>)}
             </div>
           </div>
           <div className="mt-6 flex justify-between">
-            <div className="flex gap-2">{testimonials.map((_,i)=><button key={i} onClick={()=>setTestimonialIndex(i)} aria-label={"Item "+(i+1)} className={"h-1.5 rounded-full "+(i===testimonialIndex?"w-8 bg-[#d9ff00]":"w-2 bg-white/20")}/>)}</div>
+            <div className="flex gap-2">{testimonials.map((_,i)=><button key={i} onClick={()=>setTestimonialIndex(i)} aria-label={"Item "+(i+1)} className={"h-1.5 rounded-full "+(i===testimonialIndex?"w-8 bg-[#E3EF27]":"w-2 bg-white/20")}/>)}</div>
             <div className="flex gap-2"><button onClick={()=>setTestimonialIndex(v=>Math.max(0,v-1))} className="rounded-full border border-white/10 p-2"><ChevronLeft size={17}/></button><button onClick={()=>setTestimonialIndex(v=>Math.min(testimonials.length-1,v+1))} className="rounded-full border border-white/10 p-2"><ChevronRight size={17}/></button></div>
           </div>
         </div>
@@ -640,7 +640,7 @@ function IronCoreSalesPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-7 lg:grid-cols-[.8fr_1.2fr]">
             <div>
-              <h2 className="bg-transparent !bg-transparent shadow-none mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">A HISTÓRIA<br/><span className="bg-transparent !bg-transparent shadow-none text-[#d9ff00]">POR TRÁS</span></h2>
+              <h2 className="bg-transparent !bg-transparent shadow-none mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">A HISTÓRIA<br/><span className="bg-transparent !bg-transparent shadow-none text-[#E3EF27]">POR TRÁS</span></h2>
               <div className="mt-6 aspect-[4/5] overflow-hidden rounded-2xl border border-dashed border-white/15 bg-white/[.02]">
                 <div className="flex h-full flex-col items-center justify-center p-8 text-center"><Utensils size={42} className="text-white/10"/><p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/25">Espaço reservado para a foto</p><p className="mt-2 text-xs text-white/20">Envie a foto e ela será colocada aqui.</p></div>
               </div>
