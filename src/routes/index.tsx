@@ -331,6 +331,80 @@ function IronCoreSalesPage() {
       <style>{`
 
         .hero-landing { isolation: isolate; }
+        /* Subtle sugarcane-green atmosphere: contrast, depth and corner accents without overpowering the page. */
+        main {
+          background:
+            radial-gradient(circle at 8% 8%, rgba(139, 220, 82, .10), transparent 26%),
+            radial-gradient(circle at 92% 18%, rgba(178, 235, 112, .07), transparent 24%),
+            linear-gradient(135deg, #050705 0%, #071008 48%, #050505 100%) !important;
+        }
+        section {
+          position: relative;
+        }
+        section::before,
+        section::after {
+          content: "";
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          pointer-events: none;
+          opacity: .42;
+          z-index: 0;
+          background:
+            linear-gradient(rgba(166, 229, 101, .22), rgba(166, 229, 101, .22)) 0 0 / 42px 1px no-repeat,
+            linear-gradient(rgba(166, 229, 101, .22), rgba(166, 229, 101, .22)) 0 0 / 1px 42px no-repeat;
+        }
+        section::before {
+          top: 22px;
+          left: 22px;
+          border-top: 1px solid rgba(166, 229, 101, .10);
+          border-left: 1px solid rgba(166, 229, 101, .10);
+          border-radius: 18px 0 0 0;
+        }
+        section::after {
+          right: 22px;
+          bottom: 22px;
+          transform: rotate(180deg);
+          border-top: 1px solid rgba(166, 229, 101, .08);
+          border-left: 1px solid rgba(166, 229, 101, .08);
+          border-radius: 18px 0 0 0;
+        }
+        section > div {
+          position: relative;
+          z-index: 1;
+        }
+        section:first-of-type {
+          background:
+            radial-gradient(circle at 72% 38%, rgba(143, 222, 81, .09), transparent 24%),
+            radial-gradient(circle at 18% 75%, rgba(190, 235, 120, .05), transparent 22%),
+            #020402 !important;
+        }
+        section:first-of-type::before {
+          width: 220px;
+          height: 220px;
+          border-color: rgba(166, 229, 101, .16);
+          box-shadow: 0 0 90px rgba(126, 205, 72, .08);
+        }
+        section:first-of-type::after {
+          width: 180px;
+          height: 180px;
+          border-color: rgba(166, 229, 101, .12);
+        }
+        #hero-trust-strip {
+          background: linear-gradient(90deg, rgba(111, 170, 62, .08), rgba(255,255,255,.025), rgba(111, 170, 62, .08));
+          border: 1px solid rgba(166, 229, 101, .10);
+        }
+        article {
+          background:
+            linear-gradient(145deg, rgba(145, 215, 82, .055), rgba(255,255,255,.018) 45%, rgba(0,0,0,.18)) !important;
+        }
+        @media (max-width: 768px) {
+          section::before,
+          section::after { width: 90px; height: 90px; opacity: .3; }
+          section:first-of-type::before { width: 130px; height: 130px; }
+        }
+
+
         .reveal-on-scroll {
           opacity: 0;
           transform: translate3d(0, 28px, 0);
