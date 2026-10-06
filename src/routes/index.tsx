@@ -548,7 +548,7 @@ function IronCoreSalesPage() {
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
           <div className="flex items-center"><span className="text-sm font-black tracking-[.3em]">IRON CORE</span></div>
-          <a href="#como-funciona" className="text-xs font-bold uppercase tracking-[.2em] text-white/45 hover:text-[#d9ff00]">Como funciona</a>
+          <a href="#como-funciona" className="bg-transparent !bg-transparent shadow-none text-xs font-bold uppercase tracking-[.2em] text-white/45 hover:text-[#d9ff00]">Como funciona</a>
         </div>
       </nav>
 
@@ -596,7 +596,7 @@ function IronCoreSalesPage() {
 
       <section id="como-funciona" className="reveal-on-scroll py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h2 className="mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">COMO FUNCIONA A <span className="text-[#d9ff00]">IRON CORE?</span></h2>
+          <h2 className="bg-transparent !bg-transparent shadow-none mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">COMO FUNCIONA A <span className="bg-transparent !bg-transparent shadow-none text-[#d9ff00]">IRON CORE?</span></h2>
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
               ["01","ENTENDEMOS VOCÊ","Entendemos seus objetivos, sua rotina, seu nível atual e o físico que você quer construir."],
@@ -640,7 +640,7 @@ function IronCoreSalesPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-7 lg:grid-cols-[.8fr_1.2fr]">
             <div>
-              <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">A HISTÓRIA<br/><span className="text-[#d9ff00]">POR TRÁS</span></h2>
+              <h2 className="bg-transparent !bg-transparent shadow-none mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">A HISTÓRIA<br/><span className="bg-transparent !bg-transparent shadow-none text-[#d9ff00]">POR TRÁS</span></h2>
               <div className="mt-6 aspect-[4/5] overflow-hidden rounded-2xl border border-dashed border-white/15 bg-white/[.02]">
                 <div className="flex h-full flex-col items-center justify-center p-8 text-center"><Utensils size={42} className="text-white/10"/><p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/25">Espaço reservado para a foto</p><p className="mt-2 text-xs text-white/20">Envie a foto e ela será colocada aqui.</p></div>
               </div>
