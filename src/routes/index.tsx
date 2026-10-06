@@ -239,20 +239,6 @@ function QuizAndOffer() {
         <p className="mt-1 text-xl font-black uppercase text-white/60">POR APENAS</p>
         <p className="mt-1 text-4xl font-black sm:text-5xl">R$ 27,31</p>
         <p className="mt-4 text-[10px] font-black uppercase tracking-[.25em] text-white/30">CONDIÇÃO ÚNICA DE ENTRADA</p>
-        <div id="final-trust-strip" className="mx-auto mt-8 grid max-w-2xl grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/[.025]">
-          <div className="px-3 py-4 text-center">
-            <p className="text-lg font-black">Alunos</p>
-          </div>
-          <div className="border-x border-white/10 px-3 py-4 text-center">
-            <p className="text-lg font-black">✓ CONFIÁVEL</p>
-            <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">Site seguro</p>
-          </div>
-          <div className="px-3 py-4 text-center">
-            <p className="text-lg font-black">GARANTIA</p>
-            <p className="mt-1 text-[9px] font-black uppercase tracking-[.18em] text-white/35">De resultado</p>
-          </div>
-        </div>
-
         <p className="mx-auto mt-5 max-w-lg text-xs leading-6 text-white/35">
           Essa condição especial foi criada para novos alunos que estão começando agora e fica disponível enquanto o contador estiver ativo.
         </p>
@@ -268,9 +254,10 @@ function QuizAndOffer() {
 
         <a
           href="#checkout"
-          className="mt-9 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-white px-7 py-5 text-xs font-black uppercase tracking-[.16em] text-black transition hover:-translate-y-1 hover:bg-white/90"
+          className="final-opportunity-cta mt-9 inline-flex w-full items-center justify-center gap-3 rounded-2xl px-7 py-5 text-xs font-black uppercase tracking-[.16em] text-black transition hover:-translate-y-1"
+          style={{ background: "#ffffff", backgroundColor: "#ffffff", color: "#000000", opacity: 1 }}
         >
-          QUERO COMEÇAR MEU SHAPE <ArrowRight size={18} />
+          QUERO GARANTIR A OPORTUNIDADE <ArrowRight size={18} />
         </a>
 
         <button onClick={resetQuiz} className="mt-5 text-[10px] font-black uppercase tracking-[.2em] text-white/25 transition hover:text-white/50">
