@@ -245,12 +245,6 @@
   border-color: rgba(166,229,101,.20);
 }
 
-.iron-core-theme section:nth-of-type(even) {
-  background:
-    radial-gradient(circle at 10% 20%, rgba(139,220,82,.055), transparent 28%),
-    radial-gradient(circle at 90% 80%, rgba(166,229,101,.018), transparent 30%);
-}
-
 .iron-core-theme article:hover,
 .iron-core-theme [data-slot="card"]:hover {
   border-color: rgba(166,229,101,.28);
@@ -258,8 +252,3 @@
   transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
 }
 
-@media (max-width: 768px) {
-  .iron-core-theme .hero-landing > div:first-child {
-    background: radial-gradient(ellipse at 18% 15%, rgba(139,220,82,.075), transparent 42%), linear-gradient(145deg,#030603,#081208 55%,#050805) !important;
-  }
-}
