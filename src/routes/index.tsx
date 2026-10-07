@@ -595,7 +595,7 @@ function IronCoreSalesPage() {
 
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-          <div className="flex items-center gap-2.5"><img src={ironCoreLogo} alt="Logo IRON CORE" className="h-10 w-10 shrink-0 rounded-md object-contain" onError={(e) => { e.currentTarget.src = "/story-photo.jpg"; }} /><span className="text-sm font-black tracking-[.3em]">IRON CORE</span></div>
+          <div className="flex items-center gap-2.5"><img src={ironCoreLogo} alt="Logo IRON CORE" className="h-10 w-10 shrink-0 rounded-md object-contain" /><span className="text-sm font-black tracking-[.3em]">IRON CORE</span></div>
           <a href="#como-funciona" className="bg-transparent !bg-transparent shadow-none text-xs font-bold uppercase tracking-[.2em] text-white/45 hover:text-[#E3EF27]">Como funciona</a>
         </div>
       </nav>
