@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Dumbbell, ListChecks, ShieldCheck, Sparkles, Timer, Utensils, Zap } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 const storyPhoto = "/story-photo.jpg"; // sync trigger 2026-10-06
-const ironCoreLogo = "/iron-core-logo.webp";
+const ironCoreLogo = "/iron-core-logo.png";
 
 export const Route = createFileRoute("/")({ component: IronCoreSalesPage });
 
