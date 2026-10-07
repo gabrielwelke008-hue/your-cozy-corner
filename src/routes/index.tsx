@@ -676,7 +676,7 @@ function IronCoreSalesPage() {
             <div>
               <h2 className="bg-transparent !bg-transparent shadow-none mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">A HISTÓRIA<br/><span className="bg-transparent !bg-transparent shadow-none text-[#E3EF27]">POR TRÁS</span></h2>
               <div className="mt-6 aspect-[4/5] overflow-hidden rounded-2xl border border-dashed border-white/15 bg-white/[.02]">
-                <img src={storyPhoto} alt="Foto da história por trás da Iron Core" className="h-full w-full object-cover" />
+                <img src={storyPhoto} alt="Foto da história por trás da Iron Core" className="mx-auto h-auto max-h-[720px] w-full max-w-[480px] object-contain object-top" />
               </div>
             </div>
             <article className="story-copy bg-transparent text-[13px] leading-[1.45] text-white/60 sm:text-sm sm:leading-[1.55]">
