@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Dumbbell, ListChecks, ShieldCheck, Sparkles, Timer, Utensils, Zap } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
 const storyPhoto = "/story-photo.jpg"; // sync trigger 2026-10-06
-const ironCoreLogo = "data:image/webp;base64,UklGRnIIAABXRUJQVlA4IGYIAACwdQCdASpYAlgCPp1Op02lpKQmIPj4QMATiWlu4XaV7mNwn59c/VXw1dwvVP9eOTZ9rz2fse+qnYDtJ/yj2UHm6yzQnwX/uvRV6b94MZvzO6gHS5Bf3onvSQe7MUBcMdIS8VPekg92YoC4Y6Ql4qe9JB7sxQFwx0hLxU96SD3ZigLhjpCXip70kHuzFAXDHSEvFT3pIPdmKAuGOkJeKnvSQe7MUBcMdIS8VPekg92YoC4Y6Ql4qe9JB7sxQFwx0hLxU96SD3ZigLhjpCXip70kHuzFAXDHSEvFT3pIPdmKAuGOkJeKnvSQe7MUBcMdIS8VPekg92YoC4Y6Ql4qe9JB7sxQFwx0hLxU96SD3ZigLhjpCXip70kHuzFAXDHSEvFT3pIPdmKAuGOkJeKnvSQe7MUBcMdIS8VPekg92YoC4Y6Ql4qe9JB7sxQFwx0hLxU96SD3ZigLhjpCXip70kHuzFAXDHSEvFT3pIPdmKAuGOkJeKnvSQe7MUBcMdIS8VPekg92YoC4Y6Ql4qe9JB7sxQFwxpkiQau9DgKwxlp7+ja6/D29wZJcKmSJeVGgNHaSXsglKPFuuGOkJeKnvSQbz+LkC+u7BpXNFY1Ol0igQKQhOjAG0EbdANeTDpBcEqKAuGOkJeKnvSQf7FNkpnnyQSXEm/r1lcM2sEBNCJVK/GBLEbPuSooC4Y6Ql4qe9JB7sPNHFgRW29YAxjP2Q4iuJyJqX96J70kHuzFAXDHSEvE2TU1Dar2MXhq+KTTqI0SeSb8VPekg92YoC4Y6Ql4my4L//bI7grfZGpQUQf/AHUCpNCXip70kHuzFAXDHSEvAD1dFDg4QdH0+YosKCyMYoC4Y6Ql4qe9JB7sxQjSMamh6QdjOCBKfsHMwoLIxigLhjpCXip70kHuzE/2PNThjagktGTqqEFqQl4qe9JB7sxQFwx4a4WXonvSQe7MUBcMdIS8VPekg92YoC4Y6Ql4qe9JB7sxQFwx0hLxU96SD3ZigLhjpCXip70kHuzFAXDHSEvFT3pIPdmKAuGOkJeKnvSQe7MUBcMdIS8VPekg92YoC4Y6Ql4qe9JB7sxQFwx0hLxU96SD3ZigLhjpCXip70kHuzFAXDHSEvFT3pIPdmKAuGOkJeKnvSQe7MUBcMdIS8VPekg92YoC4Y6Ql4qe9JB7sMAAD+/2+cAAAAAAAAAAAAAAFNwMG615sOjsGl4tnq3evSLqnRYN2dgrtklwaCP9cIGRNYEJVTLp3hxaPMU+9xoQgmRVDsOfHzn64tAzcxxp3suWYd2/FLj7eGm+vcTDrTG++lYpolgBTOiLbmMufEBYxrQqfUHOisdHBmEZHna/EuPvo6/wX3nkK5+OSvkblACA4WKEHZfUhuc1FLj7eHDncVhybWna+c2QlpOVV7cJUHvyHdI6ho1RXA5SyvRUj6Kp3ABmkANEt98c+Ik9/eZAxAAeN5YVW6WtOuXjFjv1ZP+QjImKrehba+Rp7X0SWX+HsN+fXI/LKDvfMo/AB2rR5ntFuxpxB4bWvP4h6UE+Y8wAERs/1W3S1p1tEOe3ogRvKHdLir+b6qT9Sq+mysuAiZARqn9Vhz65aQ6XcHnuGaEvLHyv8Jyn/RBSQGIq9gAU2jFVs7w0ROwySdi1tLPgsyI4BQ3phQc+6Mk0LBLa549TCj1RHixAjGnPsRgzAl6Untrn20QlMqg5d9ZmPrfwsZx73lhVbpa0651vUFpx0gIMoZcsjqta+BjAedr4gvZRhQRq7hKfbAKSw34aq9jeOKIrsNKYMKcofYUdjPG9GpfKV6pACm0Yqtnd1+HeBkdVGr4mM01BgiKC+bzijmc68iyrUYHGWvKpqQh2nzHvtIhPQsWwHFSPu0fSOzPnWcZFdrFu0F3nUA2hVmyg229CED+YsYa2BrCkaNHS9djlYgfFZGlhJk4TIDcrxepCRya5sMZ4p5fA1ssaLM90GwMeoSjajg8TS2qtBEysubmafd+QmRgIdBPHKzLqhsiWNtyIHIEJnmqGn5UsmOc8oIAPdH9T7KsZcSH8us3Jx6Oc1Cab0TAeQN8J/tgDCOD/2I8VHJfpMWga9iQST7puD1GBCE9HHy+EWeAshmaxQpz3FU39kBD9iVaoxzsX1s467NlHm116th9+1edx4WNqjfbQ0ilKmoa5tM66BYJn+Ktw1muax+m4uOQjKdvzlnk4aIyOjemP8zCXz0GFcNCb1g6VJNsfhp3KzZB7SbweCEJ38QQPTs0NHdRFJsrxATbV9rbkbX6irBm92w3Q8g9GyG8NGT+aMAQ5auph/ZvU01LBIKIHoQoGgmwVx2Ww2PxpAzHap0rRGynAy+N1Ul9FJFioE8bA0Dge/NRRd44JR7y8BpU/KFgY3TQcUI8cSdJEQd7Vc6jpRJ2eEhs0PMUDyLP7N1s/F484oMOQKfrWlGMcTYglduw4AZzDrgYkrmvJ/MDkIjSoFrxj28issweU+/tqKSzndrP7meq0pSu9uS2t7QEySaZ0oNOI1XxtMW85QaIhSbV0y2eCKz9yvHK5lz1TpNWxAKtg7YUwOzXcivt7gNM06ig7h23dhXH4XsFCefDJbnJwh7WDUW0QFbfM14qxfqeFk2rK7jaFaM34zgIwpXab0OjxtGhHEOFFQke/H82IBWge+YnRH1t2vnmLpQp0x+uamcNn1Gb/a/kKtdhoVJ4ZNiYEnABXkMyqxD9M6dfGbsxtUT2HElfchigIg5hxBeRkaQsZEkMT5rRjmN+7ZI2IAAAAAAAAAAAAAAAAAAAA=";
+const ironCoreLogo = "/favicon.ico";
 
 export const Route = createFileRoute("/")({ component: IronCoreSalesPage });
 
@@ -595,7 +595,7 @@ function IronCoreSalesPage() {
 
       <nav className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#050505]/80 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-          <div className="flex items-center gap-2.5"><img src={ironCoreLogo} alt="Logo IRON CORE" className="h-10 w-10 shrink-0 rounded-md object-contain" /><span className="text-sm font-black tracking-[.3em]">IRON CORE</span></div>
+          <div className="flex items-center gap-2.5"><img src={ironCoreLogo} alt="Logo IRON CORE" className="h-10 w-10 shrink-0 rounded-md object-contain" onError={(e) => { e.currentTarget.src = "/story-photo.jpg"; }} /><span className="text-sm font-black tracking-[.3em]">IRON CORE</span></div>
           <a href="#como-funciona" className="bg-transparent !bg-transparent shadow-none text-xs font-bold uppercase tracking-[.2em] text-white/45 hover:text-[#E3EF27]">Como funciona</a>
         </div>
       </nav>
@@ -676,7 +676,7 @@ function IronCoreSalesPage() {
             <div>
               <h2 className="bg-transparent !bg-transparent shadow-none mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">A HISTÓRIA<br/><span className="bg-transparent !bg-transparent shadow-none text-[#E3EF27]">POR TRÁS</span></h2>
               <div className="mt-6 aspect-[4/5] overflow-hidden rounded-2xl border border-dashed border-white/15 bg-white/[.02]">
-                <img src={storyPhoto} alt="Foto da história por trás da Iron Core" className="mx-auto h-auto max-h-[720px] w-full max-w-[480px] object-contain object-top" />
+                <img src={storyPhoto} alt="Foto da história por trás da Iron Core" className="block h-full w-full object-cover object-top" onError={(e) => { e.currentTarget.src = "/favicon.ico"; }} />
               </div>
             </div>
             <article className="story-copy bg-transparent text-[13px] leading-[1.45] text-white/60 sm:text-sm sm:leading-[1.55]">
