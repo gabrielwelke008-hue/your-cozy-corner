@@ -630,7 +630,7 @@ function IronCoreSalesPage() {
 
       <section id="como-funciona" className="reveal-on-scroll py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h2 className="bg-transparent !bg-transparent shadow-none mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">VOCÊ NÃO PRECISA TREINAR MAIS. PRECISA TREINAR COM DIREÇÃO.</h2>
+          <h2 className="bg-transparent !bg-transparent shadow-none mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">Seu esforço merece resultados. Tudo começa com a estratégia certa.</h2>
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
               ["01","ENTENDEMOS O FÍSICO QUE VOCÊ QUER CONSTRUIR","Mais massa muscular, definição ou um corpo mais atlético. Seu objetivo é o ponto de partida, não um detalhe."],
