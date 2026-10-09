@@ -669,6 +669,7 @@ function IronCoreSalesPage() {
             </div>
             <div className="mt-4 text-center">
               <h3 className="text-sm font-black uppercase tracking-[.12em]">Vídeo do criador da Iron Core</h3>
+              <p className="mt-2 text-xs font-black uppercase tracking-[.2em] text-white">AUGUSTO MORETTI</p>
               <p className="mt-2 text-xs leading-6 text-white/40 sm:text-sm">Sua história, sua visão e como o método funciona.</p>
             </div>
           </div>
