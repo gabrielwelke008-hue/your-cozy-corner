@@ -630,15 +630,15 @@ function IronCoreSalesPage() {
 
       <section id="como-funciona" className="reveal-on-scroll py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <h2 className="bg-transparent !bg-transparent shadow-none mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">COMO FUNCIONA A <span className="bg-transparent !bg-transparent shadow-none text-[#E3EF27]">IRON CORE?</span></h2>
+          <h2 className="bg-transparent !bg-transparent shadow-none mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">VOCÊ NÃO PRECISA TREINAR MAIS. PRECISA TREINAR COM DIREÇÃO.</h2>
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
-              ["01","ENTENDEMOS VOCÊ","Entendemos seus objetivos, sua rotina, seu nível atual e o físico que você quer construir."],
-              ["02","IDENTIFICAMOS O QUE VOCÊ PRECISA","Você não precisa ficar tentando descobrir sozinho qual treino seguir ou por onde começar. A partir do seu objetivo, encontramos a direção mais adequada para você."],
-              ["03","VOCÊ RECEBE SUA ESTRATÉGIA","Tenha acesso a estratégias de treino e orientação para saber exatamente o que fazer, sem depender de tentativa e erro."],
-              ["04","VOCÊ SABE O QUE FAZER","Chega de entrar na academia sem saber qual exercício fazer, quantas séries ou como organizar sua evolução. Você passa a ter um caminho claro para seguir."],
-              ["05","VOCÊ EVOLUI COM MAIS CLAREZA","Conforme avança, você entende melhor seu corpo, acompanha sua evolução e sabe quais pontos precisa melhorar."],
-              ["06","MENOS COMPLICAÇÃO. MAIS DIREÇÃO.","A Iron Core reúne o conhecimento e as estratégias que você precisa em um só lugar, para que você possa focar no que realmente importa: construir o seu shape."],
+              ["01","ENTENDEMOS O FÍSICO QUE VOCÊ QUER CONSTRUIR","Mais massa muscular, definição ou um corpo mais atlético. Seu objetivo é o ponto de partida, não um detalhe."],
+              ["02","PARE DE SE ESFORÇAR SEM SABER SE ESTÁ NO CAMINHO CERTO","Identifique o que precisa melhorar e deixe de depender de palpites para decidir como treinar."],
+              ["03","TENHA UM PLANO. NÃO MAIS UM TREINO ALEATÓRIO.","Encontre uma direção de treino alinhada ao seu objetivo, ao seu nível e à sua rotina, sem depender de personal."],
+              ["04","ENTRE NA ACADEMIA SABENDO O QUE FAZER","Menos tempo perdido em dúvidas. Mais clareza para organizar seus exercícios, séries e prioridades."],
+              ["05","FAÇA CADA TREINO TER UM PROPÓSITO","Acompanhe seu progresso, entenda o que precisa ajustar e trabalhe para chegar cada vez mais perto do físico que deseja."],
+              ["06","CHEGA DE ACHISMO. É HORA DE EVOLUIR COM ESTRATÉGIA.","A Iron Core reúne orientação e conhecimento para tornar sua jornada mais clara, organizada e consistente."],
             ].map(([number,heading,description]) => <article key={number} className="rounded-2xl border border-white/10 bg-[#090909] p-8">
               <span className="text-sm font-black text-[#E3EF27]">{number}</span>
               <h3 className="mt-8 text-xl font-black uppercase leading-tight">{heading}</h3>
