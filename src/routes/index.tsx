@@ -1,34 +1,11 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Dumbbell, ListChecks, ShieldCheck, Sparkles, Timer, Utensils, Zap } from "lucide-react";
 import { createFileRoute } from "@tanstack/react-router";
-const storyPhoto = "/story-photo.jpg"; // sync trigger 2026-10-06
 const ironCoreLogo = "/iron-core-logo.png";
 
 export const Route = createFileRoute("/")({ component: IronCoreSalesPage });
 
-const story = [
-  "Tudo começa com uma inquietação.",
-  "Aquela sensação de olhar para o próprio corpo e pensar: “Eu sei que posso chegar mais longe.”",
-  "Talvez você conheça essa sensação. Você treina, tenta se alimentar melhor, começa cheio de motivação… mas, depois de um tempo, percebe que o resultado não acompanha todo o esforço.",
-  "Foi exatamente essa inquietação que me levou a buscar respostas.",
-  "O esporte sempre esteve presente na minha vida, mas foi na musculação que essa busca se tornou ainda maior. Quanto mais eu treinava, mais queria entender por que algumas pessoas evoluíam tanto enquanto outras passavam anos se esforçando e continuavam longe do físico que desejavam.",
-  "Foi isso que me levou a estudar Educação Física.",
-  "E quanto mais eu aprendia, mais uma coisa ficava clara: um físico realmente transformado não acontece por acaso.",
-  "Treinamento, alimentação, estratégia, recuperação e consistência precisam trabalhar juntos. Não basta simplesmente fazer mais. É preciso saber o que fazer e por quê.",
-  "Foi então que percebi algo que me marcou:",
-  "a maioria das pessoas não desiste porque não quer mudar. Elas desistem porque passam tempo demais tentando mudar sem direção.",
-  "E o problema é que o tempo continua passando.",
-  "Você pode passar os próximos meses trocando de treino, testando dietas, seguindo dicas aleatórias e tentando descobrir sozinho o que funciona.",
-  "Ou pode começar a construir seu físico com uma estratégia por trás.",
-  "Foi dessa ideia que nasceu a IRON CORE.",
-  "Um sistema criado para quem cansou de improvisar e decidiu levar a própria transformação a sério.",
-  "Porque existe uma versão sua que você ainda não conhece.",
-  "Mais forte. Mais confiante. Com o físico que hoje você apenas imagina.",
-  "E ela não vai aparecer por acaso.",
-  "Quanto antes você começar a construir, mais cedo poderá olhar para trás e perceber o quanto mudou.",
-  "A pergunta é:",
-  "você vai continuar tentando descobrir sozinho ou finalmente vai dar uma direção para o esforço que já está fazendo?",
-];
+
 
 function AnatomicalModel() {
   return (
@@ -670,19 +647,57 @@ function IronCoreSalesPage() {
         </div>
       </section>
 
-      <section className="reveal-on-scroll py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <div className="grid gap-7 lg:grid-cols-[.8fr_1.2fr]">
-            <div>
-              <h2 className="bg-transparent !bg-transparent shadow-none mt-4 text-4xl font-black uppercase leading-none sm:text-6xl">A HISTÓRIA<br/><span className="bg-transparent !bg-transparent shadow-none text-[#E3EF27]">POR TRÁS</span></h2>
-              <div className="mt-6 aspect-[4/5] overflow-hidden rounded-2xl border border-dashed border-white/15 bg-white/[.02]">
-                <img src={storyPhoto} alt="Foto da história por trás da Iron Core" className="block h-full w-full object-cover object-top" onError={(e) => { e.currentTarget.src = "/favicon.ico"; }} />
+      <section id="conheca-iron-core" className="reveal-on-scroll py-16 sm:py-24">
+        <div className="mx-auto max-w-5xl px-5 sm:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="text-[10px] font-black uppercase tracking-[.35em] text-white/45">CONHEÇA A IRON CORE</p>
+            <h2 className="mt-5 text-4xl font-black uppercase leading-[.95] sm:text-6xl">NÃO FALTA VONTADE. FALTA SABER COMO CHEGAR LÁ.</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-white/55 sm:text-base">
+              Foi dessa percepção que nasceu a Iron Core: a ideia de que ninguém deveria precisar passar meses improvisando na academia para descobrir como evoluir.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-4xl">
+            <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/15 bg-white/[.025] shadow-[0_24px_80px_rgba(0,0,0,.35)]">
+              <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-white/[.04]">
+                  <Dumbbell size={23} strokeWidth={1.5} className="text-white/65" />
+                </div>
+                <p className="text-[10px] font-black uppercase tracking-[.25em] text-white/45">VÍDEO EM BREVE</p>
+                <p className="mt-2 text-sm text-white/30">O vídeo do criador será incorporado aqui.</p>
               </div>
             </div>
-            <article className="story-copy bg-transparent text-[13px] leading-[1.45] text-white/60 sm:text-sm sm:leading-[1.55]">
-              {story.map((p,i)=><p key={i} className={i===0||i===6||i===11||i===14 ? "mb-2 text-base font-bold leading-[1.35] text-white sm:text-lg" : "mb-2"}>{p}</p>)}
-            </article>
+            <div className="mt-4 text-center">
+              <h3 className="text-sm font-black uppercase tracking-[.12em]">Vídeo do criador da Iron Core</h3>
+              <p className="mt-2 text-xs leading-6 text-white/40 sm:text-sm">Sua história, sua visão e como o método funciona.</p>
+            </div>
           </div>
+
+          <div className="mx-auto mt-12 max-w-4xl">
+            <h3 className="text-center text-2xl font-black uppercase leading-tight sm:text-3xl">UMA ESTRATÉGIA PARA VOCÊ PARAR DE IMPROVISAR.</h3>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <article className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[.025] p-5 sm:p-6">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[.035]">
+                  <Dumbbell size={18} strokeWidth={1.6} className="text-white/65" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-black uppercase leading-snug">DIREÇÃO PARA SEU OBJETIVO</h4>
+                  <p className="mt-2 text-xs leading-6 text-white/45 sm:text-sm">Entenda o que priorizar para chegar mais perto do físico que deseja.</p>
+                </div>
+              </article>
+              <article className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[.025] p-5 sm:p-6">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[.035]">
+                  <ListChecks size={18} strokeWidth={1.6} className="text-white/65" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-black uppercase leading-snug">TREINO QUE CABE NA ROTINA</h4>
+                  <p className="mt-2 text-xs leading-6 text-white/45 sm:text-sm">Tenha uma abordagem mais organizada e compatível com seu dia a dia.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <p className="mx-auto mt-10 max-w-3xl text-center text-lg font-bold leading-7 text-white sm:text-xl">Seu esforço já existe. Agora, dê a ele uma direção.</p>
         </div>
       </section>
 
