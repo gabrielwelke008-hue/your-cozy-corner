@@ -578,7 +578,7 @@ function IronCoreSalesPage() {
       </nav>
 
       <section className="reveal-on-scroll relative min-h-screen overflow-hidden pt-16 hero-landing">
-<div className="absolute inset-0 bg-transparent" />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{backgroundImage: "linear-gradient(90deg, rgba(0,0,0,.54), rgba(0,0,0,.20) 55%, rgba(0,0,0,.42)), url('/Captura%20de%20tela%202026-10-10%20103051.png')"}} />
         <div className="relative mx-auto grid min-h-[calc(100vh-64px)] max-w-7xl items-center gap-8 px-5 py-12 sm:px-8 lg:grid-cols-[1fr_440px]">
           <div className="relative z-10 mx-auto w-full max-w-5xl text-center">
             <p className="mb-6 text-[10px] font-black uppercase tracking-[.4em] text-[#E3EF27]">IRON CORE • PROTOCOLO DE EVOLUÇÃO</p>
@@ -602,6 +602,14 @@ function IronCoreSalesPage() {
             </div>
             <a href="#como-funciona" className="mx-auto mt-16 inline-flex items-center gap-3 rounded-xl bg-[#E3EF27] px-7 py-4 text-xs font-black uppercase tracking-[.14em] text-black hover:-translate-y-1">Conhecer a Iron Core <ArrowRight size={17}/></a>
           </div>
+        </div>
+      </section>
+
+      <section aria-label="Boas-vindas, seu caminho e seu treino" className="reveal-on-scroll border-y border-white/10 bg-black py-12 sm:py-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-5 sm:grid-cols-3 sm:px-8">
+          <img src="/img1.jpeg" alt="Iron Core — boas-vindas" loading="lazy" className="w-full rounded-2xl border border-white/10 object-cover shadow-[0_18px_50px_rgba(0,0,0,.45)]" />
+          <img src="/img2.jpeg" alt="Iron Core — seu caminho" loading="lazy" className="w-full rounded-2xl border border-white/10 object-cover shadow-[0_18px_50px_rgba(0,0,0,.45)]" />
+          <img src="/img3.jpeg" alt="Iron Core — seu treino" loading="lazy" className="w-full rounded-2xl border border-white/10 object-cover shadow-[0_18px_50px_rgba(0,0,0,.45)]" />
         </div>
       </section>
 
