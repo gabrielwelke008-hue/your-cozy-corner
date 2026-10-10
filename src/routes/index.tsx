@@ -605,14 +605,6 @@ function IronCoreSalesPage() {
         </div>
       </section>
 
-      <section aria-label="Boas-vindas, seu caminho e seu treino" className="reveal-on-scroll border-y border-white/10 bg-black py-12 sm:py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-5 px-5 sm:grid-cols-3 sm:px-8">
-          <img src="/img1.jpeg" alt="Iron Core — boas-vindas" loading="lazy" className="w-full rounded-2xl border border-white/10 object-cover shadow-[0_18px_50px_rgba(0,0,0,.45)]" />
-          <img src="/img2.jpeg" alt="Iron Core — seu caminho" loading="lazy" className="w-full rounded-2xl border border-white/10 object-cover shadow-[0_18px_50px_rgba(0,0,0,.45)]" />
-          <img src="/img3.jpeg" alt="Iron Core — seu treino" loading="lazy" className="w-full rounded-2xl border border-white/10 object-cover shadow-[0_18px_50px_rgba(0,0,0,.45)]" />
-        </div>
-      </section>
-
       <section id="como-funciona" className="reveal-on-scroll py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <h2 className="bg-transparent !bg-transparent shadow-none mt-2 text-3xl font-black uppercase leading-none sm:text-5xl">Seu esforço merece resultados. Tudo começa com a estratégia certa.</h2>
