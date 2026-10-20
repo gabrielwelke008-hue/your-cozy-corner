@@ -171,6 +171,7 @@ function QuizAndOffer() {
 
   if (!finished) {
     const question = questions[current];
+    if (!question) return null;
     return (
       <div className="mx-auto mt-14 max-w-2xl">
         <div className="mb-5 flex items-center justify-between text-[10px] font-black uppercase tracking-[.25em] text-white/30">
